@@ -59,8 +59,6 @@ public class LoginPage extends BasePage {
                 .clickLoginButton();
     }
 
-    // ── State / assertion helpers ─────────────────────────────────────────────
-
     public boolean isLoginErrorDisplayed() {
         return isDisplayed(loginErrorMessage);
     }
