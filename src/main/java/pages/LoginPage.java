@@ -1,69 +1,36 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import io.qameta.atlas.webdriver.AtlasWebElement;
+import io.qameta.atlas.webdriver.WebPage;
+import io.qameta.atlas.webdriver.extension.FindBy;
 
-public class LoginPage extends BasePage {
+public interface LoginPage extends WebPage {
 
-    @FindBy(css = "input[data-test='email']")
-    public WebElement emailField;
+    @FindBy("//a[contains(text(),'Sign in')]")
+    AtlasWebElement<?> loginMenuBtn();
 
-    @FindBy(css = "input[data-test='password']")
-    public WebElement passwordField;
+    @FindBy("//a[@aria-label='Register your account']")
+    AtlasWebElement<?> registerYourAccountLinkText();
 
-    @FindBy(css = "input[data-test='login-submit']")
-    public WebElement loginButton;
+    @FindBy("//input[@id='email']")
+    AtlasWebElement<?> emailInputField();
 
-    @FindBy(css = "[data-test='login-error']")
-    public WebElement loginErrorMessage;
+    @FindBy("//input[@id='password']")
+    AtlasWebElement<?> passwordInputField();
 
-    @FindBy(css = "a[href='/auth/login']")
-    public WebElement signInNavLink;
+    @FindBy("//input[@value='Login']")
+    AtlasWebElement<?> loginSubmitBtn();
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
-        log.debug("LoginPage initialised");
-    }
+    @FindBy("//a[@aria-label='Forgot your Password?']")
+    AtlasWebElement<?> forgotPasswordLinkText();
 
-    public LoginPage navigateToLogin() {
-        log.info("Navigating to login page");
-        click(signInNavLink);
-        return this;
-    }
+    @FindBy("//input[@id='email']")
+    AtlasWebElement<?> enterForgotPassEmail();
 
-    public LoginPage enterEmail(String email) {
-        log.info("Entering email: {}", email);
-        type(emailField, email);
-        return this;
-    }
+    @FindBy("//input[@value='Set New Password']")
+    AtlasWebElement<?> setNewPassBtn();
 
-    public LoginPage enterPassword(String password) {
-        log.info("Entering password");
-        type(passwordField, password);
-        return this;
-    }
+    @FindBy("//div[contains(@class,'alert-danger') or contains(@class,'alert-success')]")
+    AtlasWebElement<?> globalToastMessage();
 
-    public LoginPage clickLoginButton() {
-        log.info("Clicking login button");
-        click(loginButton);
-        return this;
-    }
-
-    /** Convenience: full login in one chain. */
-    public LoginPage login(String email, String password) {
-        return enterEmail(email)
-                .enterPassword(password)
-                .clickLoginButton();
-    }
-
-    public boolean isLoginErrorDisplayed() {
-        return isDisplayed(loginErrorMessage);
-    }
-
-    public String getLoginErrorText() {
-        return getText(loginErrorMessage);
-    }
 }

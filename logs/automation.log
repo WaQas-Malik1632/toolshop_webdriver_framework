@@ -1,48 +1,48 @@
 2026-04-02 00:45:44 [main] INFO  baseTest.BaseTest - ===== Test setup: launching browser =====
-2026-04-02 00:45:44 [main] INFO  webDriverManager.WebDriverFunctional - config.properties loaded successfully
-2026-04-02 00:45:44 [main] INFO  webDriverManager.WebDriverFunctional - Setting up browser: chrome
-2026-04-02 00:45:50 [main] INFO  webDriverManager.WebDriverFunctional - 'chrome' driver ready — navigating to: https://practicesoftwaretesting.com/
-2026-04-02 00:45:51 [main] DEBUG pages.BasePage - LoginPage initialised
+2026-04-02 00:45:44 [main] INFO  webDriverManager.DriverManager - config.properties loaded successfully
+2026-04-02 00:45:44 [main] INFO  webDriverManager.DriverManager - Setting up browser: chrome
+2026-04-02 00:45:50 [main] INFO  webDriverManager.DriverManager - 'chrome' driver ready — navigating to: https://practicesoftwaretesting.com/
+2026-04-02 00:45:51 [main] DEBUG basePage.BasePage - LoginPage initialised
 2026-04-02 00:45:51 [main] INFO  baseTest.BaseTest - Browser ready. Base URL opened.
 2026-04-02 00:45:51 [main] INFO  baseTest.BaseTest - TEST: testLoginWithInvalidCredentials
 2026-04-02 00:45:51 [main] INFO  steps.LoginSteps - Step: go to login page
-2026-04-02 00:45:51 [main] INFO  pages.BasePage - Navigating to login page
-2026-04-02 00:45:51 [main] DEBUG pages.BasePage - Clicking element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: a[href='/auth/login']]
-2026-04-02 00:45:51 [main] DEBUG pages.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: a[href='/auth/login']]
+2026-04-02 00:45:51 [main] INFO  basePage.BasePage - Navigating to login page
+2026-04-02 00:45:51 [main] DEBUG basePage.BasePage - Clicking element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: a[href='/auth/login']]
+2026-04-02 00:45:51 [main] DEBUG basePage.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: a[href='/auth/login']]
 2026-04-02 00:45:52 [main] INFO  steps.LoginSteps - Step: login with email 'invalid@test.com'
-2026-04-02 00:45:52 [main] INFO  pages.BasePage - Entering email: invalid@test.com
-2026-04-02 00:45:52 [main] DEBUG pages.BasePage - Typing 'invalid@test.com' into element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='email']]
-2026-04-02 00:45:52 [main] DEBUG pages.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='email']]
-2026-04-02 00:45:52 [main] INFO  pages.BasePage - Entering password
-2026-04-02 00:45:52 [main] DEBUG pages.BasePage - Typing 'wrongpassword' into element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='password']]
-2026-04-02 00:45:52 [main] DEBUG pages.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='password']]
-2026-04-02 00:45:52 [main] INFO  pages.BasePage - Clicking login button
-2026-04-02 00:45:52 [main] DEBUG pages.BasePage - Clicking element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='login-submit']]
-2026-04-02 00:45:52 [main] DEBUG pages.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='login-submit']]
-2026-04-02 00:45:54 [main] DEBUG pages.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: [data-test='login-error']]
+2026-04-02 00:45:52 [main] INFO  basePage.BasePage - Entering email: invalid@test.com
+2026-04-02 00:45:52 [main] DEBUG basePage.BasePage - Typing 'invalid@test.com' into element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='email']]
+2026-04-02 00:45:52 [main] DEBUG basePage.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='email']]
+2026-04-02 00:45:52 [main] INFO  basePage.BasePage - Entering password
+2026-04-02 00:45:52 [main] DEBUG basePage.BasePage - Typing 'wrongpassword' into element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='password']]
+2026-04-02 00:45:52 [main] DEBUG basePage.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='password']]
+2026-04-02 00:45:52 [main] INFO  basePage.BasePage - Clicking login button
+2026-04-02 00:45:52 [main] DEBUG basePage.BasePage - Clicking element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='login-submit']]
+2026-04-02 00:45:52 [main] DEBUG basePage.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='login-submit']]
+2026-04-02 00:45:54 [main] DEBUG basePage.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: [data-test='login-error']]
 2026-04-02 00:45:54 [main] INFO  baseTest.BaseTest - ===== Test teardown: closing browser =====
-2026-04-02 00:45:54 [main] INFO  webDriverManager.WebDriverFunctional - Quitting WebDriver
+2026-04-02 00:45:54 [main] INFO  webDriverManager.DriverManager - Quitting WebDriver
 2026-04-02 00:45:54 [main] INFO  baseTest.BaseTest - ===== Test setup: launching browser =====
-2026-04-02 00:45:54 [main] INFO  webDriverManager.WebDriverFunctional - Setting up browser: chrome
-2026-04-02 00:45:55 [main] INFO  webDriverManager.WebDriverFunctional - 'chrome' driver ready — navigating to: https://practicesoftwaretesting.com/
-2026-04-02 00:45:56 [main] DEBUG pages.BasePage - LoginPage initialised
+2026-04-02 00:45:54 [main] INFO  webDriverManager.DriverManager - Setting up browser: chrome
+2026-04-02 00:45:55 [main] INFO  webDriverManager.DriverManager - 'chrome' driver ready — navigating to: https://practicesoftwaretesting.com/
+2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - LoginPage initialised
 2026-04-02 00:45:56 [main] INFO  baseTest.BaseTest - Browser ready. Base URL opened.
 2026-04-02 00:45:56 [main] INFO  baseTest.BaseTest - TEST: testSuccessfulLogin
 2026-04-02 00:45:56 [main] INFO  steps.LoginSteps - Step: go to login page
-2026-04-02 00:45:56 [main] INFO  pages.BasePage - Navigating to login page
-2026-04-02 00:45:56 [main] DEBUG pages.BasePage - Clicking element: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: a[href='/auth/login']]
-2026-04-02 00:45:56 [main] DEBUG pages.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: a[href='/auth/login']]
+2026-04-02 00:45:56 [main] INFO  basePage.BasePage - Navigating to login page
+2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - Clicking element: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: a[href='/auth/login']]
+2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: a[href='/auth/login']]
 2026-04-02 00:45:56 [main] INFO  steps.LoginSteps - Step: login with email 'customer@practicesoftwaretesting.com'
-2026-04-02 00:45:56 [main] INFO  pages.BasePage - Entering email: customer@practicesoftwaretesting.com
-2026-04-02 00:45:56 [main] DEBUG pages.BasePage - Typing 'customer@practicesoftwaretesting.com' into element: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='email']]
-2026-04-02 00:45:56 [main] DEBUG pages.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='email']]
-2026-04-02 00:45:56 [main] INFO  pages.BasePage - Entering password
-2026-04-02 00:45:56 [main] DEBUG pages.BasePage - Typing 'welcome01' into element: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='password']]
-2026-04-02 00:45:56 [main] DEBUG pages.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='password']]
-2026-04-02 00:45:56 [main] INFO  pages.BasePage - Clicking login button
-2026-04-02 00:45:56 [main] DEBUG pages.BasePage - Clicking element: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='login-submit']]
-2026-04-02 00:45:57 [main] DEBUG pages.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='login-submit']]
-2026-04-02 00:46:07 [main] DEBUG pages.BasePage - Waiting for element to be visible: Proxy element for: DefaultElementLocator 'By.cssSelector: [data-test='login-error']'
-2026-04-02 00:46:47 [main] DEBUG pages.BasePage - Element not visible: Proxy element for: DefaultElementLocator 'By.cssSelector: [data-test='login-error']'
+2026-04-02 00:45:56 [main] INFO  basePage.BasePage - Entering email: customer@practicesoftwaretesting.com
+2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - Typing 'customer@practicesoftwaretesting.com' into element: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='email']]
+2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='email']]
+2026-04-02 00:45:56 [main] INFO  basePage.BasePage - Entering password
+2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - Typing 'welcome01' into element: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='password']]
+2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='password']]
+2026-04-02 00:45:56 [main] INFO  basePage.BasePage - Clicking login button
+2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - Clicking element: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='login-submit']]
+2026-04-02 00:45:57 [main] DEBUG basePage.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='login-submit']]
+2026-04-02 00:46:07 [main] DEBUG basePage.BasePage - Waiting for element to be visible: Proxy element for: DefaultElementLocator 'By.cssSelector: [data-test='login-error']'
+2026-04-02 00:46:47 [main] DEBUG basePage.BasePage - Element not visible: Proxy element for: DefaultElementLocator 'By.cssSelector: [data-test='login-error']'
 2026-04-02 00:46:47 [main] INFO  baseTest.BaseTest - ===== Test teardown: closing browser =====
-2026-04-02 00:46:47 [main] INFO  webDriverManager.WebDriverFunctional - Quitting WebDriver
+2026-04-02 00:46:47 [main] INFO  webDriverManager.DriverManager - Quitting WebDriver

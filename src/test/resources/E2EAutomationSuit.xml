@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="10" name="End-to-End Test Suit-Tool Shop Site">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+        <listener class-name="com.toolshop.qa.utils.listeners.TestListener"/>
+    </listeners>
+
+    <test thread-count="2" name="Smoke Test" enabled="true">
+        <classes>
+            <class name="toolshop_webdriver_framework.testcases.CustomerRegisterTest"/>
+            <class name="com.toolshop.qa.web.ui.testcases.LoginTest"/>
+            <class name="com.toolshop.qa.web.ui.testcases.HomePageTest"/>
+            <class name="com.toolshop.qa.web.ui.testcases.CustomerAccountTest"/>
+        </classes>
+    </test>
+    src/test/java/testcases/LoginTest.java
+</suite> <!--End-to-End Test Suit-ToolShop Site-->
+

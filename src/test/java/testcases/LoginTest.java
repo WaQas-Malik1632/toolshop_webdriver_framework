@@ -1,37 +1,106 @@
 package testcases;
 
 import baseTest.BaseTest;
+import constants.LoginPageConstants;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import steps.LoginSteps;
 
 public class LoginTest extends BaseTest {
 
-    @Test(description = "Successful login with valid credentials")
-    public void testSuccessfulLogin() {
-        log.info("TEST: testSuccessfulLogin");
+    @Test(priority = 1, enabled = true)
+    @Story("Validate Login Page Title")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Verify that the Login page title matches the expected value")
+    public void validateLoginPageTitle() {
+        log.info("Executing test: {}", testMethod.getName());
 
-        // loginPage is inherited from BaseTest — page chaining starts here
-        new LoginSteps(loginPage)
-                .goToLoginPage()
-                .loginWithDefaultCredentials();
-
-        Assert.assertFalse(
-                loginPage.isLoginErrorDisplayed(),
-                "Login error should NOT be shown for valid credentials");
+        Assert.assertEquals(
+                onLoginPage()
+                        .navigateToLoginPage()
+                        .getLoginPageTitle(),
+                LoginPageConstants.LOGIN_PAGE_TITLE,
+                "Title mismatch on Login Page"
+        );
     }
 
-    @Test(description = "Login fails with invalid credentials")
-    public void testLoginWithInvalidCredentials() {
-        log.info("TEST: testLoginWithInvalidCredentials");
+    @Test(priority = 2, enabled = true)
+    @Story("Customer Login - Positive Flow")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Verify that user can login with valid credentials successfully")
+    public void validateCustomerLogsInSuccessfully() {
+        log.info("Executing test: {}", testMethod.getName());
+        log.info("ACTION: Attempting login with valid user");
 
-        LoginSteps steps = new LoginSteps(loginPage);
+        Assert.assertEquals(
+                onLoginPage()
+                        .navigateToLoginPage()
+                        .enterEmail(prop.getProperty("user.login.email"))
+                        .enterPassword(prop.getProperty("user.login.password"))
+                        .submitLoginAndCaptureResult(),
+                LoginPageConstants.CUSTOMER_ACCOUNT_PAGE_URL,
+                "Login failed: URL mismatch"
+        );
+    }
 
-        steps.goToLoginPage()
-                .loginWith("invalid@test.com", "wrongpassword");
+    @Test(priority = 3, enabled = true)
+    @Story("Customer Login - Negative Flow")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Verify that user can't login with invalid credentials")
+    public void validateCustomerLogInWithInvalidCredentials() {
+        log.info("Executing test: {}", testMethod.getName());
+        log.info("ACTION: Attempting login with invalid credentials");
 
-        Assert.assertTrue(
-                steps.isLoginErrorVisible(),
-                "Login error message SHOULD be shown for invalid credentials");
+        Assert.assertEquals(
+                onLoginPage()
+                        .navigateToLoginPage()
+                        .enterEmail(prop.getProperty("user.login.email"))
+                        .enterPassword(prop.getProperty("user.login.wrong.password"))
+                        .submitLoginAndCaptureResult(),
+                LoginPageConstants.INVALID_EMAIL_OR_PASSWORD,
+                "Failed! User logged in with invalid credentials"
+        );
+    }
+
+    @Test(priority = 4, enabled = true)
+    @Story("Reset Password - Registered Email")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Verify that user can reset password using Registered email successfully")
+    public void validateUserCanResetForgotPasswordWithRegisteredEmail() {
+        log.info("Executing test: {}", testMethod.getName());
+
+        Assert.assertEquals(
+                onLoginPage()
+                        .navigateToLoginPage()
+                        .openForgotPasswordForm()
+                        .enterForgotPasswordEmail(prop.getProperty("user.reset.email"))
+                        .submitForgotPasswordRequest()
+                        .captureForgotPasswordResultMessage(),
+                LoginPageConstants.FORGOT_PASSWORD_RESET_SUCCESS_MESSAGE,
+                "Failed! Entered email not registered"
+        );
+    }
+
+    @Test(priority = 5, enabled = true)
+    @Story("Reset Password - Negative Flow - Unregistered Email")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Verify that user can not reset password using un-registered email")
+    public void validateUserCanNotResetForgotPasswordWithUnregisteredEmail() {
+        log.info("Executing test: {}", testMethod.getName());
+
+        Assert.assertEquals(
+                onLoginPage()
+                        .navigateToLoginPage()
+                        .openForgotPasswordForm()
+                        .enterForgotPasswordEmail(prop.getProperty("user.reset.registered.email"))
+                        .submitForgotPasswordRequest()
+                        .captureForgotPasswordResultMessage(),
+                LoginPageConstants.FORGOT_PASSWORD_INVALID_EMAIL_ERROR,
+                "Failed! Password reset successful with unregistered email"
+        );
     }
 }
+

@@ -1,21 +1,35 @@
 package steps;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import basePage.BasePage;
 import org.openqa.selenium.WebDriver;
-import webDriverManager.WebDriverFunctional;
+import pages.*;
 
-/**
- * BaseSteps — shared driver reference and navigation helpers for all Step classes.
- * Driver is obtained from WebDriverFunctional (ThreadLocal), never created here.
- */
-public class BaseSteps {
+public class BaseSteps extends BasePage {
 
-    protected static final Logger log = LogManager.getLogger(BaseSteps.class);
-    protected final WebDriver driver;
+    public BaseSteps(WebDriver driver) {
+        super(driver);
+    }
 
-    public BaseSteps() {
-        this.driver = WebDriverFunctional.getDriver();
+    public HomePage onHomePage() {
+        return on(HomePage.class);
+    }
+
+    public LoginPage onLoginPage() {
+        return on(LoginPage.class);
+    }
+
+    public CustomerRegistrationPage onRegistrationPage() {
+        return on(CustomerRegistrationPage.class);
+    }
+
+    public CustomerAccountPage onAccountPage() {
+        return on(CustomerAccountPage.class);
+    }
+
+    public ContactPage onContactPage() {
+        return on(ContactPage.class);
     }
 
 }
+
+
