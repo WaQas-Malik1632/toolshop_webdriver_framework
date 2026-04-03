@@ -1,10 +1,10 @@
-2026-04-02 00:45:44 [main] INFO  baseTest.BaseTest - ===== Test setup: launching browser =====
+2026-04-02 00:45:44 [main] INFO  webTests.BaseTest - ===== Test setup: launching browser =====
 2026-04-02 00:45:44 [main] INFO  webDriverManager.DriverManager - config.properties loaded successfully
 2026-04-02 00:45:44 [main] INFO  webDriverManager.DriverManager - Setting up browser: chrome
 2026-04-02 00:45:50 [main] INFO  webDriverManager.DriverManager - 'chrome' driver ready — navigating to: https://practicesoftwaretesting.com/
 2026-04-02 00:45:51 [main] DEBUG basePage.BasePage - LoginPage initialised
-2026-04-02 00:45:51 [main] INFO  baseTest.BaseTest - Browser ready. Base URL opened.
-2026-04-02 00:45:51 [main] INFO  baseTest.BaseTest - TEST: testLoginWithInvalidCredentials
+2026-04-02 00:45:51 [main] INFO  webTests.BaseTest - Browser ready. Base URL opened.
+2026-04-02 00:45:51 [main] INFO  webTests.BaseTest - TEST: testLoginWithInvalidCredentials
 2026-04-02 00:45:51 [main] INFO  steps.LoginSteps - Step: go to login page
 2026-04-02 00:45:51 [main] INFO  basePage.BasePage - Navigating to login page
 2026-04-02 00:45:51 [main] DEBUG basePage.BasePage - Clicking element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: a[href='/auth/login']]
@@ -20,14 +20,14 @@
 2026-04-02 00:45:52 [main] DEBUG basePage.BasePage - Clicking element: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='login-submit']]
 2026-04-02 00:45:52 [main] DEBUG basePage.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: input[data-test='login-submit']]
 2026-04-02 00:45:54 [main] DEBUG basePage.BasePage - Waiting for element to be visible: [[ChromeDriver: chrome on windows (364bad56d5082ac7416e8b5d219ad7a1)] -> css selector: [data-test='login-error']]
-2026-04-02 00:45:54 [main] INFO  baseTest.BaseTest - ===== Test teardown: closing browser =====
+2026-04-02 00:45:54 [main] INFO  webTests.BaseTest - ===== Test teardown: closing browser =====
 2026-04-02 00:45:54 [main] INFO  webDriverManager.DriverManager - Quitting WebDriver
-2026-04-02 00:45:54 [main] INFO  baseTest.BaseTest - ===== Test setup: launching browser =====
+2026-04-02 00:45:54 [main] INFO  webTests.BaseTest - ===== Test setup: launching browser =====
 2026-04-02 00:45:54 [main] INFO  webDriverManager.DriverManager - Setting up browser: chrome
 2026-04-02 00:45:55 [main] INFO  webDriverManager.DriverManager - 'chrome' driver ready — navigating to: https://practicesoftwaretesting.com/
 2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - LoginPage initialised
-2026-04-02 00:45:56 [main] INFO  baseTest.BaseTest - Browser ready. Base URL opened.
-2026-04-02 00:45:56 [main] INFO  baseTest.BaseTest - TEST: testSuccessfulLogin
+2026-04-02 00:45:56 [main] INFO  webTests.BaseTest - Browser ready. Base URL opened.
+2026-04-02 00:45:56 [main] INFO  webTests.BaseTest - TEST: testSuccessfulLogin
 2026-04-02 00:45:56 [main] INFO  steps.LoginSteps - Step: go to login page
 2026-04-02 00:45:56 [main] INFO  basePage.BasePage - Navigating to login page
 2026-04-02 00:45:56 [main] DEBUG basePage.BasePage - Clicking element: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: a[href='/auth/login']]
@@ -44,7 +44,7 @@
 2026-04-02 00:45:57 [main] DEBUG basePage.BasePage - Waiting for element to be clickable: [[ChromeDriver: chrome on windows (634c336fd1e03948a20831d6f0f49f9f)] -> css selector: input[data-test='login-submit']]
 2026-04-02 00:46:07 [main] DEBUG basePage.BasePage - Waiting for element to be visible: Proxy element for: DefaultElementLocator 'By.cssSelector: [data-test='login-error']'
 2026-04-02 00:46:47 [main] DEBUG basePage.BasePage - Element not visible: Proxy element for: DefaultElementLocator 'By.cssSelector: [data-test='login-error']'
-2026-04-02 00:46:47 [main] INFO  baseTest.BaseTest - ===== Test teardown: closing browser =====
+2026-04-02 00:46:47 [main] INFO  webTests.BaseTest - ===== Test teardown: closing browser =====
 2026-04-02 00:46:47 [main] INFO  webDriverManager.DriverManager - Quitting WebDriver
 2026-04-03 02:16:07 WARN  TestNG:133 - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
 2026-04-03 02:16:07 WARN  TestNG:133 - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
@@ -58,7 +58,7 @@ java.io.FileNotFoundException: src\main\java\com\toolshop\qa\config\Config.prope
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:109)
 	at webDriverManager.DriverManager.loadProperties(DriverManager.java:32)
-	at baseTest.BaseTest.setUp(BaseTest.java:25)
+	at webTests.BaseTest.setUp(BaseTest.java:25)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -176,7 +176,7 @@ java.io.FileNotFoundException: src\main\java\com\toolshop\qa\config\Config.prope
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
 	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:109)
 	at webDriverManager.DriverManager.loadProperties(DriverManager.java:32)
-	at baseTest.BaseTest.setUp(BaseTest.java:25)
+	at webTests.BaseTest.setUp(BaseTest.java:25)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -2507,3 +2507,860 @@ Session ID: 627753343572ab9716f489effb9ce8b5
 2026-04-04 01:24:27 INFO  TestListener:30 -   ✘ Failed  : 4
 2026-04-04 01:24:27 INFO  TestListener:31 -   ⊘ Skipped : 0
 2026-04-04 01:24:27 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 02:04:31 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:04:31 INFO  BaseTest:16 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:04:32 INFO  BaseTest:28 - ACTION: POST /users/register with unique email: api_tester_1775250271489@yopmail.com
+2026-04-04 02:04:37 INFO  BaseTest:23 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:04:37 INFO  BaseTest:16 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:04:37 INFO  BaseTest:67 - ACTION: POST /users/register with minimal fields | email: api_minimal_1775250277049@yopmail.com
+2026-04-04 02:04:37 INFO  BaseTest:23 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:04:37 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:95 - ACTION: POST /users/register with already existing email: customer@practicesoftwaretesting.com
+2026-04-04 02:04:37 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:118 - ACTION: POST /users/register without email field
+2026-04-04 02:04:37 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:140 - ACTION: POST /users/register without password field
+2026-04-04 02:04:37 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:162 - ACTION: POST /users/register with invalid email format
+2026-04-04 02:04:37 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:185 - ACTION: POST /users/register with weak password
+2026-04-04 02:04:37 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:208 - ACTION: POST /users/register with dob under 18 years ago
+2026-04-04 02:04:37 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:04:37 INFO  BaseTest:16 - ===== STARTING API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:04:37 INFO  BaseTest:233 - ACTION: POST /users/register and verify password not in response
+2026-04-04 02:04:37 INFO  BaseTest:23 - ===== FINISHED API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:04:53 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:04:53 INFO  BaseTest:16 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:04:53 INFO  BaseTest:28 - ACTION: POST /users/register with unique email: api_tester_1775250293040@yopmail.com
+2026-04-04 02:04:57 INFO  BaseTest:23 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:04:58 INFO  BaseTest:16 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:04:58 INFO  BaseTest:67 - ACTION: POST /users/register with minimal fields | email: api_minimal_1775250298018@yopmail.com
+2026-04-04 02:04:58 INFO  BaseTest:23 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:04:58 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:95 - ACTION: POST /users/register with already existing email: customer@practicesoftwaretesting.com
+2026-04-04 02:04:58 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:118 - ACTION: POST /users/register without email field
+2026-04-04 02:04:58 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:140 - ACTION: POST /users/register without password field
+2026-04-04 02:04:58 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:162 - ACTION: POST /users/register with invalid email format
+2026-04-04 02:04:58 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:185 - ACTION: POST /users/register with weak password
+2026-04-04 02:04:58 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:208 - ACTION: POST /users/register with dob under 18 years ago
+2026-04-04 02:04:58 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:04:58 INFO  BaseTest:16 - ===== STARTING API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:04:58 INFO  BaseTest:233 - ACTION: POST /users/register and verify password not in response
+2026-04-04 02:04:58 INFO  BaseTest:23 - ===== FINISHED API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:06:53 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:06:57 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:07:04 INFO  BaseTest:16 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:07:04 INFO  BaseTest:23 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:07:04 INFO  BaseTest:16 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:07:04 INFO  BaseTest:23 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:07:04 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:07:04 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:07:04 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:07:04 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:07:04 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:07:05 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:07:05 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:07:05 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:07:05 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:07:05 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:07:05 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:07:05 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:07:05 INFO  BaseTest:16 - ===== STARTING API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:07:05 INFO  BaseTest:23 - ===== FINISHED API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:07:09 INFO  BaseTest:16 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:07:09 INFO  BaseTest:23 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:07:09 INFO  BaseTest:16 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:07:09 INFO  BaseTest:23 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:07:09 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:16 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:23 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:07:09 INFO  BaseTest:16 - ===== STARTING API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:07:10 INFO  BaseTest:23 - ===== FINISHED API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:18:03 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:18:03 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 02:18:03 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-04 02:18:03 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 02:18:03 INFO  BaseTest:24 - ===== STARTING TEST: validateLoginPageTitle =====
+2026-04-04 02:18:03 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 02:18:13 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 02:18:14 INFO  BaseTest:31 - Browser initialized successfully
+2026-04-04 02:18:15 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 02:18:15 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateLoginPageTitle
+2026-04-04 02:18:15 INFO  TestListener:41 -   Groups       : smoke
+2026-04-04 02:18:15 INFO  BaseTest:20 - Executing test: validateLoginPageTitle
+2026-04-04 02:18:16 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 02:18:16 INFO  BaseTest:25 - RESULT: Page title = 'Login - Practice Software Testing - Toolshop - v5.0'
+2026-04-04 02:18:16 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateLoginPageTitle (1470ms)
+2026-04-04 02:18:16 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-04 02:18:16 INFO  BaseTest:36 - ===== FINISHED TEST: validateLoginPageTitle =====
+2026-04-04 02:18:18 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 02:18:18 INFO  BaseTest:24 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-04 02:18:18 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 02:18:23 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 02:18:25 INFO  BaseTest:31 - Browser initialized successfully
+2026-04-04 02:18:25 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 02:18:25 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-04 02:18:25 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 02:18:25 INFO  BaseTest:34 - Executing test: validateCustomerLogsInSuccessfully
+2026-04-04 02:18:25 INFO  BaseTest:35 - ACTION: Attempting login with valid user: Tester5@yopmail.com
+2026-04-04 02:18:25 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 02:18:27 WARN  BasePage:106 - Action failed. Error: Invalid email or password
+2026-04-04 02:18:27 INFO  BaseTest:43 - RESULT: Invalid email or password
+2026-04-04 02:18:27 ERROR TestListener:57 - ✘ TEST FAILED  : [LoginTest] validateCustomerLogsInSuccessfully (2546ms)
+2026-04-04 02:18:27 ERROR TestListener:61 -   Reason       : Login failed: URL mismatch expected [https://practicesoftwaretesting.com/account] but found [Invalid email or password]
+2026-04-04 02:18:27 INFO  TestListener:69 -   Screenshot attached to Allure report
+2026-04-04 02:18:28 ERROR TestListener:75 - ──────────────────────────────────────────────────────
+2026-04-04 02:18:28 INFO  BaseTest:36 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-04 02:18:28 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 02:18:28 INFO  BaseTest:24 - ===== STARTING TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-04 02:18:28 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 02:22:12 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:22:15 INFO  BaseApiTest:39 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:22:15 INFO  BaseApiTest:20 - Authenticating API user: Tester4@yopmail.com
+2026-04-04 02:23:04 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:23:07 INFO  BaseApiTest:20 - Authenticating API user: null
+2026-04-04 02:23:07 INFO  BaseApiTest:45 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 02:23:07 INFO  BaseApiTest:50 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 02:23:07 INFO  BaseApiTest:45 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:23:07 INFO  BaseApiTest:50 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:23:07 INFO  BaseApiTest:45 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:23:07 INFO  BaseApiTest:50 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:23:07 INFO  BaseApiTest:45 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:23:07 INFO  BaseApiTest:50 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:27:44 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:27:46 INFO  BaseApiTest:39 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:27:46 INFO  BaseApiTest:20 - Authenticating API user: Tester4@yopmail.com
+2026-04-04 02:27:50 INFO  BaseApiTest:46 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 02:27:50 INFO  BaseApiTest:51 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 02:27:50 INFO  BaseApiTest:46 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:27:50 INFO  BaseApiTest:51 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:27:50 INFO  BaseApiTest:46 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:27:50 INFO  BaseApiTest:51 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:27:50 INFO  BaseApiTest:46 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:27:50 INFO  BaseApiTest:51 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:28:45 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:28:48 INFO  BaseApiTest:39 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:28:48 INFO  BaseApiTest:20 - Authenticating API user: Tester5@yopmail.com
+2026-04-04 02:28:52 INFO  BaseApiTest:46 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 02:28:52 INFO  BaseApiTest:51 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 02:28:52 INFO  BaseApiTest:46 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:28:52 INFO  BaseApiTest:51 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:28:52 INFO  BaseApiTest:46 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:28:52 INFO  BaseApiTest:51 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:28:52 INFO  BaseApiTest:46 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:28:52 INFO  BaseApiTest:51 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:29:23 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:29:25 INFO  BaseApiTest:39 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:29:25 INFO  BaseApiTest:20 - Authenticating API user: Tester6@yopmail.com
+2026-04-04 02:29:29 INFO  BaseApiTest:46 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 02:29:29 INFO  BaseApiTest:51 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 02:29:29 INFO  BaseApiTest:46 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:29:29 INFO  BaseApiTest:51 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:29:29 INFO  BaseApiTest:46 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:29:29 INFO  BaseApiTest:51 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:29:29 INFO  BaseApiTest:46 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:29:29 INFO  BaseApiTest:51 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:34:10 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:34:12 INFO  BaseApiTest:39 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:34:12 INFO  BaseApiTest:20 - Authenticating API user: Tester6@yopmail.com
+2026-04-04 02:34:16 INFO  BaseApiTest:46 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 02:34:16 INFO  BaseApiTest:51 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 02:34:16 INFO  BaseApiTest:46 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:34:16 INFO  BaseApiTest:51 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:34:16 INFO  BaseApiTest:46 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:34:16 INFO  BaseApiTest:51 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:34:16 INFO  BaseApiTest:46 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:34:16 INFO  BaseApiTest:51 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:36:25 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:36:27 INFO  BaseApiTest:39 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:36:27 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:36:28 INFO  BaseApiTest:28 - ACTION: POST /users/register with unique email: api_tester_1775252185165@yopmail.com
+2026-04-04 02:36:31 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:36:31 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:36:31 INFO  BaseApiTest:67 - ACTION: POST /users/register with minimal fields | email: api_minimal_1775252191990@yopmail.com
+2026-04-04 02:36:32 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:36:32 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:36:32 INFO  BaseApiTest:95 - ACTION: POST /users/register with already existing email: customer@practicesoftwaretesting.com
+2026-04-04 02:36:32 INFO  BaseApiTest:110 - RESULT: Duplicate email correctly rejected with 422
+2026-04-04 02:36:32 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:36:32 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:36:32 INFO  BaseApiTest:118 - ACTION: POST /users/register without email field
+2026-04-04 02:36:32 INFO  BaseApiTest:132 - RESULT: Missing email correctly rejected with 422
+2026-04-04 02:36:32 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:36:32 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:36:32 INFO  BaseApiTest:140 - ACTION: POST /users/register without password field
+2026-04-04 02:36:33 INFO  BaseApiTest:154 - RESULT: Missing password correctly rejected with 422
+2026-04-04 02:36:33 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:36:33 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:36:33 INFO  BaseApiTest:162 - ACTION: POST /users/register with invalid email format
+2026-04-04 02:36:33 INFO  BaseApiTest:177 - RESULT: Invalid email format correctly rejected with 422
+2026-04-04 02:36:33 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:36:33 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:36:33 INFO  BaseApiTest:185 - ACTION: POST /users/register with weak password
+2026-04-04 02:36:33 INFO  BaseApiTest:200 - RESULT: Weak password correctly rejected with 422
+2026-04-04 02:36:33 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:36:33 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:36:33 INFO  BaseApiTest:208 - ACTION: POST /users/register with dob under 18 years ago
+2026-04-04 02:36:33 INFO  BaseApiTest:224 - RESULT: Under-age dob correctly rejected with 422
+2026-04-04 02:36:33 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:36:33 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:36:33 INFO  BaseApiTest:233 - ACTION: POST /users/register and verify password not in response
+2026-04-04 02:36:34 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:43:25 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:43:27 INFO  BaseApiTest:39 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:43:27 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:43:28 INFO  BaseApiTest:42 - ACTION: POST /users/register | email: api_tester_1775252605369@yopmail.com
+2026-04-04 02:43:34 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:43:34 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:43:34 INFO  BaseApiTest:82 - ACTION: POST /users/register minimal | email: api_minimal_1775252614833@yopmail.com
+2026-04-04 02:43:35 INFO  BaseApiTest:101 - RESULT: Minimal registration successful | id=01knamtcmakf3qxm6m22cb090d
+2026-04-04 02:43:35 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:43:35 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:43:35 INFO  BaseApiTest:112 - ACTION: POST /users/register with existing email: Tester6@yopmail.com
+2026-04-04 02:43:35 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:43:35 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:43:35 INFO  BaseApiTest:136 - ACTION: POST /users/register without email
+2026-04-04 02:43:36 INFO  BaseApiTest:151 - RESULT: Missing email correctly rejected | body: {"email":["The email field is required."]}
+2026-04-04 02:43:36 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:43:36 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:43:36 INFO  BaseApiTest:160 - ACTION: POST /users/register without password | email: nopass_1775252616222@yopmail.com
+2026-04-04 02:43:36 INFO  BaseApiTest:175 - RESULT: Missing password correctly rejected | body: {"password":["The password field is required."]}
+2026-04-04 02:43:36 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:43:36 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:43:36 INFO  BaseApiTest:183 - ACTION: POST /users/register with invalid email format
+2026-04-04 02:43:36 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:43:36 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:43:36 INFO  BaseApiTest:208 - ACTION: POST /users/register with weak password | email: weakpass_1775252616880@yopmail.com
+2026-04-04 02:43:37 INFO  BaseApiTest:224 - RESULT: Weak password correctly rejected | body: {"password":["The password field must contain at least one uppercase and one lowercase letter.","The password field must contain at least one symbol."]}
+2026-04-04 02:43:37 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:43:37 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:43:37 INFO  BaseApiTest:233 - ACTION: POST /users/register with under-age dob | email: young_1775252617061@yopmail.com
+2026-04-04 02:43:37 INFO  BaseApiTest:250 - RESULT: Under-age dob correctly rejected | body: {"dob":["Customer must be 18 years old."]}
+2026-04-04 02:43:37 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:43:37 INFO  BaseApiTest:46 - ===== STARTING API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:43:37 INFO  BaseApiTest:259 - ACTION: POST /users/register security check | email: schema_1775252617376@yopmail.com
+2026-04-04 02:43:37 INFO  BaseApiTest:278 - RESULT: Password not exposed in response - security check passed
+2026-04-04 02:43:37 INFO  BaseApiTest:51 - ===== FINISHED API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:51:14 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:51:17 INFO  BaseApiTest:41 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:51:17 INFO  BaseApiTest:20 - Authenticating API user: Tester6@yopmail.com
+2026-04-04 02:51:22 INFO  BaseApiTest:48 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 02:51:22 INFO  BaseApiTest:53 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 02:51:22 INFO  BaseApiTest:48 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:51:22 INFO  BaseApiTest:53 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:51:22 INFO  BaseApiTest:48 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:51:22 INFO  BaseApiTest:53 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:51:22 INFO  BaseApiTest:48 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:51:22 INFO  BaseApiTest:53 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:51:47 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:51:49 INFO  BaseApiTest:41 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:51:49 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:51:49 INFO  BaseApiTest:26 - ACTION: POST /users/register | email: api_tester_1775253106917@yopmail.com
+2026-04-04 02:51:54 INFO  BaseApiTest:58 - RESPONSE [201] : {"first_name":"ApiTest","last_name":"User","email":"api_tester_1775253106917@yopmail.com","phone":"0987654321","dob":"1990-01-15","id":"01knan9kj97p3s5h4tfwyfw5qp","created_at":"2026-04-03 21:51:54","address":{"street":"Test Street 1","city":"Vienna","state":"Vienna","country":"Austria","postal_code":"1010"}}
+2026-04-04 02:51:56 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:51:56 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:51:56 INFO  BaseApiTest:66 - ACTION: POST /users/register minimal | email: api_minimal_1775253116502@yopmail.com
+2026-04-04 02:51:56 INFO  BaseApiTest:58 - RESPONSE [201] : {"first_name":"Minimal","last_name":"User","email":"api_minimal_1775253116502@yopmail.com","id":"01knan9pe5fecjggw65fg0q8es","created_at":"2026-04-03 21:51:57","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 02:51:57 INFO  BaseApiTest:85 - RESULT: Minimal registration successful | id=01knan9pe5fecjggw65fg0q8es
+2026-04-04 02:51:57 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:51:57 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:51:57 INFO  BaseApiTest:96 - ACTION: POST /users/register with existing email: Tester6@yopmail.com
+2026-04-04 02:51:57 INFO  BaseApiTest:58 - RESPONSE [422] : {"email":["A customer with this email address already exists."]}
+2026-04-04 02:51:57 INFO  BaseApiTest:112 - RESULT: Duplicate email correctly rejected | body: {"email":["A customer with this email address already exists."]}
+2026-04-04 02:51:57 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:51:57 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:51:57 INFO  BaseApiTest:120 - ACTION: POST /users/register without email
+2026-04-04 02:51:57 INFO  BaseApiTest:58 - RESPONSE [422] : {"email":["The email field is required."]}
+2026-04-04 02:51:57 INFO  BaseApiTest:135 - RESULT: Missing email correctly rejected | body: {"email":["The email field is required."]}
+2026-04-04 02:51:57 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:51:57 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:51:57 INFO  BaseApiTest:144 - ACTION: POST /users/register without password | email: nopass_1775253117719@yopmail.com
+2026-04-04 02:51:57 INFO  BaseApiTest:58 - RESPONSE [422] : {"password":["The password field is required."]}
+2026-04-04 02:51:57 INFO  BaseApiTest:159 - RESULT: Missing password correctly rejected | body: {"password":["The password field is required."]}
+2026-04-04 02:51:57 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:51:57 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:51:57 INFO  BaseApiTest:167 - ACTION: POST /users/register with invalid email format
+2026-04-04 02:51:58 INFO  BaseApiTest:58 - RESPONSE [422] : {"email":["A customer with this email address already exists."]}
+2026-04-04 02:51:58 INFO  BaseApiTest:183 - RESULT: Invalid email format correctly rejected | body: {"email":["A customer with this email address already exists."]}
+2026-04-04 02:51:58 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:51:58 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:51:58 INFO  BaseApiTest:192 - ACTION: POST /users/register with weak password | email: weakpass_1775253118238@yopmail.com
+2026-04-04 02:51:58 INFO  BaseApiTest:58 - RESPONSE [422] : {"password":["The password field must contain at least one uppercase and one lowercase letter.","The password field must contain at least one symbol."]}
+2026-04-04 02:51:58 INFO  BaseApiTest:208 - RESULT: Weak password correctly rejected | body: {"password":["The password field must contain at least one uppercase and one lowercase letter.","The password field must contain at least one symbol."]}
+2026-04-04 02:51:58 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:51:58 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:51:58 INFO  BaseApiTest:217 - ACTION: POST /users/register with under-age dob | email: young_1775253118423@yopmail.com
+2026-04-04 02:51:58 INFO  BaseApiTest:58 - RESPONSE [422] : {"dob":["Customer must be 18 years old."]}
+2026-04-04 02:51:58 INFO  BaseApiTest:234 - RESULT: Under-age dob correctly rejected | body: {"dob":["Customer must be 18 years old."]}
+2026-04-04 02:51:58 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:51:58 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:51:58 INFO  BaseApiTest:243 - ACTION: POST /users/register security check | email: schema_1775253118747@yopmail.com
+2026-04-04 02:51:59 INFO  BaseApiTest:58 - RESPONSE [201] : {"first_name":"Schema","last_name":"Check","email":"schema_1775253118747@yopmail.com","id":"01knan9rjz1w7n0zznfavfk7ff","created_at":"2026-04-03 21:51:59","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 02:51:59 INFO  BaseApiTest:262 - RESULT: Password not exposed in response - security check passed
+2026-04-04 02:51:59 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:57:36 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:57:39 INFO  BaseApiTest:41 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:57:39 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:57:39 INFO  BaseApiTest:23 - ACTION: POST /users/register | email: apitester_1775253456636@yopmail.com
+2026-04-04 02:57:43 INFO  BaseApiTest:58 - RESPONSE [201] : {"first_name":"ApiTest","last_name":"User","email":"apitester_1775253456636@yopmail.com","phone":"0987654321","dob":"1990-01-15","id":"01knanm8s5vsh2bmccjkzyczm4","created_at":"2026-04-03 21:57:43","address":{"street":"Test Street 1","city":"Vienna","state":"Vienna","country":"Austria","postal_code":"1010"}}
+2026-04-04 02:57:45 INFO  BaseApiTest:52 - RESULT: Customer registered | id=01knanm8s5vsh2bmccjkzyczm4 | email=apitester_1775253456636@yopmail.com
+2026-04-04 02:57:45 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 02:57:45 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:57:45 INFO  BaseApiTest:62 - ACTION: POST /users/register minimal | email: api_minimal_1775253465982@yopmail.com
+2026-04-04 02:57:46 INFO  BaseApiTest:58 - RESPONSE [201] : {"first_name":"Minimal","last_name":"User","email":"api_minimal_1775253465982@yopmail.com","id":"01knanmbqg3fdm9kd9btn5ndnb","created_at":"2026-04-03 21:57:46","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 02:57:46 INFO  BaseApiTest:81 - RESULT: Minimal registration successful | id=01knanmbqg3fdm9kd9btn5ndnb
+2026-04-04 02:57:46 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 02:57:46 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:57:46 INFO  BaseApiTest:92 - ACTION: POST /users/register with existing email: Tester6@yopmail.com
+2026-04-04 02:57:46 INFO  BaseApiTest:58 - RESPONSE [422] : {"email":["A customer with this email address already exists."]}
+2026-04-04 02:57:46 INFO  BaseApiTest:108 - RESULT: Duplicate email correctly rejected | body: {"email":["A customer with this email address already exists."]}
+2026-04-04 02:57:46 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 02:57:46 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:57:46 INFO  BaseApiTest:116 - ACTION: POST /users/register without email
+2026-04-04 02:57:47 INFO  BaseApiTest:58 - RESPONSE [422] : {"email":["The email field is required."]}
+2026-04-04 02:57:47 INFO  BaseApiTest:131 - RESULT: Missing email correctly rejected | body: {"email":["The email field is required."]}
+2026-04-04 02:57:47 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 02:57:47 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:57:47 INFO  BaseApiTest:140 - ACTION: POST /users/register without password | email: nopass_1775253467087@yopmail.com
+2026-04-04 02:57:47 INFO  BaseApiTest:58 - RESPONSE [422] : {"password":["The password field is required."]}
+2026-04-04 02:57:47 INFO  BaseApiTest:155 - RESULT: Missing password correctly rejected | body: {"password":["The password field is required."]}
+2026-04-04 02:57:47 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 02:57:47 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:57:47 INFO  BaseApiTest:163 - ACTION: POST /users/register with invalid email format
+2026-04-04 02:57:47 INFO  BaseApiTest:58 - RESPONSE [422] : {"email":["A customer with this email address already exists."]}
+2026-04-04 02:57:47 INFO  BaseApiTest:179 - RESULT: Invalid email format correctly rejected | body: {"email":["A customer with this email address already exists."]}
+2026-04-04 02:57:47 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 02:57:47 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:57:47 INFO  BaseApiTest:188 - ACTION: POST /users/register with weak password | email: weakpass_1775253467578@yopmail.com
+2026-04-04 02:57:47 INFO  BaseApiTest:58 - RESPONSE [422] : {"password":["The password field must contain at least one uppercase and one lowercase letter.","The password field must contain at least one symbol."]}
+2026-04-04 02:57:47 INFO  BaseApiTest:204 - RESULT: Weak password correctly rejected | body: {"password":["The password field must contain at least one uppercase and one lowercase letter.","The password field must contain at least one symbol."]}
+2026-04-04 02:57:47 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 02:57:47 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:57:47 INFO  BaseApiTest:213 - ACTION: POST /users/register with under-age dob | email: young_1775253467783@yopmail.com
+2026-04-04 02:57:48 INFO  BaseApiTest:58 - RESPONSE [422] : {"dob":["Customer must be 18 years old."]}
+2026-04-04 02:57:48 INFO  BaseApiTest:230 - RESULT: Under-age dob correctly rejected | body: {"dob":["Customer must be 18 years old."]}
+2026-04-04 02:57:48 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 02:57:48 INFO  BaseApiTest:48 - ===== STARTING API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:57:48 INFO  BaseApiTest:239 - ACTION: POST /users/register security check | email: schema_1775253468092@yopmail.com
+2026-04-04 02:57:48 INFO  BaseApiTest:58 - RESPONSE [201] : {"first_name":"Schema","last_name":"Check","email":"schema_1775253468092@yopmail.com","id":"01knanmdqk2f65a12fyb8jethx","created_at":"2026-04-03 21:57:48","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 02:57:48 INFO  BaseApiTest:258 - RESULT: Password not exposed in response - security check passed
+2026-04-04 02:57:48 INFO  BaseApiTest:53 - ===== FINISHED API TEST: registerResponseDoesNotExposePassword =====
+2026-04-04 02:59:00 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 02:59:04 INFO  BaseApiTest:41 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 02:59:04 INFO  BaseApiTest:20 - Authenticating API user: apitester_1775253456636@yopmail.com
+2026-04-04 02:59:14 INFO  BaseApiTest:38 - Authentication successful. Bearer token set.
+2026-04-04 02:59:14 INFO  BaseApiTest:48 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 02:59:15 INFO  BaseApiTest:22 - ACTION: POST /users/login | email: apitester_1775253456636@yopmail.com
+2026-04-04 02:59:15 INFO  BaseApiTest:58 - RESPONSE [200] : {"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NzUyNTM1NTYsImV4cCI6MTc3NTI1Mzg1NiwibmJmIjoxNzc1MjUzNTU2LCJqdGkiOiJYcXJId2lrbGhGUUdvZ2dsIiwic3ViIjoiMDFrbmFubThzNXZzaDJibWNjamt6eWN6bTQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.LkS_HiHm6V8zb7NKORltEgBn3fEJNtplIHX_qtOJWYM","token_type":"bearer","expires_in":300}
+2026-04-04 02:59:16 INFO  BaseApiTest:34 - RESULT: Login successful | token_type=bearer | expires_in=300
+2026-04-04 02:59:16 INFO  BaseApiTest:53 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 02:59:16 INFO  BaseApiTest:48 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:59:16 INFO  BaseApiTest:45 - ACTION: POST /users/login with wrong password | email: apitester_1775253456636@yopmail.com
+2026-04-04 02:59:16 INFO  BaseApiTest:58 - RESPONSE [401] : {"error":"Unauthorized"}
+2026-04-04 02:59:16 INFO  BaseApiTest:55 - RESULT: Login correctly rejected
+2026-04-04 02:59:16 INFO  BaseApiTest:53 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 02:59:16 INFO  BaseApiTest:48 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:59:16 INFO  BaseApiTest:64 - ACTION: GET /users/me | expected email: apitester_1775253456636@yopmail.com
+2026-04-04 02:59:16 INFO  BaseApiTest:58 - RESPONSE [200] : {"id":"01knanm8s5vsh2bmccjkzyczm4","provider":null,"first_name":"ApiTest","last_name":"User","phone":"0987654321","dob":"1990-01-15","email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 21:57:43","address":{"street":"Test Street 1","city":"Vienna","state":"Vienna","country":"Austria","postal_code":"1010"}}
+2026-04-04 02:59:17 INFO  BaseApiTest:76 - RESULT: Profile retrieved | email=apitester_1775253456636@yopmail.com | name=ApiTest User
+2026-04-04 02:59:17 INFO  BaseApiTest:53 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 02:59:17 INFO  BaseApiTest:48 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 02:59:17 INFO  BaseApiTest:87 - ACTION: GET /users/me without Authorization token
+2026-04-04 02:59:17 INFO  BaseApiTest:58 - RESPONSE [200] : {"id":"01knanm8s5vsh2bmccjkzyczm4","provider":null,"first_name":"ApiTest","last_name":"User","phone":"0987654321","dob":"1990-01-15","email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 21:57:43","address":{"street":"Test Street 1","city":"Vienna","state":"Vienna","country":"Austria","postal_code":"1010"}}
+2026-04-04 02:59:17 INFO  BaseApiTest:53 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:04:08 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:04:11 INFO  BaseApiTest:41 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:04:11 INFO  BaseApiTest:20 - Authenticating API user: apitester_1775253456636@yopmail.com
+2026-04-04 03:04:15 INFO  BaseApiTest:48 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 03:04:15 INFO  BaseApiTest:53 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 03:04:15 INFO  BaseApiTest:48 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:04:15 INFO  BaseApiTest:53 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:04:15 INFO  BaseApiTest:48 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:04:15 INFO  BaseApiTest:53 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:04:15 INFO  BaseApiTest:48 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:04:15 INFO  BaseApiTest:53 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:16:26 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:16:29 INFO  BaseApiTest:45 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:16:29 INFO  BaseApiTest:51 - ===== STARTING API TEST: getAllProductsReturns200 =====
+2026-04-04 03:16:29 INFO  BaseApiTest:22 - ACTION: GET /products
+2026-04-04 03:16:33 INFO  BaseApiTest:66 - RESPONSE [200] : {"current_page":1,"data":[{"id":"01KNANRWHZ225D0PGVY1F9XC9S","name":"Combination Pliers","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra felis nec pellentesque feugiat. Donec faucibus arcu maximus, convallis nisl eu, placerat dolor. Morbi finibus neque nec tincidunt pharetra. Sed eget tortor malesuada, mollis enim id, condimentum nisi. In viverra quam at bibendum ultricies. Aliquam quis eros ex. Etiam at pretium massa, ut pharetra tortor. Sed vel metus sem. Suspendisse ac molestie turpis. Duis luctus justo massa, faucibus ornare eros elementum et. Vestibulum quis nisl vitae ante dapibus tempor auctor ut leo. Mauris consectetur et magna at ultricies. Proin a aliquet turpis.","price":14.15,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYW8","by_name":"Helinton Fantin","by_url":"https:\/\/unsplash.com\/@fantin","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/W8BNwvOvW4M","file_name":"pliers01.avif","title":"Combination pliers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers","slug":"pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWJ61Z3GKC892DNZSTMQ","name":"Pliers","description":"Nunc vulputate, orci at congue faucibus, enim neque sodales nulla, nec imperdiet augue odio vel nibh. Etiam auctor, ligula quis gravida dictum, mi massa commodo ante, sollicitudin pulvinar nulla justo hendrerit lacus. Vivamus rutrum pharetra molestie. Fusce tristique odio tristique, elementum est eget, porttitor diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas at ligula sed sapien porta pretium. Aenean cursus, magna in blandit consectetur, libero orci aliquet eros, et maximus nunc est eu dolor. Aenean non pellentesque eros. In sodales orci eget orci fringilla, vitae feugiat elit porta. Etiam aliquam, mi pretium tempus mattis, mauris ipsum gravida risus, at tempor nulla ipsum molestie ligula. Ut placerat, urna sit amet tincidunt volutpat, ex orci luctus purus, nec laoreet dolor sapien vel erat.","price":12.01,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYW9","by_name":"Everyday basics","by_url":"https:\/\/unsplash.com\/@zanardi","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/I8eTuMmxIfo","file_name":"pliers02.avif","title":"Pliers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers","slug":"pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWJ9Z84BV7HE477NTDQH","name":"Bolt Cutters","description":"Aliquam viverra scelerisque tempus. Ut vehicula, ex sed elementum rhoncus, sem neque vehicula turpis, sit amet accumsan mauris justo non magna. Cras ut vulputate lectus, sit amet sollicitudin enim. Quisque sit amet turpis ut orci pulvinar vestibulum non at velit. Quisque ultrices malesuada felis non rutrum. Sed molestie lobortis nisl, in varius arcu dictum vel. In sit amet fringilla orci. Quisque ac magna dui. Nam pulvinar nulla sed commodo ultricies. Suspendisse aliquet quis eros sit amet gravida. Aenean vitae arcu in sapien sodales commodo.","price":48.41,"is_location_offer":true,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWA","by_name":"Michael Dziedzic","by_url":"https:\/\/unsplash.com\/@lazycreekimages","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/pM9pkc9J918","file_name":"pliers03.avif","title":"Bolt cutters"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers","slug":"pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware"}},{"id":"01KNANRWJCZCP5K5W71E4MSY3Q","name":"Long Nose Pliers","description":"Phasellus consequat fermentum quam id sodales. Curabitur nec dui orci. Fusce id turpis laoreet, lobortis ex non, finibus libero. Vivamus id enim eu nibh placerat maximus. Aenean semper dui a laoreet venenatis. Vestibulum at ligula quam. Donec interdum tristique neque lacinia laoreet. Sed auctor fermentum congue. Integer aliquet vulputate feugiat. Quisque malesuada diam iaculis ornare maximus. Mauris quam massa, sodales at mattis non, consectetur eget magna. Aliquam eget congue metus, sed congue leo. Nam sit amet est id ligula volutpat pharetra non id nisl. Vestibulum ac enim vitae nisi tempus cursus. Aliquam erat volutpat.","price":14.24,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":false,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWB","by_name":"Brett Jordan","by_url":"https:\/\/unsplash.com\/@brett_jordan","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/GamuDTVm02g","file_name":"pliers04.avif","title":"Long nose pliers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers","slug":"pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware"}},{"id":"01KNANRWJFJGCTG0MGK5V4ZAG2","name":"Slip Joint Pliers","description":"Ut cursus dui non ante convallis, facilisis auctor leo luctus. Maecenas a rhoncus metus. Sed in efficitur dolor, vulputate accumsan odio. Sed ex quam, dictum in fringilla at, vestibulum eu sem. Quisque ante orci, vulputate non porttitor eu, aliquet et nunc. Nunc a rhoncus dui. Nunc ac est non eros scelerisque maximus at a eros. Phasellus sed egestas diam, at tempus erat. Morbi sit amet congue tellus, at accumsan magna. Etiam non ornare nisl, sed luctus nisi. Pellentesque ut odio ut sapien aliquet eleifend.","price":9.17,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWC","by_name":"Yasin Hasan","by_url":"https:\/\/unsplash.com\/@yasin","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/dwlxTSpfKXg","file_name":"pliers05.avif","title":"Slip joint pliers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers","slug":"pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware"}},{"id":"01KNANRWJJ05Z8HNEC2071AED6","name":"Claw Hammer with Shock Reduction Grip","description":"Nam efficitur, turpis molestie bibendum lobortis, risus arcu congue tortor, id consequat nibh sem a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean non tincidunt tortor, vel ultricies tortor. Vivamus pulvinar efficitur arcu sit amet accumsan. Aenean dui erat, bibendum at dapibus in, feugiat non eros. Duis sodales felis ex, quis ullamcorper odio interdum non. Ut viverra magna eu augue luctus, quis convallis lectus auctor. Duis ultrices erat urna. Aliquam augue odio, mattis vitae finibus in, pellentesque nec dui. Curabitur nec odio in augue posuere posuere. Vivamus ante est, iaculis ut interdum et, hendrerit ac ante. Fusce ac venenatis neque, id fermentum nulla. Quisque tristique ornare nisi, vitae convallis dui faucibus quis. Vestibulum vel dapibus dolor.","price":13.41,"is_location_offer":true,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWD","by_name":"iMattSmart","by_url":"https:\/\/unsplash.com\/@imattsmart","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/jaLaLQdkBOE","file_name":"hammer01.avif","title":"Claw Hammer"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0J","name":"Hammer","slug":"hammer"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWJN0GV4MG9Y4NZHV0VZ","name":"Hammer","description":"Mauris mollis odio est, ac vehicula dui lobortis vel. Cras facilisis, mauris ut vehicula dignissim, ex nunc sollicitudin velit, a fermentum mi odio ut massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a sapien vel libero fermentum rhoncus. Etiam ac imperdiet arcu, ac accumsan risus. Fusce vitae lacinia sem, sit amet sagittis lorem. Curabitur efficitur ultricies sem, eu placerat ante tincidunt a. Morbi faucibus ullamcorper mi a mollis. Aenean sed magna aliquam, mollis dui at, condimentum ex. Donec blandit bibendum enim, lacinia vestibulum tellus laoreet sollicitudin. In vitae ullamcorper metus, ut interdum augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam scelerisque dignissim varius. Nulla facilisi. Praesent eros dolor, ultricies sit amet pellentesque porttitor, pretium ut lectus. Nullam tempus tellus sapien, non condimentum mauris volutpat eget.","price":12.58,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWE","by_name":"Jozsef Hocza","by_url":"https:\/\/unsplash.com\/@hocza","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/D3nouOYbALc","file_name":"hammer02.avif","title":"Hammer"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0J","name":"Hammer","slug":"hammer"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWJS25Q8H0N5C0DARTN8","name":"Claw Hammer","description":"Cras pulvinar nisl a quam fringilla tempus. Sed lectus urna, mattis quis arcu eget, aliquam laoreet mauris. Praesent accumsan facilisis eros, ac mattis nulla interdum nec. Phasellus ultrices eu metus in lobortis. Donec ac efficitur orci. Phasellus nulla neque, congue nec tincidunt id, ultrices vel sapien. Curabitur gravida ex leo, laoreet mollis arcu blandit vel.","price":11.48,"is_location_offer":true,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWF","by_name":"Andrew George","by_url":"https:\/\/unsplash.com\/@andrewjoegeorge","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/YU2mCvXR0wA","file_name":"hammer03.avif","title":"Claw Hammer"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0J","name":"Hammer","slug":"hammer"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware"}},{"id":"01KNANRWJWP32NE31CY2JEJQB5","name":"Thor Hammer","description":"Donec malesuada tempus purus. Integer sit amet arcu magna. Sed vel laoreet ligula, non sollicitudin ex. Mauris euismod ac dolor venenatis lobortis. Aliquam iaculis at diam nec accumsan. Ut sodales sed elit et imperdiet. Maecenas vitae molestie mauris. Integer quis placerat libero, in finibus diam. Interdum et malesuada fames ac ante ipsum primis in faucibus.","price":11.14,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWG","by_name":"ANIRUDH","by_url":"https:\/\/unsplash.com\/@lanirudhreddy","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/3esjG-nlgyk","file_name":"hammer04.avif","title":"Hammer"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0J","name":"Hammer","slug":"hammer"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}}],"from":1,"last_page":6,"per_page":9,"to":9,"total":50}
+2026-04-04 03:16:36 INFO  BaseApiTest:30 - RESULT: total=50 | current_page=1
+2026-04-04 03:16:36 INFO  BaseApiTest:56 - ===== FINISHED API TEST: getAllProductsReturns200 =====
+2026-04-04 03:16:36 INFO  BaseApiTest:51 - ===== STARTING API TEST: getProductsSortedByPriceAsc =====
+2026-04-04 03:16:36 INFO  BaseApiTest:38 - ACTION: GET /products?sort=price,asc
+2026-04-04 03:16:36 INFO  BaseApiTest:66 - RESPONSE [200] : {"current_page":1,"data":[{"id":"01KNANRWP92BH6K01R5QF38M7V","name":"Washers","description":"Nullam aliquam a odio tristique facilisis. Maecenas rhoncus eleifend nulla, in laoreet felis convallis vel. Praesent ultricies tincidunt arcu. Nam eleifend consequat tempor. Aenean consectetur semper quam, ac gravida odio scelerisque pharetra. Nam eu sem non mi hendrerit semper nec nec mauris. Praesent at metus nec eros egestas dictum. Quisque quis massa diam. Aenean consequat sem at lorem vestibulum, et volutpat sem imperdiet. Nulla facilisi.","price":3.55,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXP","by_name":"Robert Ruggiero","by_url":"https:\/\/unsplash.com\/@robert2301","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/a-pile-of-different-colored-washers-sitting-on-top-of-a-table-oY6774he6GQ","file_name":"fasteners06.avif","title":"Washers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR11","name":"Fasteners","slug":"fasteners"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWP44M5JC6EJT88NPJHH","name":"Flat-Head Wood Screws","description":"Nullam ac ligula sagittis, dapibus tortor at, hendrerit leo. Nam tempus lorem turpis. Vivamus laoreet odio non fringilla viverra. Curabitur ac dapibus massa. Nulla in augue velit. Nunc feugiat semper commodo. Maecenas venenatis tellus nunc, ac venenatis tortor tristique id. Aenean sed eros placerat, consectetur nisl in, placerat neque. Nullam gravida elit eu porta eleifend. Mauris at tincidunt libero. Sed vel lorem diam. Cras dui mauris, viverra sed imperdiet ac, congue varius dolor. Nunc id risus erat. Vestibulum eu libero eros.","price":3.95,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXM","by_name":"Ben Lodge","by_url":"https:\/\/unsplash.com\/@benlodge123","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/stainless-steel-11-screw-e3Y7qB67aow","file_name":"fasteners04.avif","title":"Flat-Head Wood Screws"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR11","name":"Fasteners","slug":"fasteners"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWP6MSNC7767HS5F71FR","name":"M4 Nuts","description":"Maecenas viverra et risus non accumsan. Nullam sodales, leo ac hendrerit fermentum, nulla metus mattis sem, eget sagittis dolor nibh ac nisi. In nec gravida ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi non pretium erat. Sed ac congue nisl. Aenean egestas ac lorem sit amet facilisis. Nullam porta velit non lorem pulvinar, a laoreet orci posuere. Vestibulum sed tellus porta, aliquet magna ut, tincidunt lectus. Morbi ac quam sed nisi placerat tempus. Nam ultrices dignissim lobortis. Nam ut erat pretium, imperdiet sem vel, volutpat magna. Nam luctus volutpat aliquam.","price":4.65,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXN","by_name":"Mika Baumeister","by_url":"https:\/\/unsplash.com\/@kommumikation","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/silver-and-black-round-coins-c71yQepDEjo","file_name":"fasteners05.avif","title":"M4 Nuts"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR11","name":"Fasteners","slug":"fasteners"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWKJYS2MV93Q3H7NTMBZ","name":"Phillips Screwdriver","description":"Sed posuere libero diam, vel mollis nulla malesuada vel. In hac habitasse platea dictumst. Proin quis sollicitudin lectus. Cras et posuere nisi. Curabitur nibh felis, sagittis id vulputate a, tempus at diam. Vestibulum molestie quis nunc in tincidunt. Vestibulum vestibulum suscipit enim id molestie. Morbi vitae nibh nibh. Cras et orci aliquet, euismod lorem eu, tincidunt orci. Sed hendrerit mattis tellus vitae vestibulum. Donec posuere elit quis condimentum porta. Pellentesque sit amet pellentesque elit, tincidunt luctus lectus. Ut porta orci sed nisi condimentum, et egestas mauris facilisis. In mollis lectus sapien, a laoreet lorem tincidunt sed.","price":4.92,"is_location_offer":true,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWR","by_name":"Tekton","by_url":"https:\/\/unsplash.com\/@tekton_tools","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/jlY6nV_STIw","file_name":"screwdriver01.avif","title":"Phillips Screwdriver"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0N","name":"Screwdriver","slug":"screwdriver"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWNZ7MSRHR6A2TGNCXY6","name":"Nuts and bolts","description":"Phasellus ex dolor, commodo sed lacus vitae, scelerisque dapibus neque. Sed nec arcu sit amet tortor pretium tempor sit amet nec mauris. Ut ultrices magna vitae tortor pharetra pellentesque. Cras auctor vulputate ex, sit amet faucibus ligula volutpat ac. Fusce ultrices malesuada iaculis. Vivamus sit amet orci nibh. Nunc id imperdiet est. Nulla feugiat semper aliquet. Aliquam cursus ex sem, sit amet porttitor enim elementum eu.","price":5.55,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXJ","by_name":"Edge2Edge Media","by_url":"https:\/\/unsplash.com\/@edge2edgemedia","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/silver-and-black-metal-tools-qHhJkxare7A","file_name":"fasteners02.avif","title":"Nuts and bolts"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR11","name":"Fasteners","slug":"fasteners"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWNW1H25X39FNG9NTRRH","name":"Screws","description":"Integer nec orci a est vulputate maximus. Vivamus commodo, mauris at convallis ultrices, massa neque porttitor mauris, eget tristique magna sapien nec orci. Sed faucibus metus ac leo sollicitudin, ac placerat tellus malesuada. Aenean quis urna feugiat, interdum mi in, feugiat metus. Etiam tincidunt, mauris a fermentum malesuada, felis mauris laoreet lectus, quis hendrerit nisi urna a ex. Morbi vitae lacus consectetur, vestibulum nibh vel, aliquet est. Nam vitae nisi cursus, pulvinar turpis ac, egestas elit. Phasellus volutpat augue nec augue luctus, eu pulvinar nisl porta. Duis nec nisl fringilla, posuere nulla ut, aliquet nunc. Quisque ac pulvinar nunc. In varius eleifend lectus sed gravida. Duis luctus aliquam condimentum. Fusce rhoncus varius elit, a mollis dolor accumsan vitae.","price":6.25,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXH","by_name":"Eliza Diamond","by_url":"https:\/\/unsplash.com\/@eliza28diamonds","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/gray-screw-bolt-lot-pvm5QvjFrJ8","file_name":"fasteners01.avif","title":"Screws"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR11","name":"Fasteners","slug":"fasteners"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware"}},{"id":"01KNANRWMG08R8GMBE64GJ2SX4","name":"Tape Measure 7.5m","description":"Mauris commodo lacus eu ante mattis pulvinar. Curabitur porta nibh nec magna viverra, eu feugiat felis semper. Maecenas malesuada lacus a iaculis commodo. Maecenas mollis egestas urna, sed rutrum libero vehicula et. Suspendisse aliquam, lorem a imperdiet fringilla, nulla tortor consequat nibh, quis venenatis sapien dui quis ligula. Integer id nibh vestibulum, imperdiet tellus suscipit, laoreet libero. Pellentesque a nisi et neque vestibulum faucibus in ac leo. Etiam est tellus, feugiat in iaculis vitae, tincidunt sit amet tellus. Nam sit amet nunc justo. Pellentesque feugiat lorem vitae tellus ultrices ultrices. Pellentesque id posuere augue, eget imperdiet turpis. Phasellus nec finibus augue. Quisque tincidunt mi malesuada, placerat nunc ut, dictum nibh.","price":7.23,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYX8","by_name":"Brett Jordan","by_url":"https:\/\/unsplash.com\/@brett_jordan","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/blue-and-yellow-measuring-tape-faOPbPmznfQ","file_name":"measure01.avif","title":"Tape Measure 7.5m"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0R","name":"Measures","slug":"measures"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWP18J5W5868M57SYN1W","name":"Cross-head screws","description":"Sed cursus nibh eros, nec placerat diam vestibulum sed. Nulla at dapibus mauris. Sed a ornare lorem, nec tempus lacus. Donec a sem molestie, aliquam est eu, mollis urna. Vestibulum sed lacinia urna. Quisque porta justo eget ex cursus, et eleifend mi lobortis. Donec ornare velit elit, vel dapibus quam malesuada nec. Mauris egestas ligula urna, eu lacinia nulla scelerisque a. Suspendisse sit amet congue justo, quis luctus mi.","price":7.99,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXK","by_name":"Milad Fallah","by_url":"https:\/\/unsplash.com\/@miladfallah90","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/silver-screw-lot-on-brown-wooden-table-wwZYL4BYFto","file_name":"fasteners03.avif","title":"Cross-head screws"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR11","name":"Fasteners","slug":"fasteners"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWJFJGCTG0MGK5V4ZAG2","name":"Slip Joint Pliers","description":"Ut cursus dui non ante convallis, facilisis auctor leo luctus. Maecenas a rhoncus metus. Sed in efficitur dolor, vulputate accumsan odio. Sed ex quam, dictum in fringilla at, vestibulum eu sem. Quisque ante orci, vulputate non porttitor eu, aliquet et nunc. Nunc a rhoncus dui. Nunc ac est non eros scelerisque maximus at a eros. Phasellus sed egestas diam, at tempus erat. Morbi sit amet congue tellus, at accumsan magna. Etiam non ornare nisl, sed luctus nisi. Pellentesque ut odio ut sapien aliquet eleifend.","price":9.17,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWC","by_name":"Yasin Hasan","by_url":"https:\/\/unsplash.com\/@yasin","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/dwlxTSpfKXg","file_name":"pliers05.avif","title":"Slip joint pliers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers","slug":"pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware"}}],"from":1,"last_page":6,"per_page":9,"to":9,"total":50}
+2026-04-04 03:16:36 INFO  BaseApiTest:113 - ASSERT: price sorted asc verified | first=3.55 last=9.17
+2026-04-04 03:16:36 INFO  BaseApiTest:56 - ===== FINISHED API TEST: getProductsSortedByPriceAsc =====
+2026-04-04 03:16:36 INFO  BaseApiTest:51 - ===== STARTING API TEST: getProductsSortedByNameDsc =====
+2026-04-04 03:16:36 INFO  BaseApiTest:51 - ACTION: GET /products?sort=name,desc
+2026-04-04 03:16:36 INFO  BaseApiTest:66 - RESPONSE [200] : {"current_page":1,"data":[{"id":"01KNANRWPF2K45R4PZ5S1RWNWQ","name":"Workbench with Drawers","description":"Nulla vitae lacus risus. Phasellus accumsan mi nec consectetur euismod. Donec a finibus quam. Proin id tempus tellus. Etiam vel lectus vel nunc convallis commodo. In massa ante, hendrerit eu ultricies ac, sagittis quis urna. Aliquam porttitor varius mattis. Etiam ac auctor risus, vitae pellentesque enim. Donec convallis est vel tellus dictum rhoncus. Vestibulum suscipit mollis diam, vehicula facilisis libero egestas sed. Mauris at urna aliquet, iaculis dui et, aliquam nunc.","price":178.2,"is_location_offer":false,"is_rental":false,"co2_rating":"B","in_stock":true,"is_eco_friendly":true,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXT","by_name":"Matteo Minoglio","by_url":"https:\/\/unsplash.com\/@ilmino","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/opened-brown-wooden-drawers-m8-NX7WxbpM","file_name":"workbench02.avif","title":"Workbench with Drawers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0Z","name":"Workbench","slug":"workbench"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWPTKBNQ4CQHCGP8GPJM","name":"Wooden Workbench","description":"Suspendisse non felis urna. Donec iaculis feugiat enim ac dignissim. Suspendisse vel hendrerit eros. Morbi in posuere quam. Aliquam ipsum felis, sollicitudin id magna et, facilisis bibendum metus. Donec egestas tincidunt orci, vitae dignissim nibh rutrum eu. Proin sit amet dui ut tortor luctus luctus at a velit. Vivamus facilisis orci id gravida aliquam. Nam tempus vehicula sem, nec semper ex tincidunt in. Pellentesque tellus est, sodales sit amet condimentum ac, ullamcorper sed lorem. Nullam egestas ac libero nec imperdiet.","price":172.52,"is_location_offer":false,"is_rental":false,"co2_rating":"B","in_stock":true,"is_eco_friendly":true,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXV","by_name":"Brett Garwood","by_url":"https:\/\/unsplash.com\/@brettgarwood","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/brown-wooden-stick-on-brown-wooden-table-asZVvgMGshc","file_name":"workbench01.avif","title":"Wooden Workbench"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0Z","name":"Workbench","slug":"workbench"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware"}},{"id":"01KNANRWK7EAR3Q2QRD0688YMK","name":"Wood Saw","description":"Quisque quis fermentum ligula. Aenean vulputate orci in ipsum varius, quis lacinia mauris eleifend. Quisque in turpis dapibus, consectetur nulla quis, semper felis. Nunc venenatis malesuada neque, ac rhoncus risus imperdiet eu. Proin eu eros at nibh blandit suscipit. Vestibulum condimentum nibh sit amet arcu congue, eu bibendum lorem venenatis. Nam molestie est at sem mollis porttitor. Aliquam eget purus sed lectus hendrerit finibus ac ac nunc. Nulla mi metus, euismod nec pharetra quis, porta vel nisl. Mauris euismod purus volutpat odio rhoncus, id elementum turpis rutrum. Integer semper, nunc vel pharetra mollis, magna magna euismod sem, ut scelerisque purus turpis eget lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra lectus eget lorem fermentum, ac pulvinar nulla vulputate.","price":12.18,"is_location_offer":false,"is_rental":false,"co2_rating":"B","in_stock":true,"is_eco_friendly":true,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWM","by_name":"Jonathan Cooper","by_url":"https:\/\/unsplash.com\/@theshuttervision","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/fTpzd-PjyDQ","file_name":"saw01.avif","title":"Wood Saw"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0K","name":"Hand Saw","slug":"hand-saw"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWMA5Z0RYMPRY785S0QJ","name":"Wood Carving Chisels","description":"Fusce cursus cursus leo, nec pharetra turpis mattis porttitor. Ut fringilla, nisl a iaculis dictum, enim ante eleifend nisl, fermentum fringilla ligula nunc quis eros. Donec in magna quis ex placerat dapibus. Vivamus in iaculis elit. Nulla commodo tincidunt urna, sed gravida erat egestas in. Nunc mauris sapien, placerat vitae vehicula quis, sagittis a est. Morbi condimentum vitae enim in hendrerit. Suspendisse est magna, ullamcorper et porta id, auctor eu est. Nulla id magna vestibulum, porttitor tellus porta, maximus libero. Integer pulvinar mauris at posuere interdum. Nam vel ligula placerat, condimentum lacus quis, gravida eros. Curabitur sit amet erat ipsum. Sed ut suscipit sem, ac lacinia purus. Nam dignissim imperdiet dolor, quis efficitur nulla tincidunt non.","price":45.23,"is_location_offer":true,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYX6","by_name":"Octavian Iordache","by_url":"https:\/\/unsplash.com\/@octavianiordache","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/brown-wooden-wall-mounted-rack-FgP27oU8LWw","file_name":"chisels02.avif","title":"Chisel"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0Q","name":"Chisels","slug":"chisels"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWP92BH6K01R5QF38M7V","name":"Washers","description":"Nullam aliquam a odio tristique facilisis. Maecenas rhoncus eleifend nulla, in laoreet felis convallis vel. Praesent ultricies tincidunt arcu. Nam eleifend consequat tempor. Aenean consectetur semper quam, ac gravida odio scelerisque pharetra. Nam eu sem non mi hendrerit semper nec nec mauris. Praesent at metus nec eros egestas dictum. Quisque quis massa diam. Aenean consequat sem at lorem vestibulum, et volutpat sem imperdiet. Nulla facilisi.","price":3.55,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXP","by_name":"Robert Ruggiero","by_url":"https:\/\/unsplash.com\/@robert2301","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/a-pile-of-different-colored-washers-sitting-on-top-of-a-table-oY6774he6GQ","file_name":"fasteners06.avif","title":"Washers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR11","name":"Fasteners","slug":"fasteners"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWPD25WGB1R5H79WCFBE","name":"Tool Cabinet","description":"Curabitur eu dictum eros. Integer ante neque, viverra ut dapibus eget, scelerisque et erat. Vivamus cursus laoreet dolor, id aliquet diam vulputate at. Sed mi magna, feugiat nec finibus porttitor, rhoncus ac ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ligula risus, convallis vitae pulvinar vitae, porttitor vitae purus. Ut eget placerat nisi.","price":86.71,"is_location_offer":false,"is_rental":false,"co2_rating":"B","in_stock":true,"is_eco_friendly":true,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXS","by_name":"Georg Eiermann","by_url":"https:\/\/unsplash.com\/@georgeiermann","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/a-group-of-wooden-objects-uXWbowHdJqk","file_name":"toolcabinet01.avif","title":"Tool Cabinet"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0Y","name":"Storage Solutions","slug":"storage solutions"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWJWP32NE31CY2JEJQB5","name":"Thor Hammer","description":"Donec malesuada tempus purus. Integer sit amet arcu magna. Sed vel laoreet ligula, non sollicitudin ex. Mauris euismod ac dolor venenatis lobortis. Aliquam iaculis at diam nec accumsan. Ut sodales sed elit et imperdiet. Maecenas vitae molestie mauris. Integer quis placerat libero, in finibus diam. Interdum et malesuada fames ac ante ipsum primis in faucibus.","price":11.14,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWG","by_name":"ANIRUDH","by_url":"https:\/\/unsplash.com\/@lanirudhreddy","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/3esjG-nlgyk","file_name":"hammer04.avif","title":"Hammer"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0J","name":"Hammer","slug":"hammer"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWMG08R8GMBE64GJ2SX4","name":"Tape Measure 7.5m","description":"Mauris commodo lacus eu ante mattis pulvinar. Curabitur porta nibh nec magna viverra, eu feugiat felis semper. Maecenas malesuada lacus a iaculis commodo. Maecenas mollis egestas urna, sed rutrum libero vehicula et. Suspendisse aliquam, lorem a imperdiet fringilla, nulla tortor consequat nibh, quis venenatis sapien dui quis ligula. Integer id nibh vestibulum, imperdiet tellus suscipit, laoreet libero. Pellentesque a nisi et neque vestibulum faucibus in ac leo. Etiam est tellus, feugiat in iaculis vitae, tincidunt sit amet tellus. Nam sit amet nunc justo. Pellentesque feugiat lorem vitae tellus ultrices ultrices. Pellentesque id posuere augue, eget imperdiet turpis. Phasellus nec finibus augue. Quisque tincidunt mi malesuada, placerat nunc ut, dictum nibh.","price":7.23,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYX8","by_name":"Brett Jordan","by_url":"https:\/\/unsplash.com\/@brett_jordan","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/blue-and-yellow-measuring-tape-faOPbPmznfQ","file_name":"measure01.avif","title":"Tape Measure 7.5m"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0R","name":"Measures","slug":"measures"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWMPEKVGR077SZWA96ZE","name":"Tape Measure 5m","description":"Aenean elementum, turpis sed lobortis commodo, arcu massa ullamcorper dolor, vel pretium leo tortor sit amet elit. Curabitur tellus nulla, fermentum vitae pretium in, feugiat vel tellus. Ut non porttitor elit, vel auctor est. Phasellus euismod eu lectus vel tristique. Etiam varius semper eros, a rhoncus erat dignissim vitae. In ut ultricies odio. Donec ultricies rhoncus ipsum, quis ullamcorper justo sodales nec. Integer vulputate facilisis nibh et tincidunt. Aliquam ac tortor augue. Aenean eu nisl rutrum, varius felis rhoncus, blandit justo. Sed gravida, arcu a venenatis dictum, lorem lacus commodo diam, vel pulvinar diam leo nec tellus.","price":12.91,"is_location_offer":false,"is_rental":false,"co2_rating":"C","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYXA","by_name":"Immo Wegmann","by_url":"https:\/\/unsplash.com\/@macroman","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/yellow-and-black-measuring-tape-1abCQ_3g_UY","file_name":"measure03.avif","title":"Tape Measure 5m"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0R","name":"Measures","slug":"measures"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}}],"from":1,"last_page":6,"per_page":9,"to":9,"total":50}
+2026-04-04 03:16:36 INFO  BaseApiTest:127 - ASSERT: name sorted desc verified | first='Workbench with Drawers' last='Tape Measure 5m'
+2026-04-04 03:16:36 INFO  BaseApiTest:56 - ===== FINISHED API TEST: getProductsSortedByNameDsc =====
+2026-04-04 03:16:36 INFO  BaseApiTest:51 - ===== STARTING API TEST: searchProductByName =====
+2026-04-04 03:16:36 INFO  BaseApiTest:64 - ACTION: GET /products/search?q=pliers
+2026-04-04 03:16:37 INFO  BaseApiTest:66 - RESPONSE [200] : {"current_page":1,"data":[{"id":"01KNANRWHZ225D0PGVY1F9XC9S","name":"Combination Pliers","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra felis nec pellentesque feugiat. Donec faucibus arcu maximus, convallis nisl eu, placerat dolor. Morbi finibus neque nec tincidunt pharetra. Sed eget tortor malesuada, mollis enim id, condimentum nisi. In viverra quam at bibendum ultricies. Aliquam quis eros ex. Etiam at pretium massa, ut pharetra tortor. Sed vel metus sem. Suspendisse ac molestie turpis. Duis luctus justo massa, faucibus ornare eros elementum et. Vestibulum quis nisl vitae ante dapibus tempor auctor ut leo. Mauris consectetur et magna at ultricies. Proin a aliquet turpis.","price":14.15,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYW8","by_name":"Helinton Fantin","by_url":"https:\/\/unsplash.com\/@fantin","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/W8BNwvOvW4M","file_name":"pliers01.avif","title":"Combination pliers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWJ61Z3GKC892DNZSTMQ","name":"Pliers","description":"Nunc vulputate, orci at congue faucibus, enim neque sodales nulla, nec imperdiet augue odio vel nibh. Etiam auctor, ligula quis gravida dictum, mi massa commodo ante, sollicitudin pulvinar nulla justo hendrerit lacus. Vivamus rutrum pharetra molestie. Fusce tristique odio tristique, elementum est eget, porttitor diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas at ligula sed sapien porta pretium. Aenean cursus, magna in blandit consectetur, libero orci aliquet eros, et maximus nunc est eu dolor. Aenean non pellentesque eros. In sodales orci eget orci fringilla, vitae feugiat elit porta. Etiam aliquam, mi pretium tempus mattis, mauris ipsum gravida risus, at tempor nulla ipsum molestie ligula. Ut placerat, urna sit amet tincidunt volutpat, ex orci luctus purus, nec laoreet dolor sapien vel erat.","price":12.01,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYW9","by_name":"Everyday basics","by_url":"https:\/\/unsplash.com\/@zanardi","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/I8eTuMmxIfo","file_name":"pliers02.avif","title":"Pliers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools"}},{"id":"01KNANRWJCZCP5K5W71E4MSY3Q","name":"Long Nose Pliers","description":"Phasellus consequat fermentum quam id sodales. Curabitur nec dui orci. Fusce id turpis laoreet, lobortis ex non, finibus libero. Vivamus id enim eu nibh placerat maximus. Aenean semper dui a laoreet venenatis. Vestibulum at ligula quam. Donec interdum tristique neque lacinia laoreet. Sed auctor fermentum congue. Integer aliquet vulputate feugiat. Quisque malesuada diam iaculis ornare maximus. Mauris quam massa, sodales at mattis non, consectetur eget magna. Aliquam eget congue metus, sed congue leo. Nam sit amet est id ligula volutpat pharetra non id nisl. Vestibulum ac enim vitae nisi tempus cursus. Aliquam erat volutpat.","price":14.24,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":false,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWB","by_name":"Brett Jordan","by_url":"https:\/\/unsplash.com\/@brett_jordan","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/GamuDTVm02g","file_name":"pliers04.avif","title":"Long nose pliers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware"}},{"id":"01KNANRWJFJGCTG0MGK5V4ZAG2","name":"Slip Joint Pliers","description":"Ut cursus dui non ante convallis, facilisis auctor leo luctus. Maecenas a rhoncus metus. Sed in efficitur dolor, vulputate accumsan odio. Sed ex quam, dictum in fringilla at, vestibulum eu sem. Quisque ante orci, vulputate non porttitor eu, aliquet et nunc. Nunc a rhoncus dui. Nunc ac est non eros scelerisque maximus at a eros. Phasellus sed egestas diam, at tempus erat. Morbi sit amet congue tellus, at accumsan magna. Etiam non ornare nisl, sed luctus nisi. Pellentesque ut odio ut sapien aliquet eleifend.","price":9.17,"is_location_offer":false,"is_rental":false,"co2_rating":"D","in_stock":true,"is_eco_friendly":false,"product_image":{"id":"01KNANRWH970V2Z0GHYGRKYYWC","by_name":"Yasin Hasan","by_url":"https:\/\/unsplash.com\/@yasin","source_name":"Unsplash","source_url":"https:\/\/unsplash.com\/photos\/dwlxTSpfKXg","file_name":"pliers05.avif","title":"Slip joint pliers"},"category":{"id":"01KNANRWGS3NC6DXKCY9NCQR0P","name":"Pliers"},"brand":{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware"}}],"from":1,"last_page":1,"per_page":9,"to":4,"total":4}
+2026-04-04 03:16:37 INFO  BaseApiTest:73 - RESULT: 4 results | first='Combination Pliers'
+2026-04-04 03:16:37 INFO  BaseApiTest:56 - ===== FINISHED API TEST: searchProductByName =====
+2026-04-04 03:16:37 INFO  BaseApiTest:51 - ===== STARTING API TEST: searchProductWithNoMatchReturnsEmpty =====
+2026-04-04 03:16:37 INFO  BaseApiTest:81 - ACTION: GET /products/search?q=zzznoresult
+2026-04-04 03:16:37 INFO  BaseApiTest:66 - RESPONSE [200] : {"current_page":1,"data":[],"from":null,"last_page":1,"per_page":9,"to":null,"total":0}
+2026-04-04 03:16:37 INFO  BaseApiTest:88 - RESULT: No products found - as expected
+2026-04-04 03:16:37 INFO  BaseApiTest:56 - ===== FINISHED API TEST: searchProductWithNoMatchReturnsEmpty =====
+2026-04-04 03:17:12 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:17:14 INFO  BaseApiTest:45 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:17:14 INFO  BaseApiTest:51 - ===== STARTING API TEST: getAllBrandsReturns200 =====
+2026-04-04 03:17:14 INFO  BaseApiTest:22 - ACTION: GET /brands
+2026-04-04 03:17:18 INFO  BaseApiTest:66 - RESPONSE [200] : [{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools","slug":"forgeflex-tools"},{"id":"01KNANRW4HNXBSN3P91Y5WVK37","name":"MightyCraft Hardware","slug":"mightycraft-hardware"}]
+2026-04-04 03:17:20 INFO  BaseApiTest:31 - RESULT: 2 brand(s) | first='ForgeFlex Tools'
+2026-04-04 03:17:20 INFO  BaseApiTest:56 - ===== FINISHED API TEST: getAllBrandsReturns200 =====
+2026-04-04 03:17:20 INFO  BaseApiTest:51 - ===== STARTING API TEST: searchBrandByName =====
+2026-04-04 03:17:20 INFO  BaseApiTest:40 - ACTION: GET /brands/search?q=forge
+2026-04-04 03:17:21 INFO  BaseApiTest:66 - RESPONSE [200] : [{"id":"01KNANRW4HNXBSN3P91Y5WVK36","name":"ForgeFlex Tools","slug":"forgeflex-tools"}]
+2026-04-04 03:17:21 INFO  BaseApiTest:49 - RESULT: Brand match | name='ForgeFlex Tools'
+2026-04-04 03:17:21 INFO  BaseApiTest:56 - ===== FINISHED API TEST: searchBrandByName =====
+2026-04-04 03:17:21 INFO  BaseApiTest:51 - ===== STARTING API TEST: getNonExistentBrandReturns404 =====
+2026-04-04 03:17:21 INFO  BaseApiTest:57 - ACTION: GET /brands/non-existent-id-99999
+2026-04-04 03:17:21 INFO  BaseApiTest:66 - RESPONSE [404] : {"message":"Requested item not found"}
+2026-04-04 03:17:21 INFO  BaseApiTest:62 - RESULT: 404 correctly returned
+2026-04-04 03:17:21 INFO  BaseApiTest:56 - ===== FINISHED API TEST: getNonExistentBrandReturns404 =====
+2026-04-04 03:18:39 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:18:42 INFO  BaseApiTest:43 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:18:42 INFO  BaseApiTest:20 - Authenticating API user: apitester_1775253456636@yopmail.com
+2026-04-04 03:18:46 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 03:18:47 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 03:18:47 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:18:47 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:18:47 INFO  BaseApiTest:49 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:18:47 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:18:47 INFO  BaseApiTest:49 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:18:47 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:19:37 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:19:40 INFO  BaseApiTest:43 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:19:40 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 03:19:40 INFO  BaseApiTest:21 - ACTION: POST /users/register | email: apitester_1775254777707@yopmail.com
+2026-04-04 03:19:44 INFO  BaseApiTest:64 - RESPONSE [201] : {"first_name":"ApiTest","last_name":"User","email":"apitester_1775254777707@yopmail.com","phone":"0987654321","dob":"1990-01-15","id":"01knapwjhg9ms3nb6a62q8rj4m","created_at":"2026-04-03 22:19:44","address":{"street":"Test Street 1","city":"Vienna","state":"Vienna","country":"Austria","postal_code":"1010"}}
+2026-04-04 03:19:46 INFO  BaseApiTest:50 - RESULT: Customer registered | id=01knapwjhg9ms3nb6a62q8rj4m | email=apitester_1775254777707@yopmail.com
+2026-04-04 03:19:46 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 03:19:46 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 03:19:46 INFO  BaseApiTest:60 - ACTION: POST /users/register minimal | email: api_minimal_1775254786388@yopmail.com
+2026-04-04 03:19:46 INFO  BaseApiTest:64 - RESPONSE [201] : {"first_name":"Minimal","last_name":"User","email":"api_minimal_1775254786388@yopmail.com","id":"01knapwn638fnn3hcg91ead2v4","created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:19:46 INFO  BaseApiTest:79 - RESULT: Minimal registration successful | id=01knapwn638fnn3hcg91ead2v4
+2026-04-04 03:19:46 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 03:19:46 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 03:19:46 INFO  BaseApiTest:88 - ACTION: POST /users/register with existing email: apitester_1775253456636@yopmail.com
+2026-04-04 03:19:47 INFO  BaseApiTest:64 - RESPONSE [201] : {"first_name":"Duplicate","last_name":"User","email":"apitester_1775253456636@yopmail.com","id":"01knapwnqjy46jatqnfbkavsm2","created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:19:47 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 03:19:47 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 03:19:47 INFO  BaseApiTest:112 - ACTION: POST /users/register without email
+2026-04-04 03:19:47 INFO  BaseApiTest:64 - RESPONSE [422] : {"email":["The email field is required."]}
+2026-04-04 03:19:47 INFO  BaseApiTest:127 - RESULT: Missing email correctly rejected | body: {"email":["The email field is required."]}
+2026-04-04 03:19:47 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 03:19:47 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 03:19:47 INFO  BaseApiTest:136 - ACTION: POST /users/register without password | email: nopass_1775254787795@yopmail.com
+2026-04-04 03:19:47 INFO  BaseApiTest:64 - RESPONSE [422] : {"password":["The password field is required."]}
+2026-04-04 03:19:47 INFO  BaseApiTest:151 - RESULT: Missing password correctly rejected | body: {"password":["The password field is required."]}
+2026-04-04 03:19:47 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 03:19:47 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 03:19:47 INFO  BaseApiTest:159 - ACTION: POST /users/register with invalid email format
+2026-04-04 03:19:48 INFO  BaseApiTest:64 - RESPONSE [201] : {"first_name":"Invalid","last_name":"Email","email":"not-an-email","id":"01knapwppvp9v9zdv0dn0rmaq0","created_at":"2026-04-03 22:19:48","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:19:48 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 03:19:48 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 03:19:48 INFO  BaseApiTest:184 - ACTION: POST /users/register with weak password | email: weakpass_1775254788467@yopmail.com
+2026-04-04 03:19:48 INFO  BaseApiTest:64 - RESPONSE [422] : {"password":["The password field must contain at least one uppercase and one lowercase letter.","The password field must contain at least one symbol."]}
+2026-04-04 03:19:48 INFO  BaseApiTest:200 - RESULT: Weak password correctly rejected | body: {"password":["The password field must contain at least one uppercase and one lowercase letter.","The password field must contain at least one symbol."]}
+2026-04-04 03:19:48 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 03:19:48 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 03:19:48 INFO  BaseApiTest:209 - ACTION: POST /users/register with under-age dob | email: young_1775254788708@yopmail.com
+2026-04-04 03:19:49 INFO  BaseApiTest:64 - RESPONSE [422] : {"dob":["Customer must be 18 years old."]}
+2026-04-04 03:19:49 INFO  BaseApiTest:226 - RESULT: Under-age dob correctly rejected | body: {"dob":["Customer must be 18 years old."]}
+2026-04-04 03:19:49 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 03:21:12 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:21:14 INFO  BaseApiTest:43 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:21:14 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 03:21:15 INFO  BaseApiTest:21 - ACTION: POST /users/register | email: apitester_1775254872225@yopmail.com
+2026-04-04 03:21:20 INFO  BaseApiTest:64 - RESPONSE [201] : {"first_name":"ApiTest","last_name":"User","email":"apitester_1775254872225@yopmail.com","phone":"0987654321","dob":"1990-01-15","id":"01knapzg7w1w66565sepx93hzx","created_at":"2026-04-03 22:21:20","address":{"street":"Test Street 1","city":"Vienna","state":"Vienna","country":"Austria","postal_code":"1010"}}
+2026-04-04 03:21:22 INFO  BaseApiTest:50 - RESULT: Customer registered | id=01knapzg7w1w66565sepx93hzx | email=apitester_1775254872225@yopmail.com
+2026-04-04 03:21:22 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerNewCustomerSuccessfully =====
+2026-04-04 03:21:22 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 03:21:22 INFO  BaseApiTest:60 - ACTION: POST /users/register minimal | email: api_minimal_1775254882456@yopmail.com
+2026-04-04 03:21:22 INFO  BaseApiTest:64 - RESPONSE [201] : {"first_name":"Minimal","last_name":"User","email":"api_minimal_1775254882456@yopmail.com","id":"01knapzjznevf4x2ftessvn125","created_at":"2026-04-03 22:21:23","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:21:22 INFO  BaseApiTest:79 - RESULT: Minimal registration successful | id=01knapzjznevf4x2ftessvn125
+2026-04-04 03:21:22 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerCustomerWithRequiredFieldsOnly =====
+2026-04-04 03:21:22 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 03:21:22 INFO  BaseApiTest:88 - ACTION: POST /users/register with existing email: apitester_1775253456636@yopmail.com
+2026-04-04 03:21:23 INFO  BaseApiTest:64 - RESPONSE [422] : {"email":["A customer with this email address already exists."]}
+2026-04-04 03:21:23 INFO  BaseApiTest:104 - RESULT: Duplicate email correctly rejected | body: {"email":["A customer with this email address already exists."]}
+2026-04-04 03:21:23 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithDuplicateEmailReturns422 =====
+2026-04-04 03:21:23 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 03:21:23 INFO  BaseApiTest:112 - ACTION: POST /users/register without email
+2026-04-04 03:21:23 INFO  BaseApiTest:64 - RESPONSE [422] : {"email":["The email field is required."]}
+2026-04-04 03:21:23 INFO  BaseApiTest:127 - RESULT: Missing email correctly rejected | body: {"email":["The email field is required."]}
+2026-04-04 03:21:23 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithMissingEmailReturns422 =====
+2026-04-04 03:21:23 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 03:21:23 INFO  BaseApiTest:136 - ACTION: POST /users/register without password | email: nopass_1775254883798@yopmail.com
+2026-04-04 03:21:23 INFO  BaseApiTest:64 - RESPONSE [422] : {"password":["The password field is required."]}
+2026-04-04 03:21:23 INFO  BaseApiTest:151 - RESULT: Missing password correctly rejected | body: {"password":["The password field is required."]}
+2026-04-04 03:21:23 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithMissingPasswordReturns422 =====
+2026-04-04 03:21:23 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 03:21:23 INFO  BaseApiTest:159 - ACTION: POST /users/register with invalid email format
+2026-04-04 03:21:24 INFO  BaseApiTest:64 - RESPONSE [422] : {"email":["A customer with this email address already exists."]}
+2026-04-04 03:21:24 INFO  BaseApiTest:175 - RESULT: Invalid email format correctly rejected | body: {"email":["A customer with this email address already exists."]}
+2026-04-04 03:21:24 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithInvalidEmailFormatReturns422 =====
+2026-04-04 03:21:24 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 03:21:24 INFO  BaseApiTest:184 - ACTION: POST /users/register with weak password | email: weakpass_1775254884330@yopmail.com
+2026-04-04 03:21:24 INFO  BaseApiTest:64 - RESPONSE [422] : {"password":["The password field must contain at least one uppercase and one lowercase letter.","The password field must contain at least one symbol."]}
+2026-04-04 03:21:24 INFO  BaseApiTest:200 - RESULT: Weak password correctly rejected | body: {"password":["The password field must contain at least one uppercase and one lowercase letter.","The password field must contain at least one symbol."]}
+2026-04-04 03:21:24 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithWeakPasswordReturns422 =====
+2026-04-04 03:21:24 INFO  BaseApiTest:49 - ===== STARTING API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 03:21:24 INFO  BaseApiTest:209 - ACTION: POST /users/register with under-age dob | email: young_1775254884521@yopmail.com
+2026-04-04 03:21:24 INFO  BaseApiTest:64 - RESPONSE [422] : {"dob":["Customer must be 18 years old."]}
+2026-04-04 03:21:24 INFO  BaseApiTest:226 - RESULT: Under-age dob correctly rejected | body: {"dob":["Customer must be 18 years old."]}
+2026-04-04 03:21:24 INFO  BaseApiTest:54 - ===== FINISHED API TEST: registerWithUnderAgeDobReturns422 =====
+2026-04-04 03:22:42 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:22:42 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 03:22:42 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-04 03:22:42 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 03:22:42 INFO  BaseTest:24 - ===== STARTING TEST: validateLoginPageTitle =====
+2026-04-04 03:22:42 INFO  DriverManager:58 - Initializing browser: chrome
+2026-04-04 03:22:52 INFO  DriverManager:127 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 03:22:54 INFO  BaseTest:31 - Browser initialized successfully
+2026-04-04 03:22:55 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 03:22:55 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateLoginPageTitle
+2026-04-04 03:22:55 INFO  TestListener:41 -   Groups       : smoke
+2026-04-04 03:22:55 INFO  BaseTest:20 - Executing test: validateLoginPageTitle
+2026-04-04 03:22:56 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 03:22:56 INFO  BaseTest:25 - RESULT: Page title = 'Login - Practice Software Testing - Toolshop - v5.0'
+2026-04-04 03:22:56 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateLoginPageTitle (1416ms)
+2026-04-04 03:22:56 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-04 03:22:56 INFO  BaseTest:36 - ===== FINISHED TEST: validateLoginPageTitle =====
+2026-04-04 03:22:57 INFO  DriverManager:137 - Browser closed successfully
+2026-04-04 03:22:57 INFO  BaseTest:24 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-04 03:22:57 INFO  DriverManager:58 - Initializing browser: chrome
+2026-04-04 03:23:03 INFO  DriverManager:127 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 03:23:05 INFO  BaseTest:31 - Browser initialized successfully
+2026-04-04 03:23:05 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 03:23:05 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-04 03:23:05 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 03:23:05 INFO  BaseTest:34 - Executing test: validateCustomerLogsInSuccessfully
+2026-04-04 03:23:05 INFO  BaseTest:35 - ACTION: Attempting login with valid user: apitester_1775254872225@yopmail.com
+2026-04-04 03:23:05 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 03:23:10 INFO  BasePage:98 - Action successful. Redirected to: https://practicesoftwaretesting.com/account
+2026-04-04 03:23:10 INFO  BaseTest:43 - RESULT: https://practicesoftwaretesting.com/account
+2026-04-04 03:23:10 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateCustomerLogsInSuccessfully (5000ms)
+2026-04-04 03:23:10 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-04 03:23:10 INFO  BaseTest:36 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-04 03:23:10 INFO  DriverManager:137 - Browser closed successfully
+2026-04-04 03:23:10 INFO  BaseTest:24 - ===== STARTING TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-04 03:23:10 INFO  DriverManager:58 - Initializing browser: chrome
+2026-04-04 03:23:16 INFO  DriverManager:127 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 03:23:18 INFO  BaseTest:31 - Browser initialized successfully
+2026-04-04 03:23:18 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 03:23:18 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-04 03:23:18 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 03:23:18 INFO  BaseTest:52 - Executing test: validateCustomerLogInWithInvalidCredentials
+2026-04-04 03:23:18 INFO  BaseTest:53 - ACTION: Attempting login with invalid credentials
+2026-04-04 03:23:19 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 03:23:21 WARN  BasePage:106 - Action failed. Error: Invalid email or password
+2026-04-04 03:23:21 INFO  BaseTest:61 - RESULT: Invalid email or password
+2026-04-04 03:23:21 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateCustomerLogInWithInvalidCredentials (3050ms)
+2026-04-04 03:23:21 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-04 03:23:21 INFO  BaseTest:36 - ===== FINISHED TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-04 03:23:23 INFO  DriverManager:137 - Browser closed successfully
+2026-04-04 03:23:23 INFO  BaseTest:24 - ===== STARTING TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-04 03:23:23 INFO  DriverManager:58 - Initializing browser: chrome
+2026-04-04 03:23:29 INFO  DriverManager:127 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 03:23:30 INFO  BaseTest:31 - Browser initialized successfully
+2026-04-04 03:23:30 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 03:23:30 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-04 03:23:30 INFO  TestListener:41 -   Groups       : e2e
+2026-04-04 03:23:30 INFO  BaseTest:70 - Executing test: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-04 03:23:30 INFO  BaseTest:71 - ACTION: Requesting password reset for: Tester4@yopmail.com
+2026-04-04 03:23:31 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 03:23:33 INFO  BaseTest:80 - RESULT: The selected email is invalid.
+2026-04-04 03:23:33 ERROR TestListener:57 - ✘ TEST FAILED  : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully (2764ms)
+2026-04-04 03:23:33 ERROR TestListener:61 -   Reason       : Failed! Entered email not registered expected [Your password is successfully updated!] but found [The selected email is invalid.]
+2026-04-04 03:23:33 INFO  TestListener:69 -   Screenshot attached to Allure report
+2026-04-04 03:23:34 ERROR TestListener:75 - ──────────────────────────────────────────────────────
+2026-04-04 03:23:34 INFO  BaseTest:36 - ===== FINISHED TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-04 03:23:34 INFO  DriverManager:137 - Browser closed successfully
+2026-04-04 03:23:34 INFO  BaseTest:24 - ===== STARTING TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-04 03:23:34 INFO  DriverManager:58 - Initializing browser: chrome
+2026-04-04 03:23:40 INFO  DriverManager:127 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 03:23:42 INFO  BaseTest:31 - Browser initialized successfully
+2026-04-04 03:23:42 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 03:23:42 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-04 03:23:42 INFO  TestListener:41 -   Groups       : e2e
+2026-04-04 03:23:42 INFO  BaseTest:89 - Executing test: validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-04 03:23:42 INFO  BaseTest:90 - ACTION: Requesting password reset for unregistered: customer3@practicesoftwaretesting.com
+2026-04-04 03:23:43 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 03:23:45 INFO  BaseTest:99 - RESULT: page.forgot-password.confirm
+2026-04-04 03:23:45 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail (2749ms)
+2026-04-04 03:23:45 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-04 03:23:45 INFO  BaseTest:36 - ===== FINISHED TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-04 03:23:45 INFO  DriverManager:137 - Browser closed successfully
+2026-04-04 03:23:45 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 03:23:45 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-04 03:23:45 INFO  TestListener:29 -   ✔ Passed  : 4
+2026-04-04 03:23:45 INFO  TestListener:30 -   ✘ Failed  : 1
+2026-04-04 03:23:45 INFO  TestListener:31 -   ⊘ Skipped : 0
+2026-04-04 03:23:45 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 03:28:04 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:28:07 INFO  BaseApiTest:43 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:28:07 INFO  BaseApiTest:20 - Authenticating API user: apitester_1775253456636@yopmail.com
+2026-04-04 03:28:13 INFO  BaseApiTest:38 - Authentication successful. Bearer token set.
+2026-04-04 03:28:13 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 03:28:13 INFO  BaseApiTest:22 - ACTION: POST /users/login | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:28:14 INFO  BaseApiTest:64 - RESPONSE [200] : {"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NzUyNTUyOTQsImV4cCI6MTc3NTI1NTU5NCwibmJmIjoxNzc1MjU1Mjk0LCJqdGkiOiJHNDNNRUlCQWZFZ2o0aE9aIiwic3ViIjoiMDFrbmFwd25xank0NmphdHFuZmJrYXZzbTIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.aYfjTzi_nO-XTqp-q1oqGNNjGUeTvtiR1MTU9Ekx3nw","token_type":"bearer","expires_in":300}
+2026-04-04 03:28:14 INFO  BaseApiTest:33 - RESULT: Login successful | token_type=bearer | expires_in=300
+2026-04-04 03:28:14 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 03:28:14 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:28:14 INFO  BaseApiTest:44 - ACTION: POST /users/login with wrong password | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:28:14 INFO  BaseApiTest:64 - RESPONSE [401] : {"error":"Unauthorized"}
+2026-04-04 03:28:14 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:28:14 INFO  BaseApiTest:49 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:28:14 INFO  BaseApiTest:61 - ACTION: GET /users/me | expected email: apitester_1775253456636@yopmail.com
+2026-04-04 03:28:15 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:28:15 INFO  BaseApiTest:69 - RESULT: Profile retrieved | email=apitester_1775253456636@yopmail.com | name=Duplicate User
+2026-04-04 03:28:15 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:28:15 INFO  BaseApiTest:49 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:28:15 INFO  BaseApiTest:80 - ACTION: GET /users/me without Authorization token
+2026-04-04 03:28:15 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:28:15 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:28:15 INFO  BaseApiTest:49 - ===== STARTING API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-04 03:28:15 INFO  BaseApiTest:99 - ACTION: POST /users/forgot-password | email: null
+2026-04-04 03:28:16 INFO  BaseApiTest:64 - RESPONSE [302] : <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content="0;url='https://api.practicesoftwaretesting.com'" />
+
+        <title>Redirecting to https://api.practicesoftwaretesting.com</title>
+    </head>
+    <body>
+        Redirecting to <a href="https://api.practicesoftwaretesting.com">https://api.practicesoftwaretesting.com</a>.
+    </body>
+</html>
+2026-04-04 03:28:16 INFO  BaseApiTest:54 - ===== FINISHED API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-04 03:28:16 INFO  BaseApiTest:49 - ===== STARTING API TEST: forgotPasswordWithUnregisteredEmail =====
+2026-04-04 03:28:16 INFO  BaseApiTest:117 - ACTION: POST /users/forgot-password with unregistered email: unregistered_1775255296046@yopmail.com
+2026-04-04 03:28:16 INFO  BaseApiTest:64 - RESPONSE [302] : <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content="0;url='https://api.practicesoftwaretesting.com'" />
+
+        <title>Redirecting to https://api.practicesoftwaretesting.com</title>
+    </head>
+    <body>
+        Redirecting to <a href="https://api.practicesoftwaretesting.com">https://api.practicesoftwaretesting.com</a>.
+    </body>
+</html>
+2026-04-04 03:28:16 INFO  BaseApiTest:54 - ===== FINISHED API TEST: forgotPasswordWithUnregisteredEmail =====
+2026-04-04 03:32:52 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:32:53 INFO  BaseApiTest:43 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:32:53 INFO  BaseApiTest:21 - Authenticating API user: apitester_1775253456636@yopmail.com
+2026-04-04 03:32:55 INFO  BaseApiTest:39 - Authentication successful. Bearer token set.
+2026-04-04 03:32:55 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 03:32:55 INFO  BaseApiTest:22 - ACTION: POST /users/login | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:32:55 INFO  BaseApiTest:64 - RESPONSE [200] : {"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NzUyNTU1NzYsImV4cCI6MTc3NTI1NTg3NiwibmJmIjoxNzc1MjU1NTc2LCJqdGkiOiJFVEcyaTN3NXgzaXpjZENWIiwic3ViIjoiMDFrbmFwd25xank0NmphdHFuZmJrYXZzbTIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.o4Re-O77IspRajcu8OUaQXof4sR_4zyIIWpdgCvIj84","token_type":"bearer","expires_in":300}
+2026-04-04 03:32:55 INFO  BaseApiTest:33 - RESULT: Login successful | token_type=bearer | expires_in=300
+2026-04-04 03:32:55 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 03:32:55 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:32:55 INFO  BaseApiTest:44 - ACTION: POST /users/login with wrong password | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:32:55 INFO  BaseApiTest:64 - RESPONSE [401] : {"error":"Unauthorized"}
+2026-04-04 03:32:55 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:32:55 INFO  BaseApiTest:49 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:32:55 INFO  BaseApiTest:61 - ACTION: GET /users/me | expected email: apitester_1775253456636@yopmail.com
+2026-04-04 03:32:56 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:32:56 INFO  BaseApiTest:69 - RESULT: Profile retrieved | email=apitester_1775253456636@yopmail.com | name=Duplicate User
+2026-04-04 03:32:56 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:32:56 INFO  BaseApiTest:49 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:32:56 INFO  BaseApiTest:80 - ACTION: GET /users/me without Authorization token
+2026-04-04 03:32:56 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:32:56 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:32:56 INFO  BaseApiTest:49 - ===== STARTING API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-04 03:32:56 INFO  BaseApiTest:99 - ACTION: POST /users/forgot-password | email: customer@practicesoftwaretesting.com
+2026-04-04 03:32:56 INFO  BaseApiTest:64 - RESPONSE [200] : {"success":true}
+2026-04-04 03:32:56 INFO  BaseApiTest:108 - RESULT: Password reset successful | success=true
+2026-04-04 03:32:56 INFO  BaseApiTest:54 - ===== FINISHED API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-04 03:32:56 INFO  BaseApiTest:49 - ===== STARTING API TEST: forgotPasswordWithUnregisteredEmail =====
+2026-04-04 03:32:56 INFO  BaseApiTest:117 - ACTION: POST /users/forgot-password with unregistered email: unregistered_1775255576398@yopmail.com
+2026-04-04 03:32:56 INFO  BaseApiTest:64 - RESPONSE [302] : <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content="0;url='https://api.practicesoftwaretesting.com'" />
+
+        <title>Redirecting to https://api.practicesoftwaretesting.com</title>
+    </head>
+    <body>
+        Redirecting to <a href="https://api.practicesoftwaretesting.com">https://api.practicesoftwaretesting.com</a>.
+    </body>
+</html>
+2026-04-04 03:32:56 INFO  BaseApiTest:54 - ===== FINISHED API TEST: forgotPasswordWithUnregisteredEmail =====
+2026-04-04 03:35:19 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:35:20 INFO  BaseApiTest:43 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:35:20 INFO  BaseApiTest:20 - Authenticating API user: apitester_1775253456636@yopmail.com
+2026-04-04 03:35:22 INFO  BaseApiTest:38 - Authentication successful. Bearer token set.
+2026-04-04 03:35:22 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 03:35:22 INFO  BaseApiTest:22 - ACTION: POST /users/login | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:35:23 INFO  BaseApiTest:64 - RESPONSE [200] : {"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NzUyNTU3MjMsImV4cCI6MTc3NTI1NjAyMywibmJmIjoxNzc1MjU1NzIzLCJqdGkiOiJZeU4zZ3lxd0lWVGpTRmQ3Iiwic3ViIjoiMDFrbmFwd25xank0NmphdHFuZmJrYXZzbTIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.0mwTzRrt7gfEthmdr1QV0DSxF6VSFAn7FJE0sLZ9PGA","token_type":"bearer","expires_in":300}
+2026-04-04 03:35:23 INFO  BaseApiTest:33 - RESULT: Login successful | token_type=bearer | expires_in=300
+2026-04-04 03:35:23 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 03:35:23 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:35:23 INFO  BaseApiTest:44 - ACTION: POST /users/login with wrong password | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:35:23 INFO  BaseApiTest:64 - RESPONSE [401] : {"error":"Unauthorized"}
+2026-04-04 03:35:23 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:35:23 INFO  BaseApiTest:49 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:35:23 INFO  BaseApiTest:61 - ACTION: GET /users/me | expected email: apitester_1775253456636@yopmail.com
+2026-04-04 03:35:23 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:35:23 INFO  BaseApiTest:69 - RESULT: Profile retrieved | email=apitester_1775253456636@yopmail.com | name=Duplicate User
+2026-04-04 03:35:23 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:35:23 INFO  BaseApiTest:49 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:35:23 INFO  BaseApiTest:80 - ACTION: GET /users/me without Authorization token
+2026-04-04 03:35:24 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:35:24 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:35:24 INFO  BaseApiTest:49 - ===== STARTING API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-04 03:35:24 INFO  BaseApiTest:99 - ACTION: POST /users/forgot-password | email: customer@practicesoftwaretesting.com
+2026-04-04 03:35:24 INFO  BaseApiTest:64 - RESPONSE [200] : {"success":true}
+2026-04-04 03:35:24 INFO  BaseApiTest:108 - RESULT: Password reset successful | success=true
+2026-04-04 03:35:24 INFO  BaseApiTest:54 - ===== FINISHED API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-04 03:41:10 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:41:11 INFO  BaseApiTest:43 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:41:11 INFO  BaseApiTest:20 - Authenticating API user: apitester_1775253456636@yopmail.com
+2026-04-04 03:41:13 INFO  BaseApiTest:38 - Authentication successful. Bearer token set.
+2026-04-04 03:41:13 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 03:41:13 INFO  BaseApiTest:22 - ACTION: POST /users/login | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:41:14 INFO  BaseApiTest:64 - RESPONSE [200] : {"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NzUyNTYwNzQsImV4cCI6MTc3NTI1NjM3NCwibmJmIjoxNzc1MjU2MDc0LCJqdGkiOiJCUDFkcjBBeWhGTlpiMjJyIiwic3ViIjoiMDFrbmFwd25xank0NmphdHFuZmJrYXZzbTIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.Ji_6APrdofKTOhYc6Nnl0fsMpqSn-OzsC1j4UqrXKBo","token_type":"bearer","expires_in":300}
+2026-04-04 03:41:14 INFO  BaseApiTest:33 - RESULT: Login successful | token_type=bearer | expires_in=300
+2026-04-04 03:41:14 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 03:41:14 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:41:14 INFO  BaseApiTest:44 - ACTION: POST /users/login with wrong password | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:41:14 INFO  BaseApiTest:64 - RESPONSE [401] : {"error":"Unauthorized"}
+2026-04-04 03:41:14 INFO  BaseApiTest:51 - RESULT: Login correctly rejected | body='{"error":"Unauthorized"}'
+2026-04-04 03:41:14 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:41:14 INFO  BaseApiTest:49 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:41:14 INFO  BaseApiTest:60 - ACTION: GET /users/me | expected email: apitester_1775253456636@yopmail.com
+2026-04-04 03:41:14 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:41:14 INFO  BaseApiTest:68 - RESULT: Profile retrieved | email=apitester_1775253456636@yopmail.com | name=Duplicate User
+2026-04-04 03:41:14 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:41:14 INFO  BaseApiTest:49 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:41:14 INFO  BaseApiTest:79 - ACTION: GET /users/me without Authorization token
+2026-04-04 03:41:14 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:41:14 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:41:14 INFO  BaseApiTest:49 - ===== STARTING API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-04 03:41:14 INFO  BaseApiTest:98 - ACTION: POST /users/forgot-password | email: customer@practicesoftwaretesting.com
+2026-04-04 03:41:15 INFO  BaseApiTest:64 - RESPONSE [200] : {"success":true}
+2026-04-04 03:41:15 INFO  BaseApiTest:107 - RESULT: Password reset successful | success=true
+2026-04-04 03:41:15 INFO  BaseApiTest:54 - ===== FINISHED API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-04 03:43:17 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 03:43:18 INFO  BaseApiTest:43 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-04 03:43:18 INFO  BaseApiTest:20 - Authenticating API user: apitester_1775253456636@yopmail.com
+2026-04-04 03:43:20 INFO  BaseApiTest:38 - Authentication successful. Bearer token set.
+2026-04-04 03:43:20 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-04 03:43:20 INFO  BaseApiTest:22 - ACTION: POST /users/login | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:43:20 INFO  BaseApiTest:64 - RESPONSE [200] : {"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NzUyNTYyMDEsImV4cCI6MTc3NTI1NjUwMSwibmJmIjoxNzc1MjU2MjAxLCJqdGkiOiJiTmNnRjhsUUdudG80MW5VIiwic3ViIjoiMDFrbmFwd25xank0NmphdHFuZmJrYXZzbTIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.fg6UjE5CtJcAZTKleigAwzoxmFn7ghT2dAXOI2yeNHw","token_type":"bearer","expires_in":300}
+2026-04-04 03:43:20 INFO  BaseApiTest:33 - RESULT: Login successful | token_type=bearer | expires_in=300
+2026-04-04 03:43:20 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-04 03:43:20 INFO  BaseApiTest:49 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:43:20 INFO  BaseApiTest:44 - ACTION: POST /users/login with wrong password | email: apitester_1775253456636@yopmail.com
+2026-04-04 03:43:21 INFO  BaseApiTest:64 - RESPONSE [401] : {"error":"Unauthorized"}
+2026-04-04 03:43:21 INFO  BaseApiTest:51 - RESULT: Login correctly rejected | body='{"error":"Unauthorized"}'
+2026-04-04 03:43:21 INFO  BaseApiTest:54 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-04 03:43:21 INFO  BaseApiTest:49 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:43:21 INFO  BaseApiTest:60 - ACTION: GET /users/me | expected email: apitester_1775253456636@yopmail.com
+2026-04-04 03:43:21 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:43:21 INFO  BaseApiTest:68 - RESULT: Profile retrieved | email=apitester_1775253456636@yopmail.com | name=Duplicate User
+2026-04-04 03:43:21 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-04 03:43:21 INFO  BaseApiTest:49 - ===== STARTING API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:43:21 INFO  BaseApiTest:79 - ACTION: GET /users/me without Authorization token
+2026-04-04 03:43:21 INFO  BaseApiTest:64 - RESPONSE [200] : {"id":"01knapwnqjy46jatqnfbkavsm2","provider":null,"first_name":"Duplicate","last_name":"User","phone":null,"dob":null,"email":"apitester_1775253456636@yopmail.com","totp_enabled":false,"created_at":"2026-04-03 22:19:47","address":{"street":null,"city":null,"state":null,"country":null,"postal_code":null}}
+2026-04-04 03:43:21 INFO  BaseApiTest:54 - ===== FINISHED API TEST: getProfileWithoutTokenReturns401 =====
+2026-04-04 03:43:21 INFO  BaseApiTest:49 - ===== STARTING API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-04 03:43:21 INFO  BaseApiTest:102 - ACTION: POST /users/forgot-password | email: customer@practicesoftwaretesting.com
+2026-04-04 03:43:21 INFO  BaseApiTest:64 - RESPONSE [200] : {"success":true}
+2026-04-04 03:43:21 INFO  BaseApiTest:111 - RESULT: Password reset successful | success=true
+2026-04-04 03:43:21 INFO  BaseApiTest:54 - ===== FINISHED API TEST: forgotPasswordWithRegisteredEmail =====

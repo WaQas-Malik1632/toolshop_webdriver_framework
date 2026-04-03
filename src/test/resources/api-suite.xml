@@ -15,13 +15,13 @@
             </run>
         </groups>
         <classes>
-            <class name="apiTest.UserApiTest"/>
-            <class name="apiTest.ProductApiTest"/>
-            <class name="apiTest.BrandApiTest"/>
+            <class name="apiTests.UserLoginApiTest"/>
+            <class name="apiTests.ProductApiTest"/>
+            <class name="apiTests.BrandApiTest"/>
+            <class name="apiTests.CustomerRegisterApiTest"/>
         </classes>
     </test>
 
-    <!-- Run full end-to-end tests -->
     <test name="API E2E Tests" enabled="true">
         <groups>
             <run>
@@ -29,9 +29,10 @@
             </run>
         </groups>
         <classes>
-            <class name="apiTest.UserApiTest"/>
-            <class name="apiTest.ProductApiTest"/>
-            <class name="apiTest.BrandApiTest"/>
+            <class name="apiTests.UserLoginApiTest"/>
+            <class name="apiTests.ProductApiTest"/>
+            <class name="apiTests.BrandApiTest"/>
+            <class name="apiTests.CustomerRegisterApiTest"/>
         </classes>
     </test>
 

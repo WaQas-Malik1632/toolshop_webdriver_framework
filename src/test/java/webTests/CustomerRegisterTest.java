@@ -1,6 +1,5 @@
-package testcases;
+package webTests;
 
-import baseTest.BaseTest;
 import constants.LoginPageConstants;
 import constants.RegisterPageConstants;
 import io.qameta.allure.*;

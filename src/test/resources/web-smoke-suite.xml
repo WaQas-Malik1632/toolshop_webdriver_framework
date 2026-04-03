@@ -15,11 +15,11 @@
             </run>
         </groups>
         <classes>
-            <class name="testcases.CustomerRegisterTest"/>
-            <class name="testcases.LoginTest"/>
-            <class name="testcases.HomePageTest"/>
-            <class name="testcases.CustomerAccountTest"/>
-            <class name="testcases.ContactTest"/>
+            <class name="webTests.CustomerRegisterTest"/>
+            <class name="webTests.LoginTest"/>
+            <class name="webTests.HomePageTest"/>
+            <class name="webTests.CustomerAccountTest"/>
+            <class name="webTests.ContactTest"/>
         </classes>
     </test>
 

@@ -1,0 +1,92 @@
+package apiTests;
+
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+import io.restassured.response.Response;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.given;
+
+public class UserLoginApiTest extends AuthenticatedApiTest {
+
+    @Test(priority = 1, groups = {"smoke", "e2e"})
+    @Story("User Login")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description("POST /users/login - valid credentials return access_token")
+    public void loginWithValidCredentials() {
+        String email = prop.getProperty("api.user.email");
+        String password = prop.getProperty("api.user.password");
+        log.info("ACTION: POST /users/login | email: {}", email);
+
+        Response response = given()
+                .body("{\"email\":\"" + email + "\",\"password\":\"" + password + "\"}")
+                .when().post("/users/login").then().extract().response();
+
+        assertStatusCode(response, 200);
+        assertFieldNotEmpty(response, "access_token");
+        assertFieldEquals(response, "token_type", "bearer");
+        Assert.assertTrue(response.jsonPath().getInt("expires_in") > 0,
+                "expires_in should be > 0, was: " + response.jsonPath().getInt("expires_in"));
+        log.info("RESULT: Login successful | token_type={} | expires_in={}",
+                response.jsonPath().getString("token_type"), response.jsonPath().getInt("expires_in"));
+    }
+
+    @Test(priority = 2, groups = {"smoke", "e2e"})
+    @Story("User Login")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("POST /users/login - invalid credentials return 401")
+    public void loginWithInvalidCredentials() {
+        String email     = prop.getProperty("api.user.email");
+        String wrongPass = prop.getProperty("api.user.wrong.password");
+        log.info("ACTION: POST /users/login with wrong password | email: {}", email);
+
+        Response response = given()
+                .body("{\"email\":\"" + email + "\",\"password\":\"" + wrongPass + "\"}")
+                .when().post("/users/login").then().extract().response();
+
+        assertStatusCode(response, 401);
+        log.info("RESULT: Login correctly rejected | body='{}'", response.body().asString());
+    }
+
+    @Test(priority = 3, groups = {"smoke", "e2e"})
+    @Story("User Profile")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("GET /users/me - returns authenticated user info")
+    public void getAuthenticatedUserProfile() {
+        String expectedEmail = prop.getProperty("api.user.email");
+        log.info("ACTION: GET /users/me | expected email: {}", expectedEmail);
+
+        Response response = given().when().get("/users/me").then().extract().response();
+
+        assertStatusCode(response, 200);
+        assertFieldEquals(response, "email", expectedEmail);
+        assertFieldNotEmpty(response, "first_name");
+        assertFieldNotEmpty(response, "last_name");
+        log.info("RESULT: Profile retrieved | email={} | name={} {}",
+                response.jsonPath().getString("email"),
+                response.jsonPath().getString("first_name"),
+                response.jsonPath().getString("last_name"));
+    }
+
+    @Test(priority = 4, groups = {"e2e"})
+    @Story("Forgot Password")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("POST /users/forgot-password - registered email returns success")
+    public void forgotPasswordWithRegisteredEmail() {
+        String email = prop.getProperty("api.user.reset.email");
+        log.info("ACTION: POST /users/forgot-password | email: {}", email);
+
+        Response response = given()
+                .body("{\"email\":\"" + email + "\"}")
+                .when().post("/users/forgot-password").then().extract().response();
+
+        assertStatusCode(response, 200);
+        Boolean success = response.jsonPath().getBoolean("success");
+        Assert.assertTrue(success, "Expected success=true for registered email but was: " + success);
+        log.info("RESULT: Password reset successful | success={}", success);
+    }
+
+}

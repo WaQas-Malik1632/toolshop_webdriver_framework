@@ -39,6 +39,21 @@ public class DriverManager {
         return prop;
     }
 
+    public static Properties loadApiProperties() throws IOException {
+        if (prop == null) {
+            prop = new Properties();
+            String configPath = "src/main/java/config/configApi.properties";
+
+            try (FileInputStream fis = new FileInputStream(configPath)) {
+                prop.load(fis);
+            } catch (IOException e) {
+                log.error("Failed to load configuration file: {}", configPath, e);
+                throw e;
+            }
+        }
+        return prop;
+    }
+
     public static void initializeDriver(String browserName, String baseUrl) {
         log.info("Initializing browser: {}", browserName);
 
