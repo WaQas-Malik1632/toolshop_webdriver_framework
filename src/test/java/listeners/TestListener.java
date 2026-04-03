@@ -17,56 +17,69 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        log.info("=== STARTING TEST SUITE: {} ===", context.getName());
+        log.info("╔══════════════════════════════════════════════════════╗");
+        log.info("  SUITE STARTED: {}",  context.getName());
+        log.info("╚══════════════════════════════════════════════════════╝");
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        log.info("=== FINISHED TEST SUITE: {} ===", context.getName());
-        log.info("Passed tests: {}", context.getPassedTests().size());
-        log.info("Failed tests: {}", context.getFailedTests().size());
-        log.info("Skipped tests: {}", context.getSkippedTests().size());
+        log.info("╔══════════════════════════════════════════════════════╗");
+        log.info("  SUITE FINISHED: {}", context.getName());
+        log.info("  ✔ Passed  : {}", context.getPassedTests().size());
+        log.info("  ✘ Failed  : {}", context.getFailedTests().size());
+        log.info("  ⊘ Skipped : {}", context.getSkippedTests().size());
+        log.info("╚══════════════════════════════════════════════════════╝");
     }
 
     @Override
     public void onTestStart(ITestResult result) {
-        log.info("STARTING TEST: {}", result.getMethod().getMethodName());
+        log.info("──────────────────────────────────────────────────────");
+        log.info("▶ TEST STARTED : [{}] {}",
+                result.getTestClass().getRealClass().getSimpleName(),
+                result.getMethod().getMethodName());
+        log.info("  Groups       : {}", String.join(", ", result.getMethod().getGroups()));
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        log.info("TEST PASSED: {}", result.getMethod().getMethodName());
+        long duration = result.getEndMillis() - result.getStartMillis();
+        log.info("✔ TEST PASSED  : [{}] {} ({}ms)",
+                result.getTestClass().getRealClass().getSimpleName(),
+                result.getMethod().getMethodName(),
+                duration);
+        log.info("──────────────────────────────────────────────────────");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        log.error("TEST FAILED: {}", result.getMethod().getMethodName());
+        long duration = result.getEndMillis() - result.getStartMillis();
+        log.error("✘ TEST FAILED  : [{}] {} ({}ms)",
+                result.getTestClass().getRealClass().getSimpleName(),
+                result.getMethod().getMethodName(),
+                duration);
+        log.error("  Reason       : {}", result.getThrowable().getMessage());
 
         WebDriver driver = DriverManager.getDriver();
-
         if (driver != null) {
             String testName = result.getMethod().getMethodName();
-            BasePage.captureScreenshot(driver, testName);
-
             try {
                 byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                Allure.getLifecycle().addAttachment(
-                        testName,
-                        "image/png",
-                        "png",
-                        screenshot
-                );
-                log.info("Screenshot attached to Allure report");
+                Allure.getLifecycle().addAttachment(testName, "image/png", "png", screenshot);
+                log.info("  Screenshot attached to Allure report");
+                BasePage.captureScreenshot(driver, testName);
             } catch (Exception e) {
-                log.error("Failed to capture/attach screenshot: {}", e.getMessage());
+                log.error("  Failed to capture screenshot: {}", e.getMessage());
             }
-        } else {
-            log.warn("WebDriver was null - skipping screenshot capture");
         }
+        log.error("──────────────────────────────────────────────────────");
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        log.warn("TEST SKIPPED: {}", result.getMethod().getMethodName());
+        log.warn("⊘ TEST SKIPPED : [{}] {}",
+                result.getTestClass().getRealClass().getSimpleName(),
+                result.getMethod().getMethodName());
+        log.warn("──────────────────────────────────────────────────────");
     }
 }

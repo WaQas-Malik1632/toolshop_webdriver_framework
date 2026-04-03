@@ -12,6 +12,7 @@ public interface LoginPageConstants {
     public static final String CUSTOMER_LOGGED_IN_SUCCESSFULLY = "Customer logged in successfully";
 
     public static final String FORGOT_PASSWORD_INVALID_EMAIL_ERROR = "The selected email is invalid.";
+    public static final String FORGOT_PASSWORD_INVALID_EMAIL_NEW_ERROR = "page.forgot-password.confirm";
     public static final String FORGOT_PASSWORD_RESET_SUCCESS_MESSAGE = "Your password is successfully updated!";
 
 }

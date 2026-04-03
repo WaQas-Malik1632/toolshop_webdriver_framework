@@ -835,3 +835,353 @@ Session ID: 62cf49045c34ca34de1fa894658b5674
 2026-04-03 23:27:06 INFO  BaseTest:53 - REST Assured configured. Base URI: https://api.practicesoftwaretesting.com
 2026-04-03 23:27:06 INFO  BaseTest:59 - ===== STARTING TEST: validateLoginPageTitle =====
 2026-04-03 23:27:06 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:39:24 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-03 23:39:32 INFO  BaseTest:53 - REST Assured configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-03 23:39:32 INFO  BaseTest:59 - ===== STARTING TEST: validateLoginPageTitle =====
+2026-04-03 23:39:32 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:39:41 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-03 23:39:42 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-03 23:39:43 INFO  BaseTest:17 - Executing test: validateLoginPageTitle
+2026-04-03 23:39:44 INFO  BasePage:16 - Navigated to Login Page
+2026-04-03 23:39:44 INFO  BaseTest:71 - ===== FINISHED TEST: validateLoginPageTitle =====
+2026-04-03 23:39:45 INFO  DriverManager:122 - Browser closed successfully
+2026-04-03 23:39:45 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-03 23:39:45 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:39:51 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-03 23:39:52 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-03 23:39:52 INFO  BaseTest:33 - Executing test: validateCustomerLogsInSuccessfully
+2026-04-03 23:39:52 INFO  BaseTest:34 - ACTION: Attempting login with valid user
+2026-04-03 23:39:53 INFO  BasePage:16 - Navigated to Login Page
+2026-04-03 23:39:55 INFO  BasePage:90 - Action successful. Redirected to: https://practicesoftwaretesting.com/account
+2026-04-03 23:39:55 INFO  BaseTest:71 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-03 23:39:56 INFO  DriverManager:122 - Browser closed successfully
+2026-04-03 23:39:56 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-03 23:39:56 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:40:01 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-03 23:40:02 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-03 23:40:03 INFO  BaseTest:52 - Executing test: validateCustomerLogInWithInvalidCredentials
+2026-04-03 23:40:03 INFO  BaseTest:53 - ACTION: Attempting login with invalid credentials
+2026-04-03 23:40:03 INFO  BasePage:16 - Navigated to Login Page
+2026-04-03 23:40:25 WARN  BasePage:98 - Action failed. Error: Invalid email or password
+2026-04-03 23:40:25 INFO  BaseTest:71 - ===== FINISHED TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-03 23:40:26 INFO  DriverManager:122 - Browser closed successfully
+2026-04-03 23:40:26 INFO  BaseTest:59 - ===== STARTING TEST: validateUserCanResetForgotPasswordWithRegisteredEmail =====
+2026-04-03 23:40:26 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:40:31 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-03 23:40:33 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-03 23:40:33 INFO  BaseTest:71 - Executing test: validateUserCanResetForgotPasswordWithRegisteredEmail
+2026-04-03 23:40:33 INFO  BasePage:16 - Navigated to Login Page
+2026-04-03 23:40:35 INFO  BaseTest:71 - ===== FINISHED TEST: validateUserCanResetForgotPasswordWithRegisteredEmail =====
+2026-04-03 23:40:36 INFO  DriverManager:122 - Browser closed successfully
+2026-04-03 23:40:36 INFO  BaseTest:59 - ===== STARTING TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-03 23:40:36 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:40:41 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-03 23:40:41 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-03 23:40:41 INFO  BaseTest:90 - Executing test: validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-03 23:40:43 INFO  BasePage:16 - Navigated to Login Page
+2026-04-03 23:40:45 INFO  BaseTest:71 - ===== FINISHED TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-03 23:40:45 INFO  DriverManager:122 - Browser closed successfully
+2026-04-03 23:44:18 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-03 23:44:24 INFO  BaseTest:59 - ===== STARTING TEST: validateLoginPageTitle =====
+2026-04-03 23:44:24 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:44:30 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-03 23:44:32 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-03 23:44:32 INFO  BaseTest:71 - ===== FINISHED TEST: validateLoginPageTitle =====
+2026-04-03 23:44:33 INFO  DriverManager:122 - Browser closed successfully
+2026-04-03 23:44:33 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-03 23:44:33 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:46:17 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-03 23:46:23 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-03 23:46:23 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:46:31 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-03 23:46:32 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-03 23:46:32 INFO  BaseTest:71 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-03 23:46:32 INFO  DriverManager:122 - Browser closed successfully
+2026-04-03 23:46:32 INFO  BaseTest:59 - ===== STARTING TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-03 23:46:32 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:58:42 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-03 23:58:43 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-03 23:58:43 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-03 23:58:43 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-03 23:58:49 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-03 23:58:49 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-03 23:58:57 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-03 23:58:57 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-03 23:58:58 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-03 23:58:58 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-03 23:58:58 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-03 23:58:58 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-03 23:58:58 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-03 23:58:58 INFO  BaseTest:71 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-03 23:58:59 INFO  DriverManager:122 - Browser closed successfully
+2026-04-03 23:58:59 INFO  BaseTest:59 - ===== STARTING TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-03 23:58:59 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:03:22 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 00:03:22 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:03:22 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-04 00:03:22 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:03:25 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-04 00:03:25 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:03:28 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:03:29 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:03:29 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:03:29 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-04 00:03:29 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 00:03:29 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-04 00:03:29 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-04 00:03:29 INFO  BaseTest:71 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-04 00:03:29 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:03:29 INFO  BaseTest:59 - ===== STARTING TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-04 00:03:29 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:03:31 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:03:32 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:03:32 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:03:32 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-04 00:03:32 INFO  TestListener:41 -   Groups       : e2e
+2026-04-04 00:03:32 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-04 00:03:32 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-04 00:03:32 INFO  BaseTest:71 - ===== FINISHED TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-04 00:03:32 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:03:32 INFO  BaseTest:59 - ===== STARTING TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-04 00:03:32 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:03:34 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:03:35 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:03:35 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:03:35 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-04 00:03:35 INFO  TestListener:41 -   Groups       : e2e
+2026-04-04 00:03:35 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-04 00:03:35 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-04 00:03:35 INFO  BaseTest:71 - ===== FINISHED TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-04 00:03:35 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:03:35 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:03:35 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-04 00:03:35 INFO  TestListener:29 -   ✔ Passed  : 0
+2026-04-04 00:03:35 INFO  TestListener:30 -   ✘ Failed  : 0
+2026-04-04 00:03:35 INFO  TestListener:31 -   ⊘ Skipped : 3
+2026-04-04 00:03:35 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:04:21 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 00:04:21 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:04:21 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-04 00:04:21 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:04:23 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerCanRegisterWithUniqueEmailSuccessfully =====
+2026-04-04 00:04:23 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:04:26 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:04:26 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:04:26 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:04:26 INFO  TestListener:38 - ▶ TEST STARTED : [CustomerRegisterTest] validateCustomerCanRegisterWithUniqueEmailSuccessfully
+2026-04-04 00:04:26 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 00:04:26 WARN  TestListener:80 - ⊘ TEST SKIPPED : [CustomerRegisterTest] validateCustomerCanRegisterWithUniqueEmailSuccessfully
+2026-04-04 00:04:26 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-04 00:04:26 INFO  BaseTest:71 - ===== FINISHED TEST: validateCustomerCanRegisterWithUniqueEmailSuccessfully =====
+2026-04-04 00:04:26 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:04:26 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:04:26 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-04 00:04:26 INFO  TestListener:29 -   ✔ Passed  : 0
+2026-04-04 00:04:26 INFO  TestListener:30 -   ✘ Failed  : 0
+2026-04-04 00:04:26 INFO  TestListener:31 -   ⊘ Skipped : 1
+2026-04-04 00:04:26 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:06:36 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 00:06:37 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:06:37 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-04 00:06:37 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:06:37 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerCanRegisterWithUniqueEmailSuccessfully =====
+2026-04-04 00:06:37 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:06:40 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:06:40 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:06:40 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:06:40 INFO  TestListener:38 - ▶ TEST STARTED : [CustomerRegisterTest] validateCustomerCanRegisterWithUniqueEmailSuccessfully
+2026-04-04 00:06:40 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 00:06:40 INFO  BaseTest:38 - Executing test: validateCustomerCanRegisterWithUniqueEmailSuccessfully
+2026-04-04 00:06:40 INFO  BaseTest:39 - ACTION: Registering new customer with email: Tester@yopmail.com
+2026-04-04 00:06:41 INFO  BasePage:17 - Scrolling to Register link
+2026-04-04 00:06:41 INFO  BasePage:21 - Clicking to Register link text
+2026-04-04 00:06:41 INFO  BasePage:25 - Navigated to Registration Page
+2026-04-04 00:06:41 INFO  BasePage:37 - Starting customer registration flow
+2026-04-04 00:06:47 INFO  BasePage:55 - Customer registration form submitted
+2026-04-04 00:07:08 WARN  BasePage:98 - Action failed. Error: Password must include invalid characters.
+2026-04-04 00:07:08 INFO  BaseTest:48 - RESULT: Redirected to 'Password must include invalid characters.'
+2026-04-04 00:07:08 ERROR TestListener:57 - ✘ TEST FAILED  : [CustomerRegisterTest] validateCustomerCanRegisterWithUniqueEmailSuccessfully (27749ms)
+2026-04-04 00:07:08 ERROR TestListener:61 -   Reason       : Failed! User registration failed due to already existing email expected [https://practicesoftwaretesting.com/auth/login] but found [Password must include invalid characters.]
+2026-04-04 00:07:08 INFO  TestListener:69 -   Screenshot attached to Allure report
+2026-04-04 00:07:08 ERROR TestListener:75 - ──────────────────────────────────────────────────────
+2026-04-04 00:07:08 INFO  BaseTest:71 - ===== FINISHED TEST: validateCustomerCanRegisterWithUniqueEmailSuccessfully =====
+2026-04-04 00:07:08 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:07:08 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:07:08 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-04 00:07:08 INFO  TestListener:29 -   ✔ Passed  : 0
+2026-04-04 00:07:08 INFO  TestListener:30 -   ✘ Failed  : 1
+2026-04-04 00:07:08 INFO  TestListener:31 -   ⊘ Skipped : 0
+2026-04-04 00:07:08 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:07:46 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 00:07:46 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:07:46 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-04 00:07:46 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:07:46 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerCanRegisterWithUniqueEmailSuccessfully =====
+2026-04-04 00:07:46 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:07:49 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:07:49 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:07:49 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:07:49 INFO  TestListener:38 - ▶ TEST STARTED : [CustomerRegisterTest] validateCustomerCanRegisterWithUniqueEmailSuccessfully
+2026-04-04 00:07:49 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 00:07:49 INFO  BaseTest:38 - Executing test: validateCustomerCanRegisterWithUniqueEmailSuccessfully
+2026-04-04 00:07:49 INFO  BaseTest:39 - ACTION: Registering new customer with email: Tester@yopmail.com
+2026-04-04 00:07:50 INFO  BasePage:17 - Scrolling to Register link
+2026-04-04 00:07:50 INFO  BasePage:21 - Clicking to Register link text
+2026-04-04 00:07:50 INFO  BasePage:25 - Navigated to Registration Page
+2026-04-04 00:07:50 INFO  BasePage:37 - Starting customer registration flow
+2026-04-04 00:07:57 INFO  BasePage:55 - Customer registration form submitted
+2026-04-04 00:08:39 ERROR TestListener:57 - ✘ TEST FAILED  : [CustomerRegisterTest] validateCustomerCanRegisterWithUniqueEmailSuccessfully (49288ms)
+2026-04-04 00:08:39 ERROR TestListener:61 -   Reason       : Neither success nor error condition met
+2026-04-04 00:08:39 INFO  TestListener:69 -   Screenshot attached to Allure report
+2026-04-04 00:08:39 ERROR TestListener:75 - ──────────────────────────────────────────────────────
+2026-04-04 00:08:39 INFO  BaseTest:71 - ===== FINISHED TEST: validateCustomerCanRegisterWithUniqueEmailSuccessfully =====
+2026-04-04 00:08:39 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:08:39 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:08:39 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-04 00:08:39 INFO  TestListener:29 -   ✔ Passed  : 0
+2026-04-04 00:08:39 INFO  TestListener:30 -   ✘ Failed  : 1
+2026-04-04 00:08:39 INFO  TestListener:31 -   ⊘ Skipped : 0
+2026-04-04 00:08:39 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:08:55 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 00:08:55 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:08:55 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-04 00:08:55 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:08:55 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-04 00:08:55 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:08:58 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:08:58 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:08:58 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:08:58 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-04 00:08:58 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 00:08:58 INFO  BaseTest:33 - Executing test: validateCustomerLogsInSuccessfully
+2026-04-04 00:08:58 INFO  BaseTest:34 - ACTION: Attempting login with valid user: Tester@yopmail.com
+2026-04-04 00:08:59 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 00:09:00 INFO  BasePage:90 - Action successful. Redirected to: https://practicesoftwaretesting.com/account
+2026-04-04 00:09:00 INFO  BaseTest:42 - RESULT: https://practicesoftwaretesting.com/account
+2026-04-04 00:09:00 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateCustomerLogsInSuccessfully (1824ms)
+2026-04-04 00:09:00 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-04 00:09:00 INFO  BaseTest:71 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-04 00:09:00 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:09:00 INFO  BaseTest:59 - ===== STARTING TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-04 00:09:00 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:09:02 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:09:03 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:09:03 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:09:03 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-04 00:09:03 INFO  TestListener:41 -   Groups       : e2e
+2026-04-04 00:09:03 INFO  BaseTest:69 - Executing test: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-04 00:09:03 INFO  BaseTest:70 - ACTION: Requesting password reset for: Tester@yopmail.com
+2026-04-04 00:09:03 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 00:09:04 INFO  BaseTest:79 - RESULT: page.forgot-password.confirm
+2026-04-04 00:09:04 ERROR TestListener:57 - ✘ TEST FAILED  : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully (1174ms)
+2026-04-04 00:09:04 ERROR TestListener:61 -   Reason       : Failed! Entered email not registered expected [Your password is successfully updated!] but found [page.forgot-password.confirm]
+2026-04-04 00:09:04 INFO  TestListener:69 -   Screenshot attached to Allure report
+2026-04-04 00:09:04 ERROR TestListener:75 - ──────────────────────────────────────────────────────
+2026-04-04 00:09:04 INFO  BaseTest:71 - ===== FINISHED TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-04 00:09:05 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:09:05 INFO  BaseTest:59 - ===== STARTING TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-04 00:09:05 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:09:07 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:09:07 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:09:07 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:09:07 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-04 00:09:07 INFO  TestListener:41 -   Groups       : e2e
+2026-04-04 00:09:07 INFO  BaseTest:88 - Executing test: validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-04 00:09:07 INFO  BaseTest:89 - ACTION: Requesting password reset for unregistered: customer3@practicesoftwaretesting.com
+2026-04-04 00:09:07 INFO  BasePage:16 - Navigated to Login Page
+2026-04-04 00:09:08 INFO  BaseTest:98 - RESULT: page.forgot-password.confirm
+2026-04-04 00:09:08 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail (1118ms)
+2026-04-04 00:09:08 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-04 00:09:08 INFO  BaseTest:71 - ===== FINISHED TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-04 00:09:08 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:09:08 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:09:08 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-04 00:09:08 INFO  TestListener:29 -   ✔ Passed  : 2
+2026-04-04 00:09:08 INFO  TestListener:30 -   ✘ Failed  : 1
+2026-04-04 00:09:08 INFO  TestListener:31 -   ⊘ Skipped : 0
+2026-04-04 00:09:08 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:23:27 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 00:23:27 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:23:27 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-04 00:23:27 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:23:27 INFO  BaseTest:59 - ===== STARTING TEST: validateNavigationToContactPage =====
+2026-04-04 00:23:27 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:23:30 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:23:31 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:23:31 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:23:31 INFO  TestListener:38 - ▶ TEST STARTED : [ContactTest] validateNavigationToContactPage
+2026-04-04 00:23:31 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 00:23:31 INFO  BaseTest:21 - Executing test: validateNavigationToContactPage
+2026-04-04 00:23:32 INFO  BasePage:16 - Navigated to Contact Us Page
+2026-04-04 00:23:32 INFO  BaseTest:26 - RESULT: Page title = 'Contact Us - Practice Software Testing - Toolshop - v5.0'
+2026-04-04 00:23:32 INFO  TestListener:47 - ✔ TEST PASSED  : [ContactTest] validateNavigationToContactPage (994ms)
+2026-04-04 00:23:32 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-04 00:23:32 INFO  BaseTest:71 - ===== FINISHED TEST: validateNavigationToContactPage =====
+2026-04-04 00:23:33 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:23:33 INFO  BaseTest:59 - ===== STARTING TEST: validateUserCanSendContactMessageSuccessfully =====
+2026-04-04 00:23:33 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:23:35 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:23:35 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:23:35 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:23:35 INFO  TestListener:38 - ▶ TEST STARTED : [ContactTest] validateUserCanSendContactMessageSuccessfully
+2026-04-04 00:23:35 INFO  TestListener:41 -   Groups       : e2e
+2026-04-04 00:23:35 INFO  BaseTest:35 - Executing test: validateUserCanSendContactMessageSuccessfully
+2026-04-04 00:23:35 INFO  BaseTest:44 - ACTION: Filling Contact Us form --> [Name: Tester User, Email: test@gmail.com, Subject: Payments]
+2026-04-04 00:23:36 INFO  BasePage:16 - Navigated to Contact Us Page
+2026-04-04 00:23:36 INFO  BasePage:28 - Filling contact form
+2026-04-04 00:23:47 ERROR TestListener:57 - ✘ TEST FAILED  : [ContactTest] validateUserCanSendContactMessageSuccessfully (12505ms)
+2026-04-04 00:23:47 ERROR TestListener:61 -   Reason       : invalid argument: File not found : C:\Users\waqas.naseer\Downloads\EmptyFile.txt
+  (Session info: chrome=146.0.7680.178)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3452b1b15dc961bc6014db6393c3d604, sendKeysToElement {id=f.AF4B6C1E815B25B5CDBE9D7724E6DC2D.d.ACC6B43722A84799BD23BEED63FADA70.e.48, value=[Ljava.lang.CharSequence;@175745fc}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Waqas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61471}, goog:processID: 20760, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61471/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webSocketUrl: ws://localhost:5675/session..., webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (3452b1b15dc961bc6014db6393c3d604)] -> xpath: //input[@id='attachment']]
+Session ID: 3452b1b15dc961bc6014db6393c3d604
+2026-04-04 00:23:48 INFO  TestListener:69 -   Screenshot attached to Allure report
+2026-04-04 00:23:48 ERROR TestListener:75 - ──────────────────────────────────────────────────────
+2026-04-04 00:23:48 INFO  BaseTest:71 - ===== FINISHED TEST: validateUserCanSendContactMessageSuccessfully =====
+2026-04-04 00:23:48 INFO  DriverManager:122 - Browser closed successfully
+2026-04-04 00:23:48 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:23:48 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-04 00:23:48 INFO  TestListener:29 -   ✔ Passed  : 1
+2026-04-04 00:23:48 INFO  TestListener:30 -   ✘ Failed  : 1
+2026-04-04 00:23:48 INFO  TestListener:31 -   ⊘ Skipped : 0
+2026-04-04 00:23:48 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:24:47 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-04 00:24:47 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-04 00:24:47 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-04 00:24:47 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-04 00:24:47 INFO  BaseTest:59 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-04 00:24:47 INFO  DriverManager:43 - Initializing browser: chrome
+2026-04-04 00:24:50 INFO  DriverManager:112 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-04 00:24:51 INFO  BaseTest:66 - Browser initialized successfully
+2026-04-04 00:24:51 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-04 00:24:51 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-04 00:24:51 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-04 00:24:51 INFO  BaseTest:35 - Executing test: validateCustomerLogsInSuccessfully
+2026-04-04 00:24:51 INFO  BaseTest:36 - ACTION: Attempting login with valid user: Tester@yopmail.com
+2026-04-04 00:24:52 INFO  BasePage:16 - Navigated to Login Page

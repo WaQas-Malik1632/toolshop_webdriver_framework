@@ -20,13 +20,11 @@ public class ContactTest extends BaseTest {
     public void validateNavigationToContactPage() {
         log.info("Executing test: {}", testMethod.getName());
 
-        Assert.assertEquals(
-                onContactPage()
-                        .navigateToContactUsPage()
-                        .getContactPageTitle(),
-                ContactPageConstants.CONTACT_PAGE_TITLE,
-                "Failed! Title didn't match"
-        );
+        String title = onContactPage()
+                .navigateToContactUsPage()
+                .getContactPageTitle();
+        log.info("RESULT: Page title = '{}'", title);
+        Assert.assertEquals(title, ContactPageConstants.CONTACT_PAGE_TITLE, "Failed! Title didn't match");
     }
 
     @Test(priority = 2, enabled = true, groups = {"e2e"})
@@ -43,16 +41,15 @@ public class ContactTest extends BaseTest {
         String message = "TestUser is contacting related to payment refund status, as products returned two weeks ago, thanks";
         String attachmentPath = "C:\\Users\\waqas.naseer\\Downloads\\EmptyFile.txt";
 
-        log.info("ACTION: Filling Contact Us form--> [Name: {} {}, Email: {}, Subject: {}]", firstName, lastName, email, subject);
+        log.info("ACTION: Filling Contact Us form --> [Name: {} {}, Email: {}, Subject: {}]", firstName, lastName, email, subject);
 
-        Assert.assertEquals(
-                onContactPage()
-                        .navigateToContactUsPage()
-                        .contactUsForm(firstName, lastName, email, subject, message, attachmentPath)
-                        .captureContactSuccessMessage(),
-                ContactPageConstants.CONTACT_MESSAGE_SUCCESS_MESSAGE,
-                "Failed! Form didn't submit successfully"
-        );
+        String result = onContactPage()
+                .navigateToContactUsPage()
+                .contactUsForm(firstName, lastName, email, subject, message, attachmentPath)
+                .captureContactSuccessMessage();
+
+        log.info("RESULT: '{}'", result);
+        Assert.assertEquals(result, ContactPageConstants.CONTACT_MESSAGE_SUCCESS_MESSAGE, "Failed! Form didn't submit successfully");
     }
 }
 

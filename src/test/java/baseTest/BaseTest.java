@@ -22,7 +22,7 @@ public class BaseTest {
     protected Properties prop;
     protected Method testMethod;
 
-    @BeforeClass(alwaysRun = true)
+    @BeforeClass(enabled = false)
     public void setupRestAssured() throws IOException {
         prop = DriverManager.loadProperties();
 

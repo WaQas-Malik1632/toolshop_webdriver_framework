@@ -1,15 +1,16 @@
 package apiTest;
 
-import apiTest.BaseApiTest;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-import io.restassured.builder.RequestSpecBuilder;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 
 public class UserApiTest extends BaseApiTest {
 
@@ -18,14 +19,20 @@ public class UserApiTest extends BaseApiTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("POST /users/login - valid credentials return access_token")
     public void loginWithValidCredentials() {
-        given()
-            .body("{\"email\":\"customer@practicesoftwaretesting.com\",\"password\":\"welcome01\"}")
-        .when()
-            .post("/users/login")
-        .then()
-            .statusCode(200)
-            .body("access_token", notNullValue())
-            .body("token_type", equalTo("bearer"));
+        log.info("ACTION: POST /users/login with valid credentials");
+
+        Response response = given()
+                .body("{\"email\":\"customer@practicesoftwaretesting.com\",\"password\":\"welcome01\"}")
+                .when()
+                .post("/users/login")
+                .then()
+                .statusCode(200)
+                .body("access_token", notNullValue())
+                .body("token_type", equalTo("bearer"))
+                .extract().response();
+
+        log.info("RESULT: Login successful | token_type={} | expires_in={}",
+                response.path("token_type"), response.path("expires_in"));
     }
 
     @Test(priority = 2, groups = {"smoke", "e2e"})
@@ -33,12 +40,17 @@ public class UserApiTest extends BaseApiTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("POST /users/login - invalid credentials return 401")
     public void loginWithInvalidCredentials() {
-        given()
-            .body("{\"email\":\"customer@practicesoftwaretesting.com\",\"password\":\"wrongpassword\"}")
-        .when()
-            .post("/users/login")
-        .then()
-            .statusCode(401);
+        log.info("ACTION: POST /users/login with invalid credentials");
+
+        Response response = given()
+                .body("{\"email\":\"customer@practicesoftwaretesting.com\",\"password\":\"wrongpassword\"}")
+                .when()
+                .post("/users/login")
+                .then()
+                .statusCode(401)
+                .extract().response();
+
+        log.info("RESULT: Login correctly rejected | status={}", response.statusCode());
     }
 
     @Test(priority = 3, groups = {"smoke", "e2e"})
@@ -46,14 +58,20 @@ public class UserApiTest extends BaseApiTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("GET /users/me - returns authenticated user info")
     public void getAuthenticatedUserProfile() {
-        given()
-        .when()
-            .get("/users/me")
-        .then()
-            .statusCode(200)
-            .body("email", equalTo("customer@practicesoftwaretesting.com"))
-            .body("first_name", notNullValue())
-            .body("last_name", notNullValue());
+        log.info("ACTION: GET /users/me with valid token");
+
+        Response response = given()
+                .when()
+                .get("/users/me")
+                .then()
+                .statusCode(200)
+                .body("email", equalTo("customer@practicesoftwaretesting.com"))
+                .body("first_name", notNullValue())
+                .body("last_name", notNullValue())
+                .extract().response();
+
+        log.info("RESULT: Profile retrieved | email={} | name={} {}",
+                response.path("email"), response.path("first_name"), response.path("last_name"));
     }
 
     @Test(priority = 4, groups = {"e2e"})
@@ -61,15 +79,19 @@ public class UserApiTest extends BaseApiTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("GET /users/me - returns 401 without token")
     public void getProfileWithoutTokenReturns401() {
-        // Reset default spec to send request with no Authorization header
-        given()
-            .spec(new RequestSpecBuilder()
-                .setBaseUri(prop.getProperty("api.base.url"))
-                .setContentType("application/json")
-                .build())
-        .when()
-            .get("/users/me")
-        .then()
-            .statusCode(401);
+        log.info("ACTION: GET /users/me without Authorization token");
+
+        Response response = given()
+                .spec(new RequestSpecBuilder()
+                        .setBaseUri(prop.getProperty("api.base.url"))
+                        .setContentType("application/json")
+                        .build())
+                .when()
+                .get("/users/me")
+                .then()
+                .statusCode(401)
+                .extract().response();
+
+        log.info("RESULT: Unauthorized correctly returned | status={}", response.statusCode());
     }
 }

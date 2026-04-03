@@ -35,6 +35,7 @@ public class HomePageTest extends BaseTest {
     public void validateUserCanSelectAndPurchaseMultipleProductsInSingleOrder() {
         log.info("Executing test: {}", testMethod.getName());
 
+        // Pre-condition: Login and navigate to home page
         onLoginPage()
                 .navigateToLoginPage()
                 .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"))
@@ -48,8 +49,7 @@ public class HomePageTest extends BaseTest {
                         "Tester User");
 
         Assert.assertEquals(
-                actualMessage,
-                HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
+                actualMessage, HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
                 "Payment was not successful");
     }
 
@@ -71,10 +71,8 @@ public class HomePageTest extends BaseTest {
                 .purchaseItemWithBankTransfer("Test Bank", "Test user", "1015112101512");
 
         Assert.assertEquals(
-                actualMessage,
-                HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
-                "Payment was not successful"
-        );
+                actualMessage, HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
+                "Payment was not successful");
     }
 
     @Test(priority = 4, enabled = false, groups = {"e2e"})
@@ -98,11 +96,8 @@ public class HomePageTest extends BaseTest {
                         "10115"
                 );
 
-        Assert.assertEquals(
-                actualMessage,
-                HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
-                "Payment was not successful"
-        );
+        Assert.assertEquals(actualMessage, HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
+                "Payment was not successful");
     }
 }
 

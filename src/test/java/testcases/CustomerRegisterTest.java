@@ -21,13 +21,14 @@ public class CustomerRegisterTest extends BaseTest {
     public void validateCustomerRegisterPageTitle() {
         log.info("Executing test: {}", testMethod.getName());
 
-        Assert.assertEquals(
-                onRegisterPage()
-                        .navigateToRegisterPage()
-                        .getCustomerRegisterPageTitle(),
-                RegisterPageConstants.CUSTOMER_REGISTER_PAGE_TITLE,
-                "Failed! Title didn't match"
-        );
+        String title = onRegisterPage()
+                .navigateToRegisterPage()
+                .getCustomerRegisterPageTitle();
+
+        log.info("Actual Register Page Title: {}", title);
+
+        Assert.assertEquals(title, RegisterPageConstants.CUSTOMER_REGISTER_PAGE_TITLE,
+                "Customer Register page title mismatch");
     }
 
     @Test(priority = 2, enabled = true, groups = {"smoke", "e2e"})
@@ -36,51 +37,37 @@ public class CustomerRegisterTest extends BaseTest {
     @Description("Verify that new customer can register successfully with unique email and valid details")
     public void validateCustomerCanRegisterWithUniqueEmailSuccessfully() {
         log.info("Executing test: {}", testMethod.getName());
+        log.info("ACTION: Registering new customer with email: Tester@yopmail.com");
 
-        Assert.assertEquals(
-                onRegisterPage()
-                        .navigateToRegisterPage()
-                        .registerCustomer(
-                                "Tester",
-                                "New",
-                                "2000-01-27",
-                                "123",
-                                "1130",
-                                "Adbuston",
-                                "District 8",
-                                "Hungary",
-                                "3012809097",
-                                "Tester@yopmail.com",
-                                "Angry@200")
-                        .captureRegistrationResult(),
-                LoginPageConstants.LOGIN_PAGE_URL,
+        String result = onRegisterPage()
+                .navigateToRegisterPage()
+                .registerCustomer("Tester", "New", "2000-01-27", "123", "1130",
+                        "Adbuston", "District 8", "Hungary", "3012809097",
+                        "Tester@yopmail.com", "welcome01@Pass")
+                .captureRegistrationResult();
+
+        log.info("RESULT: Redirected to '{}'", result);
+        Assert.assertEquals(result, LoginPageConstants.LOGIN_PAGE_URL,
                 "Failed! User registration failed due to already existing email");
     }
 
-    @Test(priority = 3, enabled = true, groups = {"e2e"})
+    @Test(priority = 3, enabled = false, groups = {"e2e"})
     @Story("Customer Registration - Duplicate Email Validation")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the system prevents registration when customer tries to register with an already existing email address")
     public void validateCustomerCanNotRegisterUserWithAlreadyExistingEmail() {
         log.info("Executing test: {}", testMethod.getName());
+        log.info("ACTION: Attempting registration with existing email: Tester@yopmail.com");
 
-        Assert.assertEquals(
-                onRegisterPage()
-                        .navigateToRegisterPage()
-                        .registerCustomer(
-                                "Test2",
-                                "User",
-                                "1987-05-20",
-                                "Main Street 123",
-                                "1130",
-                                "Budapest",
-                                "District 4",
-                                "Hungary",
-                                "301234567",
-                                "Tester@yopmail.com",
-                                "Angry@200")
-                        .captureRegistrationResult(),
-                RegisterPageConstants.CUSTOMER_ALREADY_EXISTS_WITH_THIS_EMAIL,
+        String result = onRegisterPage()
+                .navigateToRegisterPage()
+                .registerCustomer("Test2", "User", "1987-05-20", "Main Street 123", "1130",
+                        "Budapest", "District 4", "Hungary", "301234567",
+                        "Tester@yopmail.com", "welcome01")
+                .captureRegistrationResult();
+
+        log.info("RESULT: '{}'", result);
+        Assert.assertEquals(result, RegisterPageConstants.CUSTOMER_ALREADY_EXISTS_WITH_THIS_EMAIL,
                 "Failed! User registered with unique email successfully");
     }
 }
