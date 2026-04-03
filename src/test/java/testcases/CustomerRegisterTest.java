@@ -10,12 +10,11 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Epic("Authentication Module")
-@Feature("Registration")
+@Feature("Authentication")
 @Listeners({AllureTestNg.class, TestListener.class})
 public class CustomerRegisterTest extends BaseTest {
 
-    @Test(priority = 1, enabled = false)
+    @Test(priority = 1, enabled = false, groups = {"smoke"})
     @Story("Validate Customer Register Page Title")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the customer register page title matches the expected value")
@@ -31,7 +30,7 @@ public class CustomerRegisterTest extends BaseTest {
         );
     }
 
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 2, enabled = true, groups = {"smoke", "e2e"})
     @Story("Customer Registration - Positive Flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that new customer can register successfully with unique email and valid details")
@@ -58,7 +57,7 @@ public class CustomerRegisterTest extends BaseTest {
                 "Failed! User registration failed due to already existing email");
     }
 
-    @Test(priority = 3, enabled = true)
+    @Test(priority = 3, enabled = true, groups = {"e2e"})
     @Story("Customer Registration - Duplicate Email Validation")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the system prevents registration when customer tries to register with an already existing email address")

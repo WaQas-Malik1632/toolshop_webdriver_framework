@@ -2,16 +2,14 @@ package testcases;
 
 import baseTest.BaseTest;
 import constants.LoginPageConstants;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Feature("Authentication")
 public class LoginTest extends BaseTest {
 
-    @Test(priority = 1, enabled = true)
+    @Test(priority = 1, enabled = true, groups = {"smoke"})
     @Story("Validate Login Page Title")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the Login page title matches the expected value")
@@ -27,7 +25,7 @@ public class LoginTest extends BaseTest {
         );
     }
 
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 2, enabled = true, groups = {"smoke", "e2e"})
     @Story("Customer Login - Positive Flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that user can login with valid credentials successfully")
@@ -46,7 +44,7 @@ public class LoginTest extends BaseTest {
         );
     }
 
-    @Test(priority = 3, enabled = true)
+    @Test(priority = 3, enabled = true, groups = {"smoke", "e2e"})
     @Story("Customer Login - Negative Flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that user can't login with invalid credentials")
@@ -65,7 +63,7 @@ public class LoginTest extends BaseTest {
         );
     }
 
-    @Test(priority = 4, enabled = true)
+    @Test(priority = 4, enabled = true, groups = {"e2e"})
     @Story("Reset Password - Registered Email")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that user can reset password using Registered email successfully")
@@ -84,7 +82,7 @@ public class LoginTest extends BaseTest {
         );
     }
 
-    @Test(priority = 5, enabled = true)
+    @Test(priority = 5, enabled = true, groups = {"e2e"})
     @Story("Reset Password - Negative Flow - Unregistered Email")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that user can not reset password using un-registered email")

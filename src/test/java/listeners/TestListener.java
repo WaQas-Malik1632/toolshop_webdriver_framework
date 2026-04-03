@@ -1,5 +1,6 @@
 package listeners;
 
+import basePage.BasePage;
 import io.qameta.allure.Allure;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utils.FileUtils;
 import webDriverManager.DriverManager;
 
 public class TestListener implements ITestListener {
@@ -46,7 +46,7 @@ public class TestListener implements ITestListener {
 
         if (driver != null) {
             String testName = result.getMethod().getMethodName();
-            FileUtils.captureScreenshot(driver, testName);
+            BasePage.captureScreenshot(driver, testName);
 
             try {
                 byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
@@ -70,4 +70,3 @@ public class TestListener implements ITestListener {
         log.warn("TEST SKIPPED: {}", result.getMethod().getMethodName());
     }
 }
-

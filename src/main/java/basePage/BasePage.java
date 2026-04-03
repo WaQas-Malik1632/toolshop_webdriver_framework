@@ -1,8 +1,6 @@
 package basePage;
 
-import block.Button;
-import block.DropDown;
-import block.Input;
+import block.*;
 import helper.ReworkedRetryer;
 import io.qameta.atlas.core.Atlas;
 import io.qameta.atlas.core.context.RetryerContext;
@@ -11,11 +9,15 @@ import io.qameta.atlas.webdriver.WebDriverConfiguration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
@@ -35,7 +37,7 @@ public class BasePage {
     protected Button button;
     protected DropDown dropdown;
     protected Label label;
-    protected Checkbox checkbox;
+    protected CheckBox checkbox;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -47,9 +49,8 @@ public class BasePage {
         this.input = new Input(driver);
         this.button = new Button(driver);
         this.dropdown = new DropDown(driver);
-       // this.label = new Label(driver);
-        this.label= new Label(driver);
-        this.checkbox = new Checkbox(driver);
+        this.label = new Label(driver);
+        this.checkbox = new CheckBox(driver);
     }
 
     protected String getPageTitle() {
@@ -108,6 +109,18 @@ public class BasePage {
 
     protected WebDriverWait getWait() {
         return wait;
+    }
+
+    public static String captureScreenshot(WebDriver driver, String testName) {
+        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        String path = System.getProperty("user.dir") + "/screenshots/" + testName + "_" + System.currentTimeMillis() + ".png";
+        File destination = new File(path);
+        try {
+            FileHandler.copy(srcFile, destination);
+        } catch (IOException e) {
+            //Error case
+        }
+        return path;
     }
 
 }

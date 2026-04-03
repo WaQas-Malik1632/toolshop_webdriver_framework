@@ -27,7 +27,7 @@ public class DriverManager {
     public static Properties loadProperties() throws IOException {
         if (prop == null) {
             prop = new Properties();
-            String configPath = "src/main/java/com/toolshop/qa/config/Config.properties";
+            String configPath = "src/main/java/config/config.properties";
 
             try (FileInputStream fis = new FileInputStream(configPath)) {
                 prop.load(fis);

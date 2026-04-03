@@ -10,12 +10,11 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Epic("E2E Automation")
 @Feature("Customer Account Page")
 @Listeners({AllureTestNg.class, TestListener.class})
 public class CustomerAccountTest extends BaseTest {
 
-    @Test(priority = 1, enabled = true, invocationCount = 1)
+    @Test(priority = 1, enabled = true, invocationCount = 1, groups = {"smoke", "e2e"})
     @Story("Validate logged out flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can logged out successfully")
@@ -32,7 +31,7 @@ public class CustomerAccountTest extends BaseTest {
         );
     }
 
-    @Test(priority = 2, enabled = true, invocationCount = 1)
+    @Test(priority = 2, enabled = true, invocationCount = 1, groups = {"e2e"})
     @Story("Validate accounts profile data update")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can update his profile data")
@@ -53,7 +52,7 @@ public class CustomerAccountTest extends BaseTest {
         );
     }
 
-    @Test(priority = 3, enabled = true, invocationCount = 1)
+    @Test(priority = 3, enabled = true, invocationCount = 1, groups = {"e2e"})
     @Story("Validate update password flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can update password")
@@ -77,7 +76,7 @@ public class CustomerAccountTest extends BaseTest {
         );
     }
 
-    @Test(priority = 4, enabled = true, invocationCount = 1)
+    @Test(priority = 4, enabled = true, invocationCount = 1, groups = {"e2e"})
     @Story("Validate update password -Negative flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can update password")

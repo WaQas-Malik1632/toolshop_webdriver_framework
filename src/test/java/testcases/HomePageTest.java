@@ -9,12 +9,11 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Epic("E2E Automation")
 @Feature("Home Page")
 @Listeners({AllureTestNg.class, TestListener.class})
 public class HomePageTest extends BaseTest {
 
-    @Test(priority = 1, enabled = true)
+    @Test(priority = 1, enabled = true, groups = {"smoke", "e2e"})
     @Story("Validate Home page logo is visible")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that Home page logo is visible and clickable")
@@ -29,7 +28,7 @@ public class HomePageTest extends BaseTest {
         log.info("Home Page Logo visible: {}", actualLogoVisible);
     }
 
-    @Test(priority = 2, enabled = false)
+    @Test(priority = 2, enabled = false, groups = {"e2e"})
     @Story("Validate Customer can purchase multiple products with Credit Card")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can purchase multiple products in single order with Credit Card successfully")
@@ -54,7 +53,7 @@ public class HomePageTest extends BaseTest {
                 "Payment was not successful");
     }
 
-    @Test(priority = 3, enabled = false)
+    @Test(priority = 3, enabled = false, groups = {"e2e"})
     @Story("Validate Customer can purchase any product with Bank Account")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can purchase product successfully with Bank Transfer")
@@ -78,7 +77,7 @@ public class HomePageTest extends BaseTest {
         );
     }
 
-    @Test(priority = 4, enabled = false)
+    @Test(priority = 4, enabled = false, groups = {"e2e"})
     @Story("Validate guest user can purchase any product with COD")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that guest user can purchase product successfully with Cash on Delivery")

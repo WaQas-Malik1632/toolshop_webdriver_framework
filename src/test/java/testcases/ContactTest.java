@@ -9,12 +9,11 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Epic("E2E Automation")
 @Feature("Contact Us Page")
 @Listeners({AllureTestNg.class, TestListener.class})
 public class ContactTest extends BaseTest {
 
-    @Test(priority = 1, enabled = true)
+    @Test(priority = 1, enabled = true, groups = {"smoke", "e2e"})
     @Story("Validate contact page title")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the customer contact page title matches the expected value")
@@ -30,7 +29,7 @@ public class ContactTest extends BaseTest {
         );
     }
 
-    @Test(priority = 2, enabled = true)
+    @Test(priority = 2, enabled = true, groups = {"e2e"})
     @Story("Validate customer can contact with Admin")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the customer can contact successfully")

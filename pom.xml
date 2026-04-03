@@ -14,6 +14,8 @@
     <maven.compiler.source>25</maven.compiler.source>
     <maven.compiler.target>25</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Default suite — override with: mvn test -Dsuite=api or -Dsuite=web-smoke or -Dsuite=web-e2e or -Dsuite=master -->
+    <suite>master</suite>
   </properties>
 
   <dependencies>
@@ -92,6 +94,14 @@
       <version>1.9.25.1</version>
       <scope>runtime</scope>
     </dependency>
+
+    <!-- REST Assured -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>5.5.0</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -119,7 +129,7 @@
             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.25.1/aspectjweaver-1.9.25.1.jar"
           </argLine>
           <suiteXmlFiles>
-            <suiteXmlFile>src/test/resources/E2EAutomationSuit.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/resources/${suite}-suite.xml</suiteXmlFile>
           </suiteXmlFiles>
 
         </configuration>
