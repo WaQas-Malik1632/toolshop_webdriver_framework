@@ -39,7 +39,7 @@ public class ContactTest extends BaseTest {
         String email = "test@gmail.com";
         String subject = "Payments";
         String message = "TestUser is contacting related to payment refund status, as products returned two weeks ago, thanks";
-        String attachmentPath = "C:\\Users\\waqas.naseer\\Downloads\\EmptyFile.txt";
+        String attachmentPath = "C:\\Users\\waqas\\Downloads\\EmptyFile.txt";
 
         log.info("ACTION: Filling Contact Us form --> [Name: {} {}, Email: {}, Subject: {}]", firstName, lastName, email, subject);
 

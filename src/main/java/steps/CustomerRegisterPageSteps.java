@@ -89,12 +89,7 @@ public class CustomerRegisterPageSteps extends BaseSteps {
 
     @Step("Capture Registration Result")
     public String captureRegistrationResult() {
-        return handleResult(onRegistrationPage().globalToastMessage());
+        return handleRegistrationResult(onRegistrationPage().globalToastMessage());
     }
 
-    @Step("Submit login and capture result")
-    public String submitRegisterAndCaptureResult() {
-        //  button.click(onRegistrationPage().registerSubmitBtn());
-        return captureRegistrationResult();
-    }
 }

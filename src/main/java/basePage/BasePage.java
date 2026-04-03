@@ -14,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
@@ -42,7 +43,7 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         this.atlas = new Atlas(new WebDriverConfiguration(driver)).context(
-                new RetryerContext(new ReworkedRetryer(5000L, 100L, singletonList(NoSuchElementException.class))));
+                new RetryerContext(new ReworkedRetryer(2000L, 100L, singletonList(NoSuchElementException.class))));
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT));
 
         // Initialize blocks with WebDriver
@@ -82,25 +83,70 @@ public class BasePage {
         return currentUrl;
     }
 
-    protected String handleResult(AtlasWebElement<?> errorElement) {
-        log.debug("Waiting for result: success URL or error message");
-        try {
-            // Wait for URL to contain /account (success case)
-            wait.until(ExpectedConditions.urlContains("/account"));
-            log.info("Action successful. Redirected to: {}", driver.getCurrentUrl());
-            return driver.getCurrentUrl();
+    protected String handleLoginResult(AtlasWebElement<?> errorElement) {
+        log.debug("Waiting for result: success URL or error toast — polling both simultaneously");
 
-        } catch (Exception e) {
-            // If URL doesn't change, check for error message
-            try {
-                wait.until(ExpectedConditions.visibilityOf(errorElement));
-                String errorText = label.getText(errorElement);
-                log.warn("Action failed. Error: {}", errorText);
-                return errorText;
-            } catch (Exception ex) {
-                throw new RuntimeException("Neither success nor error condition met", ex);
+        // Poll every 500ms for up to 20s — whichever condition appears first wins
+        FluentWait<WebDriver> fluentWait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(DEFAULT_TIMEOUT))
+                .pollingEvery(Duration.ofMillis(500))
+                .ignoring(Exception.class);
+
+        String result = fluentWait.until(d -> {
+            // Success: URL changed to /account
+            if (d.getCurrentUrl().contains("/account")) {
+                log.info("Action successful. Redirected to: {}", d.getCurrentUrl());
+                return d.getCurrentUrl();
             }
-        }
+            // Failure: toast/error message is visible
+            try {
+                if (errorElement.getWrappedElement().isDisplayed()) {
+                    String errorText = errorElement.getText().trim();
+                    if (!errorText.isEmpty()) {
+                        log.warn("Action failed. Error: {}", errorText);
+                        return errorText;
+                    }
+                }
+            } catch (Exception ignored) {
+                // element not yet in DOM — keep polling
+            }
+            return null; // neither condition met yet — keep polling
+        });
+
+        return result;
+    }
+
+    protected String handleRegistrationResult(AtlasWebElement<?> errorElement) {
+        log.debug("Waiting for result: success (/login) or error message on register page");
+
+        // Poll every 500ms for up to 20s — whichever condition appears first wins
+        FluentWait<WebDriver> fluentWait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(DEFAULT_TIMEOUT))
+                .pollingEvery(Duration.ofMillis(500))
+                .ignoring(Exception.class);
+
+        String result = fluentWait.until(d -> {
+            // Success: URL changed to /account
+            if (d.getCurrentUrl().contains("/login")) {
+                log.info("Action successful. Redirected to: {}", d.getCurrentUrl());
+                return d.getCurrentUrl();
+            }
+            // Failure: toast/error message is visible
+            try {
+                if (errorElement.getWrappedElement().isDisplayed()) {
+                    String errorText = errorElement.getText().trim();
+                    if (!errorText.isEmpty()) {
+                        log.warn("Action failed. Error: {}", errorText);
+                        return errorText;
+                    }
+                }
+            } catch (Exception ignored) {
+                // element not yet in DOM — keep polling
+            }
+            return null; // neither condition met yet — keep polling
+        });
+
+        return result;
     }
 
     protected <T> T on(Class<T> pageClass) {

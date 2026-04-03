@@ -12,18 +12,16 @@ import java.time.Duration;
 public class Label {
     private static final Logger log = LogManager.getLogger(Label.class);
     private static final int DEFAULT_WAIT_TIMEOUT = 20;
-    private final WebDriverWait wait;
+    private final WebDriver driver;
 
-    public Label (WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_WAIT_TIMEOUT));
+    public Label(WebDriver driver) {
+        this.driver = driver;
     }
 
     public String getText(AtlasWebElement<?> element) {
         log.debug("Getting text from label");
-
-        waitForVisible(element);
+        waitForVisible(element, DEFAULT_WAIT_TIMEOUT);
         String text = element.getText().trim();
-
         log.debug("Retrieved text: {}", text);
         return text;
     }
@@ -38,28 +36,22 @@ public class Label {
     }
 
     public String waitForToast(AtlasWebElement<?> element) {
-        log.debug("Getting toast/alert message");
-
+        log.debug("Waiting for toast/alert message");
         waitForVisible(element, DEFAULT_WAIT_TIMEOUT);
         String text = element.getText().trim();
-
         log.debug("Toast message: {}", text);
         return text;
     }
 
-    private void waitForVisible(AtlasWebElement<?> element) {
-        waitForVisible(element, DEFAULT_WAIT_TIMEOUT);
-    }
-
     private void waitForVisible(AtlasWebElement<?> element, int timeoutSeconds) {
+        // Create a fresh WebDriverWait each time — never mutate a shared instance
+        WebDriverWait freshWait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
         try {
-            wait.withTimeout(Duration.ofSeconds(timeoutSeconds))
-                    .until(ExpectedConditions.visibilityOf(element.getWrappedElement()));
+            freshWait.until(ExpectedConditions.visibilityOf(element.getWrappedElement()));
             log.debug("Element is visible");
         } catch (Exception e) {
             log.error("Element not visible within {} seconds: {}", timeoutSeconds, e.getMessage());
             throw e;
         }
     }
-
 }

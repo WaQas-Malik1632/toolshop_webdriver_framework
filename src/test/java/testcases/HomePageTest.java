@@ -21,14 +21,13 @@ public class HomePageTest extends BaseTest {
         log.info("Executing test: {}", testMethod.getName());
 
         boolean actualLogoVisible = onHomePage()
-                .navigateToHomePage()
                 .isHomePageLogoVisibleAndClickable();
 
         Assert.assertTrue(actualLogoVisible, "Logo is not visible");
         log.info("Home Page Logo visible: {}", actualLogoVisible);
     }
 
-    @Test(priority = 2, enabled = false, groups = {"e2e"})
+    @Test(priority = 2, enabled = true, groups = {"e2e"})
     @Story("Validate Customer can purchase multiple products with Credit Card")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can purchase multiple products in single order with Credit Card successfully")
@@ -38,8 +37,8 @@ public class HomePageTest extends BaseTest {
         // Pre-condition: Login and navigate to home page
         onLoginPage()
                 .navigateToLoginPage()
-                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"))
-                .navigateToHomePage();
+                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"));
+             //   .navigateToHomePage();
 
         String actualMessage = onHomePage()
                 .purchaseMultipleProductsWithCreditCard(
@@ -48,12 +47,11 @@ public class HomePageTest extends BaseTest {
                         "587",
                         "Tester User");
 
-        Assert.assertEquals(
-                actualMessage, HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
+        Assert.assertEquals(actualMessage, HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
                 "Payment was not successful");
     }
 
-    @Test(priority = 3, enabled = false, groups = {"e2e"})
+    @Test(priority = 3, enabled = true, groups = {"e2e"})
     @Story("Validate Customer can purchase any product with Bank Account")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can purchase product successfully with Bank Transfer")
@@ -63,19 +61,18 @@ public class HomePageTest extends BaseTest {
         // Pre-condition: Login and navigate to home page
         onLoginPage()
                 .navigateToLoginPage()
-                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"))
-                .navigateToHomePage();
+                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"));
+            //    .navigateToHomePage();
 
         // Test execution: Purchase item with bank transfer
         String actualMessage = onHomePage()
                 .purchaseItemWithBankTransfer("Test Bank", "Test user", "1015112101512");
 
-        Assert.assertEquals(
-                actualMessage, HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
+        Assert.assertEquals(actualMessage, HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
                 "Payment was not successful");
     }
 
-    @Test(priority = 4, enabled = false, groups = {"e2e"})
+    @Test(priority = 4, enabled = true, groups = {"e2e"})
     @Story("Validate guest user can purchase any product with COD")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that guest user can purchase product successfully with Cash on Delivery")
@@ -84,7 +81,6 @@ public class HomePageTest extends BaseTest {
 
         // Test execution: Purchase as guest with COD (no login required)
         String actualMessage = onHomePage()
-                .navigateToHomePage()
                 .purchaseItemFlowAsGuestWithCod(
                         "guest@example.com",
                         "Tester",
@@ -93,8 +89,7 @@ public class HomePageTest extends BaseTest {
                         "Berlin",
                         "Berlin",
                         "Germany",
-                        "10115"
-                );
+                        "10115");
 
         Assert.assertEquals(actualMessage, HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
                 "Payment was not successful");

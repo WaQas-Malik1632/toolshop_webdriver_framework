@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 @Listeners({AllureTestNg.class, TestListener.class})
 public class LoginTest extends BaseTest {
 
-    @Test(priority = 1, enabled = false, groups = {"smoke"})
+    @Test(priority = 1, enabled = true, groups = {"smoke"})
     @Story("Validate Login Page Title")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the Login page title matches the expected value")
@@ -45,7 +45,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(result, LoginPageConstants.CUSTOMER_ACCOUNT_PAGE_URL, "Login failed: URL mismatch");
     }
 
-    @Test(priority = 3, enabled = false, groups = {"smoke", "e2e"})
+    @Test(priority = 3, enabled = true, groups = {"smoke", "e2e"})
     @Story("Customer Login - Negative Flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that user can't login with invalid credentials")

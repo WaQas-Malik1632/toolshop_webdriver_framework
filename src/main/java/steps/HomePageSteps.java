@@ -12,7 +12,7 @@ public class HomePageSteps extends BaseSteps {
 
     @Step("Navigate to Home Page")
     public HomePageSteps navigateToHomePage() {
-        button.waitAndClick(onHomePage().homeNavMenu());
+       // button.isClickable(onHomePage().homeNavMenu());
         onHomePage().homePageLogo().isDisplayed();
 
         log.info("Navigated to Home Page");

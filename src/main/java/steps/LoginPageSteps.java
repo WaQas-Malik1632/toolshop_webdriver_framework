@@ -56,9 +56,8 @@ public class LoginPageSteps extends BaseSteps {
 
     @Step("Capture login result")
     public String captureLoginResult() {
-        return handleResult(
-                onLoginPage().globalToastMessage()
-        );
+        return handleLoginResult(
+                onLoginPage().globalToastMessage());
     }
 
     @Step("Submit login and capture result")
