@@ -61,8 +61,9 @@ pipeline {
                     usernameVariable: 'TEST_USER',
                     passwordVariable: 'TEST_PASS'
                 )]) {
+                    // -fae = fail at end: run all tests, don't stop on first failure
                     bat """
-                        mvn test ^
+                        mvn test -fae ^
                             -Dsuite=%SUITE% ^
                             -Dbrowser=%BROWSER% ^
                             "-Dapp.base.url=%APP_URL%" ^
@@ -74,9 +75,9 @@ pipeline {
             }
             post {
                 always {
-                    junit(
-                        testResults: 'target/surefire-reports/*.xml',
-                        allowEmptyResults: true
+                    testNG(
+                        reportFilenamePattern: 'target/surefire-reports/testng-results.xml',
+                        failureOnFailedTestConfig: false
                     )
                 }
             }
