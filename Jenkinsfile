@@ -21,16 +21,6 @@ pipeline {
         )
     }
 
-    // ─── Environment Variables ────────────────────────────────────────────────
-    environment {
-        JAVA_HOME        = tool name: 'JDK-25', type: 'jdk'
-        MAVEN_HOME       = tool name: 'Maven-3', type: 'maven'
-        PATH             = "${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${env.PATH}"
-        ALLURE_RESULTS   = 'allure-results'
-        TEST_CREDS       = credentials('toolshop-test-credentials')  // username/password secret
-    }
-
-    // ─── Pipeline Options ─────────────────────────────────────────────────────
     options {
         buildDiscarder(logRotator(numToKeepStr: '20'))
         timestamps()
@@ -48,48 +38,57 @@ pipeline {
             }
         }
 
-        // ── 2. Build & Compile ────────────────────────────────────────────────
-        stage('Build') {
+        // ── 2. Verify Tools ───────────────────────────────────────────────────
+        stage('Verify Tools') {
             steps {
-                dir('toolshop_webdriver_framework') {
-                    sh 'mvn clean compile test-compile -q'
-                }
+                bat 'java -version'
+                bat 'mvn -version'
             }
         }
 
-        // ── 3. Run Tests ──────────────────────────────────────────────────────
+        // ── 3. Build & Compile ────────────────────────────────────────────────
+        stage('Build') {
+            steps {
+                bat 'mvn clean compile test-compile -q'
+            }
+        }
+
+        // ── 4. Run Tests ──────────────────────────────────────────────────────
         stage('Test') {
             steps {
-                dir('toolshop_webdriver_framework') {
-                    sh """
-                        mvn test \
-                            -Dsuite=${params.SUITE} \
-                            -Dbrowser=${params.BROWSER} \
-                            -Dapp.base.url=${params.APP_URL} \
-                            -Duser.login.email=${TEST_CREDS_USR} \
-                            -Duser.login.password=${TEST_CREDS_PSW} \
+                withCredentials([usernamePassword(
+                    credentialsId: 'toolshop-test-credentials',
+                    usernameVariable: 'TEST_USER',
+                    passwordVariable: 'TEST_PASS'
+                )]) {
+                    bat """
+                        mvn test ^
+                            -Dsuite=%SUITE% ^
+                            -Dbrowser=%BROWSER% ^
+                            "-Dapp.base.url=%APP_URL%" ^
+                            "-Duser.login.email=%TEST_USER%" ^
+                            "-Duser.login.password=%TEST_PASS%" ^
                             -q
                     """
                 }
             }
             post {
                 always {
-                    // Archive raw TestNG surefire reports
                     junit(
-                        testResults: 'toolshop_webdriver_framework/target/surefire-reports/*.xml',
+                        testResults: 'target/surefire-reports/*.xml',
                         allowEmptyResults: true
                     )
                 }
             }
         }
 
-        // ── 4. Allure Report ──────────────────────────────────────────────────
+        // ── 5. Allure Report ──────────────────────────────────────────────────
         stage('Allure Report') {
             steps {
                 allure([
                     includeProperties: false,
                     jdk: '',
-                    results: [[path: "toolshop_webdriver_framework/${env.ALLURE_RESULTS}"]]
+                    results: [[path: 'allure-results']]
                 ])
             }
         }
@@ -97,30 +96,19 @@ pipeline {
 
     // ─── Post Actions ─────────────────────────────────────────────────────────
     post {
-
         always {
-            // Archive screenshots on every run
             archiveArtifacts(
-                artifacts: 'toolshop_webdriver_framework/screenshots/*.png',
-                allowEmptyArchive: true
-            )
-            // Archive logs
-            archiveArtifacts(
-                artifacts: 'toolshop_webdriver_framework/logs/automation.log',
+                artifacts: 'screenshots/*.png, logs/automation.log',
                 allowEmptyArchive: true
             )
         }
-
         failure {
             echo "Pipeline FAILED — check Allure report and archived screenshots."
         }
-
         success {
-            echo "Pipeline PASSED — all tests in '${params.SUITE}' suite completed successfully."
+            echo "Pipeline PASSED — suite '${params.SUITE}' completed successfully."
         }
-
         cleanup {
-            // Clean workspace after every build to avoid stale state
             cleanWs()
         }
     }
