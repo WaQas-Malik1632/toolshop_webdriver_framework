@@ -35,6 +35,15 @@ public class DriverManager {
                 log.error("Failed to load configuration file: {}", configPath, e);
                 throw e;
             }
+
+            // Allow Jenkins / CLI system properties to override config file values
+            for (String key : new String[]{"browser", "app.base.url", "user.login.email", "user.login.password"}) {
+                String sysProp = System.getProperty(key);
+                if (sysProp != null && !sysProp.isEmpty()) {
+                    prop.setProperty(key, sysProp);
+                    log.info("System property override: {}={}", key, key.contains("password") ? "***" : sysProp);
+                }
+            }
         }
         return prop;
     }
@@ -62,7 +71,8 @@ public class DriverManager {
             case "chrome":
                 WebDriverManager.chromedriver().clearDriverCache().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation", "load-extension"));
+                chromeOptions.setExperimentalOption("excludeSwitches",
+                        Arrays.asList("enable-automation", "load-extension"));
                 chromeOptions.addArguments(
                         "--restrict-iframe-permissions",
                         "--disable-popup-blocking",
@@ -76,7 +86,8 @@ public class DriverManager {
             case "edge":
                 WebDriverManager.edgedriver().clearDriverCache().setup();
                 EdgeOptions edgeOptions = new EdgeOptions();
-                edgeOptions.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation", "load-extension"));
+                edgeOptions.setExperimentalOption("excludeSwitches",
+                        Arrays.asList("enable-automation", "load-extension"));
                 edgeOptions.addArguments(
                         "--restrict-iframe-permissions",
                         "--disable-popup-blocking",
@@ -90,7 +101,8 @@ public class DriverManager {
             case "chrome-headless":
                 WebDriverManager.chromedriver().clearDriverCache().setup();
                 ChromeOptions chromeHeadlessOptions = new ChromeOptions();
-                chromeHeadlessOptions.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation", "load-extension"));
+                chromeHeadlessOptions.setExperimentalOption("excludeSwitches",
+                        Arrays.asList("enable-automation", "load-extension"));
                 chromeHeadlessOptions.addArguments(
                         "--headless",
                         "--restrict-iframe-permissions",
@@ -105,7 +117,8 @@ public class DriverManager {
             case "edge-headless":
                 WebDriverManager.edgedriver().clearDriverCache().setup();
                 EdgeOptions edgeHeadlessOptions = new EdgeOptions();
-                edgeHeadlessOptions.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation", "load-extension"));
+                edgeHeadlessOptions.setExperimentalOption("excludeSwitches",
+                        Arrays.asList("enable-automation", "load-extension"));
                 edgeHeadlessOptions.addArguments(
                         "--headless",
                         "--restrict-iframe-permissions",
