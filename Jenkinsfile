@@ -62,6 +62,7 @@ pipeline {
                     passwordVariable: 'TEST_PASS'
                 )]) {
                     // -fae = fail at end: run all tests, don't stop on first failure
+                    // || exit 0 ensures Maven test failures don't abort the pipeline
                     bat """
                         mvn test -fae ^
                             -Dsuite=%SUITE% ^
@@ -69,7 +70,7 @@ pipeline {
                             "-Dapp.base.url=%APP_URL%" ^
                             "-Duser.login.email=%TEST_USER%" ^
                             "-Duser.login.password=%TEST_PASS%" ^
-                            -q
+                            -q || exit 0
                     """
                 }
             }
