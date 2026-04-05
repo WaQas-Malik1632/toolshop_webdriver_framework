@@ -40,7 +40,7 @@ public class CustomerRegisterTest extends BaseTest {
         String result = onRegisterPage()
                 .navigateToRegisterPage()
                 .registerCustomer(
-                        "Test5",
+                        "Test",
                         "User",
                         "1987-05-20",
                         "Main Street 123",
@@ -49,7 +49,7 @@ public class CustomerRegisterTest extends BaseTest {
                         "District 4",
                         "Hungary",
                         "301234567",
-                        "Tester5@yopmail.com",
+                        "Tester@yopmail.com",
                         "welcome01@Pass")
                 .captureRegistrationResult();
 
@@ -77,7 +77,7 @@ public class CustomerRegisterTest extends BaseTest {
                         "District 4",
                         "Hungary",
                         "301234567",
-                        "Tester3@yopmail.com",
+                        "Tester@yopmail.com",
                         "welcome01@Pass")
                 .captureRegistrationResult();
 

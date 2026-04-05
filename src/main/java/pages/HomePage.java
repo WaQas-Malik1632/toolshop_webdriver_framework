@@ -12,7 +12,7 @@ public interface HomePage extends WebPage {
     @FindBy("//a[contains(text(),'Home')]")
     AtlasWebElement<?> homeNavMenu();
 
-    @FindBy("//svg[@id='Layer_1']")
+    @FindBy("//*[@id='Layer_1']")
     AtlasWebElement<?> homePageLogo();
 
     @FindBy("//img[@alt='Combination Pliers']")
@@ -48,7 +48,7 @@ public interface HomePage extends WebPage {
     @FindBy("//a[@aria-label='cart']")
     AtlasWebElement<?> openCartBtn();
 
-    @FindBy("//button[text()='Continue Shopping']")
+    @FindBy("//button[text()='pages.checkout.cart.continue-shopping']")
     AtlasWebElement<?> continueShoppingBtn();
 
     @FindBy("//tbody/tr[1]/td[5]/a[1]/fa-icon[1]//*[name()='svg']")

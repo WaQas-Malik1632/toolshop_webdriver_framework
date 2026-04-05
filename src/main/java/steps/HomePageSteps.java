@@ -12,7 +12,7 @@ public class HomePageSteps extends BaseSteps {
 
     @Step("Navigate to Home Page")
     public HomePageSteps navigateToHomePage() {
-       // button.isClickable(onHomePage().homeNavMenu());
+        button.waitAndClick(onHomePage().homeNavMenu());
         onHomePage().homePageLogo().isDisplayed();
 
         log.info("Navigated to Home Page");
@@ -20,7 +20,7 @@ public class HomePageSteps extends BaseSteps {
     }
 
     @Step("Verify Home Page Logo is visible and clickable")
-    public boolean isHomePageLogoVisibleAndClickable() {
+    public boolean isHomePageLogoVisible() {
         return button.isClickable(onHomePage().homePageLogo());
     }
 
@@ -98,7 +98,7 @@ public class HomePageSteps extends BaseSteps {
         button.waitAndClick(onHomePage().openCartBtn());
 
         button.waitAndClick(onHomePage().proceedToCheckoutBtn());
-        button.waitAndClick(onHomePage().switchToGuestTab());
+        button.isClickable(onHomePage().switchToGuestTab());
 
         input.enterText(onHomePage().inputGuestEmail(), formData.getGuestEmail());
         input.enterText(onHomePage().inputGuestFirstName(), formData.getGuestFirstName());
