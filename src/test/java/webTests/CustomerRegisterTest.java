@@ -37,6 +37,8 @@ public class CustomerRegisterTest extends BaseTest {
     public void validateCustomerCanRegisterWithUniqueEmailSuccessfully() {
         log.info("Executing test: {}", testMethod.getName());
 
+        String uniqueEmail = "tester_" + System.currentTimeMillis() + "@yopmail.com";
+
         String result = onRegisterPage()
                 .navigateToRegisterPage()
                 .registerCustomer(
@@ -49,7 +51,7 @@ public class CustomerRegisterTest extends BaseTest {
                         "District 4",
                         "Hungary",
                         "301234567",
-                        "Tester@yopmail.com",
+                        uniqueEmail,
                         "welcome01@Pass")
                 .captureRegistrationResult();
 
