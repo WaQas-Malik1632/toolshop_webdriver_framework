@@ -6,6 +6,7 @@ import io.qameta.atlas.webdriver.extension.FindBy;
 
 public interface LoginPage extends WebPage {
 
+
     @FindBy("//a[contains(text(),'Sign in')]")
     AtlasWebElement<?> loginMenuBtn();
 
@@ -30,7 +31,10 @@ public interface LoginPage extends WebPage {
     @FindBy("//input[@value='Set New Password']")
     AtlasWebElement<?> setNewPassBtn();
 
-    @FindBy("//div[contains(@class,'alert-danger') or contains(@class,'alert-success')]")
+    @FindBy("//div[contains(@class,'alert') and contains(@class,'mt-3')]")
     AtlasWebElement<?> globalToastMessage();
+
+    @FindBy("//div[contains(@class,'alert') and not(contains(@class,'mt-3'))]")
+    AtlasWebElement<?> globalErrorMessage();
 
 }

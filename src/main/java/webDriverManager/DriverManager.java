@@ -16,9 +16,9 @@ import java.util.Properties;
 
 public class DriverManager {
 
-    private static final Logger log = LogManager.getLogger(DriverManager.class);
-    private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-    private static Properties prop;
+    public static final Logger log = LogManager.getLogger(DriverManager.class);
+    public static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    public static Properties prop;
 
     public static WebDriver getDriver() {
         return driver.get();
@@ -66,8 +66,10 @@ public class DriverManager {
     public static void initializeDriver(String browserName, String baseUrl) {
         log.info("Initializing browser: {}", browserName);
 
+        //browserName = browserName.trim().toLowerCase();
         WebDriver webDriver;
-        switch (browserName.toLowerCase()) {
+
+        switch (browserName.trim().toLowerCase()) {
             case "chrome":
                 WebDriverManager.chromedriver().clearDriverCache().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
@@ -81,6 +83,7 @@ public class DriverManager {
                         "--remote-allow-origins=*");
                 chromeOptions.enableBiDi();
                 webDriver = new ChromeDriver(chromeOptions);
+                webDriver.manage().window().maximize();
                 break;
 
             case "edge":
@@ -96,6 +99,7 @@ public class DriverManager {
                         "--remote-allow-origins=*");
                 edgeOptions.enableBiDi();
                 webDriver = new EdgeDriver(edgeOptions);
+                webDriver.manage().window().maximize();
                 break;
 
             case "chrome-headless":
@@ -136,7 +140,6 @@ public class DriverManager {
         }
 
         driver.set(webDriver);
-        webDriver.manage().window().maximize();
         log.info("Navigating to Application URL: {}", baseUrl);
         webDriver.get(baseUrl);
     }

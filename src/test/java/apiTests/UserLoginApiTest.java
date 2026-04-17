@@ -17,17 +17,20 @@ public class UserLoginApiTest extends AuthenticatedApiTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("POST /users/login - valid credentials return access_token")
     public void loginWithValidCredentials() {
-        String email = prop.getProperty("api.user.email");
-        String password = prop.getProperty("api.user.password");
-        log.info("ACTION: POST /users/login | email: {}", email);
+
+        log.info("ACTION: POST /users/login | email: {}", apiUserEmail);
 
         Response response = given()
-                .body("{\"email\":\"" + email + "\",\"password\":\"" + password + "\"}")
-                .when().post("/users/login").then().extract().response();
+                .body("{\"email\":\"" + apiUserEmail + "\",\"password\":\"" + apiUserPassword + "\"}")
+                .when()
+                .post("/users/login")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 200);
-        assertFieldNotEmpty(response, "access_token");
-        assertFieldEquals(response, "token_type", "bearer");
+        apiBaseSteps.assertStatusCode(response, 200);
+        apiBaseSteps.assertFieldNotEmpty(response, "access_token");
+        apiBaseSteps.assertFieldEquals(response, "token_type", "bearer");
         Assert.assertTrue(response.jsonPath().getInt("expires_in") > 0,
                 "expires_in should be > 0, was: " + response.jsonPath().getInt("expires_in"));
         log.info("RESULT: Login successful | token_type={} | expires_in={}",
@@ -39,15 +42,18 @@ public class UserLoginApiTest extends AuthenticatedApiTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("POST /users/login - invalid credentials return 401")
     public void loginWithInvalidCredentials() {
-        String email     = prop.getProperty("api.user.email");
-        String wrongPass = prop.getProperty("api.user.wrong.password");
-        log.info("ACTION: POST /users/login with wrong password | email: {}", email);
+
+        log.info("ACTION: POST /users/login with wrong password | email: {}", apiUserEmail);
 
         Response response = given()
-                .body("{\"email\":\"" + email + "\",\"password\":\"" + wrongPass + "\"}")
-                .when().post("/users/login").then().extract().response();
+                .body("{\"email\":\"" + apiUserEmail + "\",\"password\":\"" + apiWrongLoginPass + "\"}")
+                .when()
+                .post("/users/login")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 401);
+        apiBaseSteps.assertStatusCode(response, 401);
         log.info("RESULT: Login correctly rejected | body='{}'", response.body().asString());
     }
 
@@ -56,15 +62,20 @@ public class UserLoginApiTest extends AuthenticatedApiTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("GET /users/me - returns authenticated user info")
     public void getAuthenticatedUserProfile() {
-        String expectedEmail = prop.getProperty("api.user.email");
-        log.info("ACTION: GET /users/me | expected email: {}", expectedEmail);
 
-        Response response = given().when().get("/users/me").then().extract().response();
+        log.info("ACTION: GET /users/me | expected email: {}", apiUserEmail);
 
-        assertStatusCode(response, 200);
-        assertFieldEquals(response, "email", expectedEmail);
-        assertFieldNotEmpty(response, "first_name");
-        assertFieldNotEmpty(response, "last_name");
+        Response response = given()
+                .when()
+                .get("/users/me")
+                .then()
+                .extract()
+                .response();
+
+        apiBaseSteps.assertStatusCode(response, 200);
+        apiBaseSteps.assertFieldEquals(response, "email", apiUserEmail);
+        apiBaseSteps.assertFieldNotEmpty(response, "first_name");
+        apiBaseSteps.assertFieldNotEmpty(response, "last_name");
         log.info("RESULT: Profile retrieved | email={} | name={} {}",
                 response.jsonPath().getString("email"),
                 response.jsonPath().getString("first_name"),
@@ -76,17 +87,20 @@ public class UserLoginApiTest extends AuthenticatedApiTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("POST /users/forgot-password - registered email returns success")
     public void forgotPasswordWithRegisteredEmail() {
-        String email = prop.getProperty("api.user.reset.email");
-        log.info("ACTION: POST /users/forgot-password | email: {}", email);
+        log.info("ACTION: POST /users/forgot-password | email: {}", apiResetEmail);
 
         Response response = given()
-                .body("{\"email\":\"" + email + "\"}")
-                .when().post("/users/forgot-password").then().extract().response();
+                .body("{\"email\":\"" + apiResetEmail + "\"}")
+                .when()
+                .post("/users/forgot-password")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 200);
-        Boolean success = response.jsonPath().getBoolean("success");
+        apiBaseSteps.assertStatusCode(response, 200);
+        boolean success = response.jsonPath().getBoolean("success");
         Assert.assertTrue(success, "Expected success=true for registered email but was: " + success);
-        log.info("RESULT: Password reset successful | success={}", success);
+        log.info("RESULT: Password reset successful | success={}", true);
     }
 
 }

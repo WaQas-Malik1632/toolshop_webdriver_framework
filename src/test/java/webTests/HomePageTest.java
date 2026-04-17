@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 @Listeners({AllureTestNg.class, TestListener.class})
 public class HomePageTest extends BaseTest {
 
-    @Test(priority = 1, enabled = false, groups = {"smoke", "e2e"})
+    @Test(priority = 1, enabled = true, groups = {"smoke", "e2e"})
     @Story("Validate Home page logo is visible")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that Home page logo is visible and clickable")
@@ -26,7 +26,7 @@ public class HomePageTest extends BaseTest {
         log.info("Home Page Logo visible: {}", actualLogoVisible);
     }
 
-    @Test(priority = 2, enabled = false, groups = {"e2e"})
+    @Test(priority = 2, enabled = true, groups = {"e2e"})
     @Story("Validate Customer can purchase multiple products with Credit Card")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can purchase multiple products in single order with Credit Card successfully")
@@ -36,7 +36,7 @@ public class HomePageTest extends BaseTest {
         // Pre-condition: Login and navigate to home page
         onLoginPage()
                 .navigateToLoginPage()
-                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"))
+                .logInAs(loginUserEmail, loginUserPass)
                 .navigateToHomePage();
 
         String actualMessage = onHomePage()
@@ -50,7 +50,7 @@ public class HomePageTest extends BaseTest {
                 "Payment was not successful");
     }
 
-    @Test(priority = 3, enabled = false, groups = {"e2e"})
+    @Test(priority = 3, enabled = true, groups = {"e2e"})
     @Story("Validate Customer can purchase any product with Bank Account")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can purchase product successfully with Bank Transfer")
@@ -60,7 +60,7 @@ public class HomePageTest extends BaseTest {
         // Pre-condition: Login and navigate to home page
         onLoginPage()
                 .navigateToLoginPage()
-                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"))
+                .logInAs(loginUserEmail, loginUserPass)
                 .navigateToHomePage();
 
         // Test execution: Purchase item with bank transfer
@@ -83,7 +83,7 @@ public class HomePageTest extends BaseTest {
                 .purchaseItemFlowAsGuestWithCod(
                         "guest@example.com",
                         "Tester",
-                        "Naseer",
+                        "viki",
                         "123 Test St",
                         "Berlin",
                         "Berlin",

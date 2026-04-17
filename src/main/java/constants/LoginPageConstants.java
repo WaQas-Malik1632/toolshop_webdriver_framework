@@ -16,3 +16,4 @@ public interface LoginPageConstants {
     public static final String FORGOT_PASSWORD_RESET_SUCCESS_MESSAGE = "Your password is successfully updated!";
 
 }
+

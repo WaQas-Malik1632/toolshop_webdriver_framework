@@ -39,10 +39,13 @@ public interface CustomerAccountPage extends WebPage {
     @FindBy("//a[@id='menu']")
     AtlasWebElement<?> navMenu();
 
-    @FindBy("//a[contains(text(), 'Sign out')]")
+    @FindBy("//a[normalize-space()='Sign out']")
     AtlasWebElement<?> signOutLink();
 
-    @FindBy("//div[contains(@class,'alert-danger') or contains(@class,'alert-success')]")
+    @FindBy("//div[contains(@class,'alert alert-danger mt-3') or contains(@class,'alert alert-success mt-3')]")
     AtlasWebElement<?> globalToastMessage();
+
+    @FindBy("//div[contains(@class,'alert alert-danger') or contains(@class,'alert alert-success')]")
+    AtlasWebElement<?> globalErrorMessage();
 
 }

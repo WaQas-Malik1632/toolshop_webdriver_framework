@@ -7,3 +7,4 @@ public interface ContactPageConstants {
     public static final String CONTACT_MESSAGE_SUCCESS_MESSAGE = "Thanks for your message! We will contact you shortly.";
 
 }
+

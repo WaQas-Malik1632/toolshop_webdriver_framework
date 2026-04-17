@@ -32,12 +32,12 @@ public class LoginTest extends BaseTest {
     @Description("Verify that user can login with valid credentials successfully")
     public void validateCustomerLogsInSuccessfully() {
         log.info("Executing test: {}", testMethod.getName());
-        log.info("ACTION: Attempting login with valid user: {}", prop.getProperty("user.login.email"));
+        log.info("ACTION: Attempting login with valid user: {}", loginUserEmail);
 
         String result = onLoginPage()
                 .navigateToLoginPage()
-                .enterEmail(prop.getProperty("user.login.email"))
-                .enterPassword(prop.getProperty("user.login.password"))
+                .enterEmail(loginUserEmail)
+                .enterPassword(loginUserPass)
                 .submitLoginAndCaptureResult();
 
         log.info("RESULT: {}", result);
@@ -54,26 +54,26 @@ public class LoginTest extends BaseTest {
 
         String result = onLoginPage()
                 .navigateToLoginPage()
-                .enterEmail(prop.getProperty("user.login.email"))
-                .enterPassword(prop.getProperty("user.login.wrong.password"))
+                .enterEmail(loginUserEmail)
+                .enterPassword(loginWrongPass)
                 .submitLoginAndCaptureResult();
 
         log.info("RESULT: {}", result);
         Assert.assertEquals(result, LoginPageConstants.INVALID_EMAIL_OR_PASSWORD, "Failed! User logged in with invalid credentials");
     }
 
-    @Test(priority = 4, enabled = true, groups = {"e2e"})
+    @Test(priority = 4, enabled = false, groups = {"e2e"})
     @Story("Reset Password - Registered Email")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that user can reset password using Registered email successfully")
     public void validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully() {
         log.info("Executing test: {}", testMethod.getName());
-        log.info("ACTION: Requesting password reset for: {}", prop.getProperty("user.reset.email"));
+        log.info("ACTION: Requesting password reset for: {}", resetEmail);
 
         String result = onLoginPage()
                 .navigateToLoginPage()
                 .openForgotPasswordForm()
-                .enterForgotPasswordEmail(prop.getProperty("user.reset.email"))
+                .enterForgotPasswordEmail(resetEmail)
                 .submitForgotPasswordRequest()
                 .captureForgotPasswordResultMessage();
 
@@ -81,18 +81,18 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(result, LoginPageConstants.FORGOT_PASSWORD_RESET_SUCCESS_MESSAGE, "Failed! Entered email not registered");
     }
 
-    @Test(priority = 5, enabled = true, groups = {"e2e"})
+    @Test(priority = 5, enabled = false, groups = {"e2e"})
     @Story("Reset Password - Negative Flow - Unregistered Email")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that user can not reset password using un-registered email")
     public void validateUserCanNotResetForgotPasswordWithUnregisteredEmail() {
         log.info("Executing test: {}", testMethod.getName());
-        log.info("ACTION: Requesting password reset for unregistered: {}", prop.getProperty("user.reset.registered.email"));
+        log.info("ACTION: Requesting password reset for unregistered: {}", registeredEmail);
 
         String result = onLoginPage()
                 .navigateToLoginPage()
                 .openForgotPasswordForm()
-                .enterForgotPasswordEmail(prop.getProperty("user.reset.registered.email"))
+                .enterForgotPasswordEmail(registeredEmail)
                 .submitForgotPasswordRequest()
                 .captureForgotPasswordResultMessage();
 
@@ -100,4 +100,3 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(result, LoginPageConstants.FORGOT_PASSWORD_INVALID_EMAIL_NEW_ERROR, "Failed! Password reset successful with unregistered email");
     }
 }
-

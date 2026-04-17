@@ -1,7 +1,7 @@
 package steps;
 
 import io.qameta.allure.Step;
-import model.CustomerRegistrationFormData;
+import utils.CustomerRegistrationFormData;
 import org.openqa.selenium.WebDriver;
 
 public class CustomerRegisterPageSteps extends BaseSteps {
@@ -32,8 +32,7 @@ public class CustomerRegisterPageSteps extends BaseSteps {
     }
 
     @Step("Fill Customer Registration Form")
-    public CustomerRegisterPageSteps customerRegistrationFlow (CustomerRegistrationFormData registerFormData) {
-
+    public CustomerRegisterPageSteps customerRegistrationFlow(CustomerRegistrationFormData registerFormData) {
         log.info("Starting customer registration flow");
 
         input.enterText(onRegistrationPage().firstNameInputField(), registerFormData.getFirstName());
@@ -89,7 +88,7 @@ public class CustomerRegisterPageSteps extends BaseSteps {
 
     @Step("Capture Registration Result")
     public String captureRegistrationResult() {
-        return handleRegistrationResult(onRegistrationPage().globalToastMessage());
+        return handleRegistrationResult(onRegistrationPage().globalErrorMessage());
     }
 
 }

@@ -12,30 +12,28 @@ import java.time.Duration;
 public class Button {
 
     private static final Logger log = LogManager.getLogger(Button.class);
-    private static final int DEFAULT_WAIT_TIMEOUT = 10;
+    private static final int DEFAULT_WAIT_TIMEOUT = 20;
     private final WebDriverWait wait;
+    private final WebDriver driver;
 
-    public Button(WebDriver driver)
-    {
+    public Button(WebDriver driver) {
+        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_WAIT_TIMEOUT));
     }
 
     public Button waitAndClick(AtlasWebElement<?> element) {
-        return click(element, DEFAULT_WAIT_TIMEOUT);
+        return click(element);
     }
 
-    public Button click(AtlasWebElement<?> element, int timeoutSeconds) {
-        log.debug("Clicking button with wait: {} seconds", timeoutSeconds);
-
+    public Button click(AtlasWebElement<?> element) {
         try {
-            wait.withTimeout(Duration.ofSeconds(timeoutSeconds))
-                    .until(ExpectedConditions.elementToBeClickable(element.getWrappedElement()));
-            log.debug("Element is clickable");
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            log.debug("Waiting for element to be clickable");
 
             element.click();
             log.debug("Button clicked successfully");
         } catch (Exception e) {
-            log.error("Element not clickable within {} seconds: {}", timeoutSeconds, e.getMessage());
+            log.error("Element not clickable within {} seconds: {}", DEFAULT_WAIT_TIMEOUT, e.getMessage());
             throw e;
         }
 
@@ -44,7 +42,9 @@ public class Button {
 
     public boolean isClickable(AtlasWebElement<?> element) {
         try {
-            return element.isDisplayed() && element.isEnabled();
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            log.debug("Element is clickable");
+            return true;
         } catch (Exception e) {
             log.debug("Element is not clickable: {}", e.getMessage());
             return false;
@@ -53,7 +53,9 @@ public class Button {
 
     public boolean isDisplayed(AtlasWebElement<?> element) {
         try {
-            return element.isDisplayed();
+            wait.until(ExpectedConditions.visibilityOf(element));
+            log.debug("Element is displayed");
+            return true;
         } catch (Exception e) {
             log.debug("Element is not displayed: {}", e.getMessage());
             return false;

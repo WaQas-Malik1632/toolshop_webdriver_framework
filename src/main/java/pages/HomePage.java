@@ -48,7 +48,7 @@ public interface HomePage extends WebPage {
     @FindBy("//a[@aria-label='cart']")
     AtlasWebElement<?> openCartBtn();
 
-    @FindBy("//button[text()='pages.checkout.cart.continue-shopping']")
+    @FindBy("//button[text()='Continue Shopping']")
     AtlasWebElement<?> continueShoppingBtn();
 
     @FindBy("//tbody/tr[1]/td[5]/a[1]/fa-icon[1]//*[name()='svg']")
@@ -123,9 +123,6 @@ public interface HomePage extends WebPage {
     @FindBy("//button[contains(text(),'Confirm')]")
     AtlasWebElement<?> confirmBtn();
 
-    @FindBy("//div[contains(text(),'Payment was successful')]")
-    AtlasWebElement<?> paymentSuccess();
-
     @FindBy("//div[@aria-label='Product deleted.']")
     AtlasWebElement<?> productDeletedFromCartMsge();
 
@@ -145,6 +142,10 @@ public interface HomePage extends WebPage {
     @FindBy("//input[@value='Continue as Guest']")
     AtlasWebElement<?> continueAsGuestBtn();
 
-    @FindBy("//div[contains(@class,'alert-danger') or contains(@class,'alert-success')]")
+    @FindBy("//div[contains(@class,'alert alert-danger mt-3') or contains(@class,'alert alert-success')]")
     AtlasWebElement<?> globalToastMessage();
+
+    @FindBy("//div[contains(@class,'alert alert-danger') or contains(@class,'alert alert-success')]")
+    AtlasWebElement<?> globalErrorMessage();
+
 }

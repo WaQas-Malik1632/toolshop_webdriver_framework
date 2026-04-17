@@ -54,4 +54,3 @@ public class ReworkedRetryer implements Retryer {
         return false;
     }
 }
-

@@ -30,27 +30,24 @@ public class Input {
     }
 
     public Input clearAndEnterText(AtlasWebElement<?> element, String text) {
-        log.debug("Clearing and entering text: {}", text);
-
         waitForVisible(element);
         element.clear();
         element.sendKeys(text);
 
-        log.debug("Text cleared and entered successfully");
+        log.debug("Field cleared and text entered successfully");
         return this;
     }
 
     private void waitForVisible(AtlasWebElement<?> element) {
-        waitForVisible(element, DEFAULT_WAIT_TIMEOUT);
+        waitToBeVisible(element);
     }
 
-    private void waitForVisible(AtlasWebElement<?> element, int timeoutSeconds) {
+    private void waitToBeVisible(AtlasWebElement<?> element) {
         try {
-            wait.withTimeout(Duration.ofSeconds(timeoutSeconds))
-                    .until(ExpectedConditions.visibilityOf(element.getWrappedElement()));
+            wait.until(ExpectedConditions.visibilityOf(element));
             log.debug("Element is visible");
         } catch (Exception e) {
-            log.error("Element not visible within {} seconds: {}", timeoutSeconds, e.getMessage());
+            log.error("Element not visible within {} seconds: {}", DEFAULT_WAIT_TIMEOUT, e.getMessage());
             throw e;
         }
     }
@@ -66,6 +63,7 @@ public class Input {
 
     public boolean isDisplayed(AtlasWebElement<?> element) {
         try {
+            wait.until(ExpectedConditions.visibilityOf(element));
             return element.isDisplayed();
         } catch (Exception e) {
             log.debug("Element is not displayed: {}", e.getMessage());
@@ -75,6 +73,7 @@ public class Input {
 
     public boolean isEnabled(AtlasWebElement<?> element) {
         try {
+            wait.until(ExpectedConditions.elementToBeClickable(element));
             return element.isEnabled();
         } catch (Exception e) {
             log.debug("Element is not enabled: {}", e.getMessage());

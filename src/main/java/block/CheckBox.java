@@ -62,16 +62,16 @@ public class CheckBox {
     }
 
     private void waitForClickable(AtlasWebElement<?> element) {
-        waitForClickable(element, DEFAULT_WAIT_TIMEOUT);
+        waitForToBeClickable(element);
     }
 
-    private void waitForClickable(AtlasWebElement<?> element, int timeoutSeconds) {
+    private void waitForToBeClickable(AtlasWebElement<?> element) {
         try {
-            wait.withTimeout(Duration.ofSeconds(timeoutSeconds))
-                    .until(ExpectedConditions.elementToBeClickable(element.getWrappedElement()));
+            wait.withTimeout(Duration.ofSeconds(DEFAULT_WAIT_TIMEOUT))
+                    .until(ExpectedConditions.elementToBeClickable(element));
             log.debug("Element is clickable");
         } catch (Exception e) {
-            log.error("Element not clickable within {} seconds: {}", timeoutSeconds, e.getMessage());
+            log.error("Element not clickable within {} seconds: {}", DEFAULT_WAIT_TIMEOUT, e.getMessage());
             throw e;
         }
     }

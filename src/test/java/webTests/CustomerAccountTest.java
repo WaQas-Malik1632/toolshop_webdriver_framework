@@ -22,7 +22,7 @@ public class CustomerAccountTest extends BaseTest {
 
         String result = onLoginPage()
                 .navigateToLoginPage()
-                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"))
+                .logInAs(loginUserEmail, loginUserPass)
                 .userSignOut();
 
         log.info("RESULT: Redirected to '{}'", result);
@@ -39,7 +39,7 @@ public class CustomerAccountTest extends BaseTest {
 
         String result = onLoginPage()
                 .navigateToLoginPage()
-                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"))
+                .logInAs(loginUserEmail, loginUserPass)
                 .navigateToProfilePage()
                 .updateProfileDetails("FirstTest", "Last", "365648244")
                 .captureProfileUpdateMessage();
@@ -58,12 +58,9 @@ public class CustomerAccountTest extends BaseTest {
 
         String result = onLoginPage()
                 .navigateToLoginPage()
-                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"))
+                .logInAs(loginUserEmail, loginUserPass)
                 .navigateToProfilePage()
-                .updatePassword(
-                        prop.getProperty("user.change.current.password"),
-                        prop.getProperty("user.change.new.password"),
-                        prop.getProperty("user.change.confirm.password"))
+                .updatePassword(userCurrentPass,userNewPass,userNewConfirmPass)
                 .capturePasswordUpdateMessage();
 
         log.info("RESULT: '{}'", result);
@@ -80,16 +77,12 @@ public class CustomerAccountTest extends BaseTest {
 
         String result = onLoginPage()
                 .navigateToLoginPage()
-                .logInAs(prop.getProperty("user.login.email"), prop.getProperty("user.login.password"))
+                .logInAs(loginUserEmail, loginUserPass)
                 .navigateToProfilePage()
-                .updatePassword(
-                        prop.getProperty("user.change.current.password"),
-                        prop.getProperty("user.change.new.password"),
-                        prop.getProperty("user.change.confirm.password"))
+                .updatePassword(userCurrentPass, userNewPass, userNewConfirmPass)
                 .capturePasswordUpdateMessage();
 
         log.info("RESULT: '{}'", result);
         Assert.assertEquals(result, AccountPageConstants.NEW_PASSWORD_AND_CONFIRM_PASSWORD_DONT_MATCH, "Failed! Password changed successfully");
     }
 }
-

@@ -1,7 +1,7 @@
 package steps;
 
 import io.qameta.allure.Step;
-import model.CheckoutPaymentFormData;
+import utils.CheckoutPaymentFormData;
 import org.openqa.selenium.WebDriver;
 
 public class HomePageSteps extends BaseSteps {
@@ -98,7 +98,7 @@ public class HomePageSteps extends BaseSteps {
         button.waitAndClick(onHomePage().openCartBtn());
 
         button.waitAndClick(onHomePage().proceedToCheckoutBtn());
-        button.isClickable(onHomePage().switchToGuestTab());
+        button.waitAndClick(onHomePage().switchToGuestTab());
 
         input.enterText(onHomePage().inputGuestEmail(), formData.getGuestEmail());
         input.enterText(onHomePage().inputGuestFirstName(), formData.getGuestFirstName());
@@ -188,4 +188,3 @@ public class HomePageSteps extends BaseSteps {
         return purchaseItemFlow(formData);
     }
 }
-

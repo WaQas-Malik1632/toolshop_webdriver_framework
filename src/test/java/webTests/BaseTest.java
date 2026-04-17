@@ -15,8 +15,22 @@ import java.util.Properties;
 
 public class BaseTest {
     protected static final Logger log = LogManager.getLogger(BaseTest.class);
-    protected Properties prop;
+    public Properties prop;
     protected Method testMethod;
+
+    public String browserName;
+    public String appBaseUrl;
+
+    public String loginUserEmail;
+    public String loginUserPass;
+    public String loginWrongPass;
+    public String resetEmail;
+    public String registeredEmail;
+
+    public String userCurrentPass;
+    public String userNewPass;
+    public String userNewConfirmPass;
+
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(Method method) throws IOException {
@@ -24,9 +38,21 @@ public class BaseTest {
         log.info("===== STARTING TEST: {} =====", method.getName());
 
         prop = DriverManager.loadProperties();
-        String browserName = prop.getProperty("browser");
-        String baseUrl = prop.getProperty("app.base.url");
-        DriverManager.initializeDriver(browserName, baseUrl);
+
+        browserName = prop.getProperty("browser");
+        appBaseUrl = prop.getProperty("app.base.url");
+
+        loginUserEmail = prop.getProperty("user.login.email");
+        loginUserPass = prop.getProperty("user.login.password");
+        loginWrongPass = prop.getProperty("user.login.wrong.password");
+        resetEmail = prop.getProperty("user.reset.email");
+        registeredEmail = prop.getProperty("user.reset.registered.email");
+
+        userCurrentPass = prop.getProperty("user.change.current.password");
+        userNewPass = prop.getProperty("user.change.new.password");
+        userNewConfirmPass = prop.getProperty("user.change.confirm.password");
+
+        DriverManager.initializeDriver(browserName, appBaseUrl);
 
         log.info("Browser initialized successfully");
     }

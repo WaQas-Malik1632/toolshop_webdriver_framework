@@ -38,7 +38,7 @@ public class ContactTest extends BaseTest {
         String email = "test@gmail.com";
         String subject = "Payments";
         String message = "TestUser is contacting related to payment refund status, as products returned two weeks ago, thanks";
-        String attachmentPath = "C:\\Users\\waqas\\Downloads\\EmptyFile.txt";
+        String attachmentPath = "C:\\Users\\waqas.naseer\\Downloads\\EmptyFile.txt";
 
         log.info("ACTION: Filling Contact Us form --> [Name: {} {}, Email: {}, Subject: {}]", firstName, lastName, email, subject);
 
@@ -51,5 +51,3 @@ public class ContactTest extends BaseTest {
         Assert.assertEquals(result, ContactPageConstants.CONTACT_MESSAGE_SUCCESS_MESSAGE, "Failed! Form didn't submit successfully");
     }
 }
-
-

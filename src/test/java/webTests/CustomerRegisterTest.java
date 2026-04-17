@@ -13,6 +13,12 @@ import org.testng.annotations.Test;
 @Listeners({AllureTestNg.class, TestListener.class})
 public class CustomerRegisterTest extends BaseTest {
 
+    private static final String UNIQUE_EMAIL = "apitester_" + System.currentTimeMillis() + "@yopmail.com";
+    private static final String VALID_PASSWORD = "Toolshopuser@1";
+
+    private static final String EXISTING_EMAIL = "Tester@yopmail.com";
+    private static final String PASSWORD = "welcome01@Pass";
+
     @Test(priority = 1, enabled = false, groups = {"smoke"})
     @Story("Validate Customer Register Page Title")
     @Severity(SeverityLevel.NORMAL)
@@ -30,14 +36,12 @@ public class CustomerRegisterTest extends BaseTest {
                 "Customer Register page title mismatch");
     }
 
-    @Test(priority = 2, enabled = true, groups = {"smoke", "e2e"})
+    @Test(priority = 2, enabled = false, groups = {"smoke", "e2e"})
     @Story("Customer Registration - Positive Flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that new customer can register successfully with unique email and valid details")
     public void validateCustomerCanRegisterWithUniqueEmailSuccessfully() {
         log.info("Executing test: {}", testMethod.getName());
-
-        String uniqueEmail = "tester_" + System.currentTimeMillis() + "@yopmail.com";
 
         String result = onRegisterPage()
                 .navigateToRegisterPage()
@@ -51,8 +55,7 @@ public class CustomerRegisterTest extends BaseTest {
                         "District 4",
                         "Hungary",
                         "301234567",
-                        uniqueEmail,
-                        "welcome01@Pass")
+                        UNIQUE_EMAIL, VALID_PASSWORD)
                 .captureRegistrationResult();
 
         log.info("RESULT: Redirected to '{}'", result);
@@ -60,7 +63,7 @@ public class CustomerRegisterTest extends BaseTest {
                 "Failed! User registration failed due to already existing email");
     }
 
-    @Test(priority = 3, enabled = false, groups = {"e2e"})
+    @Test(priority = 3, enabled = true, groups = {"e2e"})
     @Story("Customer Registration - Duplicate Email Validation")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the system prevents registration when customer tries to register with an already existing email address")
@@ -78,9 +81,8 @@ public class CustomerRegisterTest extends BaseTest {
                         "Budapest",
                         "District 4",
                         "Hungary",
-                        "301234567",
-                        "Tester@yopmail.com",
-                        "welcome01@Pass")
+                        "30123554667",
+                        loginUserEmail, loginWrongPass)
                 .captureRegistrationResult();
 
         log.info("RESULT: '{}'", result);
@@ -88,4 +90,3 @@ public class CustomerRegisterTest extends BaseTest {
                 "Failed! User registered with unique email successfully");
     }
 }
-

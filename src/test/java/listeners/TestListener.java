@@ -38,7 +38,7 @@ public class TestListener implements ITestListener {
         log.info("▶ TEST STARTED : [{}] {}",
                 result.getTestClass().getRealClass().getSimpleName(),
                 result.getMethod().getMethodName());
-        log.info("  Groups       : {}", String.join(", ", result.getMethod().getGroups()));
+        log.info("  Groups    : {}", String.join(", ", result.getMethod().getGroups()));
     }
 
     @Override
@@ -58,7 +58,7 @@ public class TestListener implements ITestListener {
                 result.getTestClass().getRealClass().getSimpleName(),
                 result.getMethod().getMethodName(),
                 duration);
-        log.error("  Reason       : {}", result.getThrowable().getMessage());
+        log.error("  Reason    : {}", result.getThrowable().getMessage());
 
         WebDriver driver = DriverManager.getDriver();
         if (driver != null) {

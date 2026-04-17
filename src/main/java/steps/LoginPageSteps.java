@@ -57,7 +57,7 @@ public class LoginPageSteps extends BaseSteps {
     @Step("Capture login result")
     public String captureLoginResult() {
         return handleLoginResult(
-                onLoginPage().globalToastMessage());
+                onLoginPage().globalErrorMessage());
     }
 
     @Step("Submit login and capture result")
@@ -89,5 +89,3 @@ public class LoginPageSteps extends BaseSteps {
         return label.waitForToast(onLoginPage().globalToastMessage());
     }
 }
-
-

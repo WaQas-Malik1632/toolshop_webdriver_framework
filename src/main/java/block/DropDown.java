@@ -75,7 +75,7 @@ public class DropDown
     private void waitForClickable(AtlasWebElement<?> element, int timeoutSeconds) {
         try {
             wait.withTimeout(Duration.ofSeconds(timeoutSeconds))
-                    .until(ExpectedConditions.elementToBeClickable(element.getWrappedElement()));
+                    .until(ExpectedConditions.elementToBeClickable(element));
             log.debug("Element is clickable");
         } catch (Exception e) {
             log.error("Element not clickable within {} seconds: {}", timeoutSeconds, e.getMessage());

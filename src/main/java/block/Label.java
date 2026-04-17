@@ -13,14 +13,15 @@ public class Label {
     private static final Logger log = LogManager.getLogger(Label.class);
     private static final int DEFAULT_WAIT_TIMEOUT = 20;
     private final WebDriver driver;
+    private final WebDriverWait wait;
 
     public Label(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_WAIT_TIMEOUT));
     }
 
     public String getText(AtlasWebElement<?> element) {
-        log.debug("Getting text from label");
-        waitForVisible(element, DEFAULT_WAIT_TIMEOUT);
+        waitForVisible(element);
         String text = element.getText().trim();
         log.debug("Retrieved text: {}", text);
         return text;
@@ -28,7 +29,9 @@ public class Label {
 
     public boolean isDisplayed(AtlasWebElement<?> element) {
         try {
-            return element.isDisplayed();
+            wait.until(ExpectedConditions.visibilityOf(element));
+            log.debug("Element is displayed");
+            return true;
         } catch (Exception e) {
             log.debug("Element is not displayed: {}", e.getMessage());
             return false;
@@ -37,21 +40,26 @@ public class Label {
 
     public String waitForToast(AtlasWebElement<?> element) {
         log.debug("Waiting for toast/alert message");
-        waitForVisible(element, DEFAULT_WAIT_TIMEOUT);
-        String text = element.getText().trim();
-        log.debug("Toast message: {}", text);
-        return text;
+        try {
+            wait.until(ExpectedConditions.visibilityOf(element));
+
+            String text = element.getText().trim();
+            log.debug("Toast message captured: {}", text);
+            return text;
+        } catch (Exception e) {
+            log.error("Toast message not visible within timeout: {}", e.getMessage());
+            throw new RuntimeException("Failed to capture toast message", e);
+        }
     }
 
-    private void waitForVisible(AtlasWebElement<?> element, int timeoutSeconds) {
-        // Create a fresh WebDriverWait each time — never mutate a shared instance
-        WebDriverWait freshWait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+    private void waitForVisible(AtlasWebElement<?> element) {
         try {
-            freshWait.until(ExpectedConditions.visibilityOf(element.getWrappedElement()));
+            wait.until(ExpectedConditions.visibilityOf(element));
             log.debug("Element is visible");
         } catch (Exception e) {
-            log.error("Element not visible within {} seconds: {}", timeoutSeconds, e.getMessage());
+            log.error("Element not visible within {} seconds: {}", DEFAULT_WAIT_TIMEOUT, e.getMessage());
             throw e;
         }
+
     }
 }

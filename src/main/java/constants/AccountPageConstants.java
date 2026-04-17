@@ -13,5 +13,5 @@ public interface AccountPageConstants {
 
     public static final String USER_SIGN_OUT_MESSAGE = "User logged out successfully";
 
-
 }
+

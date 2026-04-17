@@ -69,12 +69,11 @@ public class CustomerAccountPageSteps extends BaseSteps {
     public CustomerAccountPageSteps updatePassword(String currentPass, String newPass, String confirmNewPass) {
         log.info("Updating password");
 
+        scrollIntoView(onAccountPage().changePasswordSubmitBtn());
+
         input.enterText(onAccountPage().currentPassword(), currentPass);
         input.enterText(onAccountPage().newPassword(), newPass);
         input.enterText(onAccountPage().confirmNewPassword(), confirmNewPass);
-
-        scrollIntoView(onAccountPage().changePasswordSubmitBtn());
-
         button.waitAndClick(onAccountPage().changePasswordSubmitBtn());
 
         log.info("Password update submitted");
@@ -84,8 +83,7 @@ public class CustomerAccountPageSteps extends BaseSteps {
     @Step("Capture Password Update Message")
     public String capturePasswordUpdateMessage() {
 
-        String message = label.waitForToast(
-                onAccountPage().globalToastMessage());
+        String message = label.waitForToast(onAccountPage().globalToastMessage());
 
         log.info("Password update completed. Result: {}", message);
         return message;

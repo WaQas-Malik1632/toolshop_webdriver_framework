@@ -30,9 +30,9 @@ public interface ContactPage extends WebPage {
     @FindBy("//input[@value='Send']")
     AtlasWebElement<?> sendSubmitBtn();
 
-    @FindBy("//div[contains(@class,'alert-danger') or contains(@class,'alert-success')]")
+    @FindBy("//div[contains(@class,'alert alert-danger mt-3') or contains(@class,'alert alert-success mt-3')]")
     AtlasWebElement<?> globalToastMessage();
 
+    @FindBy("//div[contains(@class,'alert alert-danger') or contains(@class,'alert alert-success')]")
+    AtlasWebElement<?> globalErrorMessage();
 }
-
-

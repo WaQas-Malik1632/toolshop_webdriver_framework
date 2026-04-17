@@ -21,13 +21,18 @@ public class BrandApiTest extends BaseApiTest {
     public void getAllBrandsReturns200() {
         log.info("ACTION: GET /brands");
 
-        Response response = given().when().get("/brands").then().extract().response();
+        Response response = given()
+                .when()
+                .get("/brands")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 200);
-        assertListNotEmpty(response, "$");
-        assertFieldNotEmpty(response, "[0].id");
-        assertFieldNotEmpty(response, "[0].name");
-        assertFieldNotEmpty(response, "[0].slug");
+        apiBaseSteps.assertStatusCode(response, 200);
+        apiBaseSteps.assertListNotEmpty(response, "$");
+        apiBaseSteps.assertFieldNotEmpty(response, "[0].id");
+        apiBaseSteps.assertFieldNotEmpty(response, "[0].name");
+        apiBaseSteps.assertFieldNotEmpty(response, "[0].slug");
         log.info("RESULT: {} brand(s) | first='{}'",
                 response.jsonPath().getList("$").size(), response.jsonPath().getString("[0].name"));
     }
@@ -39,10 +44,16 @@ public class BrandApiTest extends BaseApiTest {
     public void searchBrandByName() {
         log.info("ACTION: GET /brands/search?q=forge");
 
-        Response response = given().queryParam("q", "forge").when().get("/brands/search").then().extract().response();
+        Response response = given()
+                .queryParam("q", "forge")
+                .when()
+                .get("/brands/search")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 200);
-        assertListNotEmpty(response, "$");
+        apiBaseSteps.assertStatusCode(response, 200);
+        apiBaseSteps.assertListNotEmpty(response, "$");
         List<String> names = response.jsonPath().getList("name", String.class);
         Assert.assertTrue(names.get(0).contains("ForgeFlex"),
                 "First brand should contain 'ForgeFlex' but was: " + names.get(0));
@@ -56,9 +67,14 @@ public class BrandApiTest extends BaseApiTest {
     public void getNonExistentBrandReturns404() {
         log.info("ACTION: GET /brands/non-existent-id-99999");
 
-        Response response = given().when().get("/brands/non-existent-id-99999").then().extract().response();
+        Response response = given()
+                .when()
+                .get("/brands/non-existent-id-99999")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 404);
+        apiBaseSteps.assertStatusCode(response, 404);
         log.info("RESULT: 404 correctly returned");
     }
 }

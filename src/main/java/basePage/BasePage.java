@@ -68,9 +68,9 @@ public class BasePage {
 
     protected void scrollIntoView(AtlasWebElement<?> element) {
         log.debug("Scrolling element into view");
+        wait.until(ExpectedConditions.visibilityOf(element));
         ((JavascriptExecutor) driver).executeScript(
-                "arguments[0].scrollIntoView({block: 'center'});",
-                element.getWrappedElement());
+                "arguments[0].scrollIntoView", element);
     }
 
     protected String waitForUrl(String urlFraction) {
@@ -84,7 +84,7 @@ public class BasePage {
     }
 
     protected String handleLoginResult(AtlasWebElement<?> errorElement) {
-        log.debug("Waiting for result: success URL or error toast — polling both simultaneously");
+        log.debug("Waiting for result: success URL or error toast");
 
         // Poll every 500ms for up to 20s — whichever condition appears first wins
         FluentWait<WebDriver> fluentWait = new FluentWait<>(driver)
@@ -100,7 +100,7 @@ public class BasePage {
             }
             // Failure: toast/error message is visible
             try {
-                if (errorElement.getWrappedElement().isDisplayed()) {
+                if (errorElement.isDisplayed()) {
                     String errorText = errorElement.getText().trim();
                     if (!errorText.isEmpty()) {
                         log.warn("Action failed. Error: {}", errorText);
@@ -133,7 +133,7 @@ public class BasePage {
             }
             // Failure: toast/error message is visible
             try {
-                if (errorElement.getWrappedElement().isDisplayed()) {
+                if (errorElement.isDisplayed()) {
                     String errorText = errorElement.getText().trim();
                     if (!errorText.isEmpty()) {
                         log.warn("Action failed. Error: {}", errorText);

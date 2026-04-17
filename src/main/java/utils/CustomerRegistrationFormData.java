@@ -1,4 +1,4 @@
-package model;
+package utils;
 
 public class CustomerRegistrationFormData {
     private final String firstName;

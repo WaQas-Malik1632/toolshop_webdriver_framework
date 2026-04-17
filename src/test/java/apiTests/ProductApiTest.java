@@ -21,10 +21,15 @@ public class ProductApiTest extends BaseApiTest {
     public void getAllProductsReturns200() {
         log.info("ACTION: GET /products");
 
-        Response response = given().when().get("/products").then().extract().response();
+        Response response = given()
+                .when()
+                .get("/products")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 200);
-        assertListNotEmpty(response, "data");
+        apiBaseSteps.assertStatusCode(response, 200);
+        apiBaseSteps.assertListNotEmpty(response, "data");
         Assert.assertEquals(response.jsonPath().getInt("current_page"), 1, "current_page should be 1");
         Assert.assertTrue(response.jsonPath().getInt("total") > 0, "total should be > 0");
         log.info("RESULT: total={} | current_page={}", response.jsonPath().getInt("total"), response.jsonPath().getInt("current_page"));
@@ -37,10 +42,16 @@ public class ProductApiTest extends BaseApiTest {
     public void getProductsSortedByPriceAsc() {
         log.info("ACTION: GET /products?sort=price,asc");
 
-        Response response = given().queryParam("sort", "price,asc").when().get("/products").then().extract().response();
+        Response response = given()
+                .queryParam("sort", "price,asc")
+                .when()
+                .get("/products")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 200);
-        assertSortedAsc(response.jsonPath().getList("data.price", Float.class), "price");
+        apiBaseSteps.assertStatusCode(response, 200);
+        apiBaseSteps.assertSortedAsc(response.jsonPath().getList("data.price", Float.class), "price");
     }
 
     @Test(priority = 3, groups = {"e2e"})
@@ -50,10 +61,16 @@ public class ProductApiTest extends BaseApiTest {
     public void getProductsSortedByNameDsc() {
         log.info("ACTION: GET /products?sort=name,desc");
 
-        Response response = given().queryParam("sort", "name,desc").when().get("/products").then().extract().response();
+        Response response = given()
+                .queryParam("sort", "name,desc")
+                .when()
+                .get("/products")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 200);
-        assertSortedDesc(response.jsonPath().getList("data.name", String.class), "name");
+        apiBaseSteps.assertStatusCode(response, 200);
+        apiBaseSteps.assertSortedDesc(response.jsonPath().getList("data.name", String.class), "name");
     }
 
     @Test(priority = 4, groups = {"smoke", "e2e"})
@@ -63,10 +80,16 @@ public class ProductApiTest extends BaseApiTest {
     public void searchProductByName() {
         log.info("ACTION: GET /products/search?q=pliers");
 
-        Response response = given().queryParam("q", "pliers").when().get("/products/search").then().extract().response();
+        Response response = given()
+                .queryParam("q", "pliers")
+                .when()
+                .get("/products/search")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 200);
-        assertListNotEmpty(response, "data");
+        apiBaseSteps.assertStatusCode(response, 200);
+        apiBaseSteps.assertListNotEmpty(response, "data");
         List<String> names = response.jsonPath().getList("data.name", String.class);
         Assert.assertTrue(names.get(0).contains("Pliers"),
                 "First result should contain 'Pliers' but was: " + names.get(0));
@@ -80,9 +103,15 @@ public class ProductApiTest extends BaseApiTest {
     public void searchProductWithNoMatchReturnsEmpty() {
         log.info("ACTION: GET /products/search?q=zzznoresult");
 
-        Response response = given().queryParam("q", "zzznoresult").when().get("/products/search").then().extract().response();
+        Response response = given()
+                .queryParam("q", "zzznoresult")
+                .when()
+                .get("/products/search")
+                .then()
+                .extract()
+                .response();
 
-        assertStatusCode(response, 200);
+        apiBaseSteps.assertStatusCode(response, 200);
         List<?> data = response.jsonPath().getList("data");
         Assert.assertTrue(data.isEmpty(), "Expected empty data but got " + data.size() + " results");
         log.info("RESULT: No products found - as expected");

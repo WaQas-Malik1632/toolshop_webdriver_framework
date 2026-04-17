@@ -5545,3 +5545,465 @@ Session ID: 19e1fe8d9ad361b993e1f52b25e7e125
 2026-04-09 02:17:19 INFO  TestListener:30 -   ✘ Failed  : 1
 2026-04-09 02:17:19 INFO  TestListener:31 -   ⊘ Skipped : 0
 2026-04-09 02:17:19 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-11 18:57:03 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-11 18:57:03 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-11 18:57:03 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-11 18:57:03 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-11 18:57:03 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-11 18:57:03 ERROR DriverManager:35 - Failed to load configuration file: src/main/java/com/toolshop/qa/config/config.properties
+java.io.FileNotFoundException: src\main\java\com\toolshop\qa\config\config.properties (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:185)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:109)
+	at webDriverManager.DriverManager.loadProperties(DriverManager.java:32)
+	at webTests.BaseTest.setUp(BaseTest.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:846)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:611)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+2026-04-11 18:57:04 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 18:57:04 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-11 18:57:04 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-11 18:57:04 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-11 18:57:04 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-11 18:57:04 INFO  BaseTest:62 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-11 18:57:04 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-11 18:57:04 INFO  DriverManager:67 - Initializing browser: null
+2026-04-11 18:57:04 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 18:57:04 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-11 18:57:04 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-11 18:57:04 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-11 18:57:04 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-11 18:57:04 INFO  BaseTest:62 - ===== FINISHED TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-11 18:57:04 INFO  BaseTest:38 - ===== STARTING TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-11 18:57:04 INFO  DriverManager:67 - Initializing browser: null
+2026-04-11 18:57:04 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 18:57:04 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-11 18:57:04 INFO  TestListener:41 -   Groups       : e2e
+2026-04-11 18:57:04 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-11 18:57:04 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-11 18:57:04 INFO  BaseTest:62 - ===== FINISHED TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-11 18:57:04 INFO  BaseTest:38 - ===== STARTING TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-11 18:57:04 INFO  DriverManager:67 - Initializing browser: null
+2026-04-11 18:57:04 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 18:57:04 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-11 18:57:04 INFO  TestListener:41 -   Groups       : e2e
+2026-04-11 18:57:04 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-11 18:57:04 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-11 18:57:04 INFO  BaseTest:62 - ===== FINISHED TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-11 18:57:04 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-11 18:57:04 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-11 18:57:04 INFO  TestListener:29 -   ✔ Passed  : 0
+2026-04-11 18:57:04 INFO  TestListener:30 -   ✘ Failed  : 0
+2026-04-11 18:57:04 INFO  TestListener:31 -   ⊘ Skipped : 4
+2026-04-11 18:57:04 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-11 18:58:05 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-11 18:58:05 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-11 18:58:05 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-11 18:58:05 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-11 18:58:05 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-11 18:58:05 INFO  DriverManager:44 - System property override: browser=chrome
+2026-04-11 18:58:05 INFO  DriverManager:44 - System property override: app.base.url=https://practicesoftwaretesting.com/
+2026-04-11 18:58:05 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-11 18:58:10 INFO  DriverManager:140 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-11 18:58:10 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-11 18:58:10 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 18:58:10 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-11 18:58:10 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-11 18:58:10 INFO  BaseTest:34 - Executing test: validateCustomerLogsInSuccessfully
+2026-04-11 18:58:10 INFO  BaseTest:35 - ACTION: Attempting login with valid user: customer2@practicesoftwaretesting.com
+2026-04-11 18:58:13 INFO  BasePage:16 - Navigated to Login Page
+2026-04-11 18:58:16 INFO  BasePage:98 - Action successful. Redirected to: https://practicesoftwaretesting.com/account
+2026-04-11 18:58:16 INFO  BaseTest:43 - RESULT: https://practicesoftwaretesting.com/account
+2026-04-11 18:58:16 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateCustomerLogsInSuccessfully (6380ms)
+2026-04-11 18:58:16 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-11 18:58:16 INFO  BaseTest:62 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-11 18:58:17 INFO  DriverManager:150 - Browser closed successfully
+2026-04-11 18:58:17 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-11 18:58:17 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-11 18:58:19 INFO  DriverManager:140 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-11 18:58:20 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-11 18:58:20 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 18:58:20 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-11 18:58:20 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-11 18:58:20 INFO  BaseTest:52 - Executing test: validateCustomerLogInWithInvalidCredentials
+2026-04-11 18:58:20 INFO  BaseTest:53 - ACTION: Attempting login with invalid credentials
+2026-04-11 18:58:21 INFO  BasePage:16 - Navigated to Login Page
+2026-04-11 18:58:22 WARN  BasePage:106 - Action failed. Error: Invalid email or password
+2026-04-11 18:58:22 INFO  BaseTest:61 - RESULT: Invalid email or password
+2026-04-11 18:58:22 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateCustomerLogInWithInvalidCredentials (2327ms)
+2026-04-11 18:58:22 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-11 18:58:22 INFO  BaseTest:62 - ===== FINISHED TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-11 18:58:22 INFO  DriverManager:150 - Browser closed successfully
+2026-04-11 18:58:22 INFO  BaseTest:38 - ===== STARTING TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-11 18:58:22 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-11 18:58:25 INFO  DriverManager:140 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-11 18:58:25 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-11 18:58:25 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 18:58:25 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-11 18:58:25 INFO  TestListener:41 -   Groups       : e2e
+2026-04-11 18:58:25 INFO  BaseTest:70 - Executing test: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully
+2026-04-11 18:58:25 INFO  BaseTest:71 - ACTION: Requesting password reset for: Tester4@yopmail.com
+2026-04-11 18:58:27 INFO  BasePage:16 - Navigated to Login Page
+2026-04-11 18:58:27 INFO  BaseTest:80 - RESULT: The selected email is invalid.
+2026-04-11 18:58:27 ERROR TestListener:57 - ✘ TEST FAILED  : [LoginTest] validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully (2047ms)
+2026-04-11 18:58:27 ERROR TestListener:61 -   Reason       : Failed! Entered email not registered expected [Your password is successfully updated!] but found [The selected email is invalid.]
+2026-04-11 18:58:28 INFO  TestListener:69 -   Screenshot attached to Allure report
+2026-04-11 18:58:28 ERROR TestListener:75 - ──────────────────────────────────────────────────────
+2026-04-11 18:58:28 INFO  BaseTest:62 - ===== FINISHED TEST: validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully =====
+2026-04-11 18:58:28 INFO  DriverManager:150 - Browser closed successfully
+2026-04-11 18:58:28 INFO  BaseTest:38 - ===== STARTING TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-11 18:58:28 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-11 18:58:31 INFO  DriverManager:140 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-11 18:58:31 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-11 18:58:31 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 18:58:31 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-11 18:58:31 INFO  TestListener:41 -   Groups       : e2e
+2026-04-11 18:58:31 INFO  BaseTest:89 - Executing test: validateUserCanNotResetForgotPasswordWithUnregisteredEmail
+2026-04-11 18:58:31 INFO  BaseTest:90 - ACTION: Requesting password reset for unregistered: customer2@practicesoftwaretesting.com
+2026-04-11 18:58:32 INFO  BasePage:16 - Navigated to Login Page
+2026-04-11 18:58:33 INFO  BaseTest:99 - RESULT: page.forgot-password.confirm
+2026-04-11 18:58:33 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateUserCanNotResetForgotPasswordWithUnregisteredEmail (1941ms)
+2026-04-11 18:58:33 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-11 18:58:33 INFO  BaseTest:62 - ===== FINISHED TEST: validateUserCanNotResetForgotPasswordWithUnregisteredEmail =====
+2026-04-11 18:58:33 INFO  DriverManager:150 - Browser closed successfully
+2026-04-11 18:58:33 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-11 18:58:33 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-11 18:58:33 INFO  TestListener:29 -   ✔ Passed  : 3
+2026-04-11 18:58:33 INFO  TestListener:30 -   ✘ Failed  : 1
+2026-04-11 18:58:33 INFO  TestListener:31 -   ⊘ Skipped : 0
+2026-04-11 18:58:33 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-11 19:00:19 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-11 19:00:19 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-11 19:00:19 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-11 19:00:19 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-11 19:00:19 INFO  BaseTest:38 - ===== STARTING TEST: isHomePageLogoVisibleTest =====
+2026-04-11 19:00:19 INFO  DriverManager:44 - System property override: browser=chrome
+2026-04-11 19:00:19 INFO  DriverManager:44 - System property override: app.base.url=https://practicesoftwaretesting.com/
+2026-04-11 19:00:19 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-11 19:00:23 INFO  DriverManager:140 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-11 19:00:24 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-11 19:00:24 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 19:00:24 INFO  TestListener:38 - ▶ TEST STARTED : [HomePageTest] isHomePageLogoVisibleTest
+2026-04-11 19:00:24 INFO  TestListener:41 -   Groups       : smoke, e2e
+2026-04-11 19:00:24 INFO  BaseTest:20 - Executing test: isHomePageLogoVisibleTest
+2026-04-11 19:00:24 INFO  BaseTest:26 - Home Page Logo visible: true
+2026-04-11 19:00:24 INFO  TestListener:47 - ✔ TEST PASSED  : [HomePageTest] isHomePageLogoVisibleTest (380ms)
+2026-04-11 19:00:24 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-11 19:00:24 INFO  BaseTest:62 - ===== FINISHED TEST: isHomePageLogoVisibleTest =====
+2026-04-11 19:00:24 INFO  DriverManager:150 - Browser closed successfully
+2026-04-11 19:00:24 INFO  BaseTest:38 - ===== STARTING TEST: validateUserCanSelectAndPurchaseMultipleProductsInSingleOrder =====
+2026-04-11 19:00:24 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-11 19:00:27 INFO  DriverManager:140 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-11 19:00:28 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-11 19:00:28 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 19:00:28 INFO  TestListener:38 - ▶ TEST STARTED : [HomePageTest] validateUserCanSelectAndPurchaseMultipleProductsInSingleOrder
+2026-04-11 19:00:28 INFO  TestListener:41 -   Groups       : e2e
+2026-04-11 19:00:28 INFO  BaseTest:34 - Executing test: validateUserCanSelectAndPurchaseMultipleProductsInSingleOrder
+2026-04-11 19:00:29 INFO  BasePage:16 - Navigated to Login Page
+2026-04-11 19:00:30 INFO  BasePage:46 - Login successful, redirected to account page
+2026-04-11 19:00:30 INFO  BasePage:18 - Navigated to Home Page
+2026-04-11 19:00:30 INFO  BasePage:30 - <<< STARTING MULTIPLE PRODUCTS PURCHASE FLOW >>>
+2026-04-11 19:01:14 ERROR Button:36 - Element not clickable within 20 seconds: Expected condition failed: waiting for element to be clickable, but the element was not enabled.
+(tried for 20 seconds with 500 milliseconds interval)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Waqas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56260}, goog:processID: 5144, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56260/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webSocketUrl: ws://localhost:33305/sessio..., webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 66f0f11675d138022430b56cc7d115ef
+2026-04-11 19:01:14 ERROR TestListener:57 - ✘ TEST FAILED  : [HomePageTest] validateUserCanSelectAndPurchaseMultipleProductsInSingleOrder (45416ms)
+2026-04-11 19:01:14 ERROR TestListener:61 -   Reason       : Expected condition failed: waiting for element to be clickable, but the element was not enabled.
+(tried for 20 seconds with 500 milliseconds interval)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Waqas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56260}, goog:processID: 5144, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56260/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webSocketUrl: ws://localhost:33305/sessio..., webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 66f0f11675d138022430b56cc7d115ef
+2026-04-11 19:01:14 INFO  TestListener:69 -   Screenshot attached to Allure report
+2026-04-11 19:01:14 ERROR TestListener:75 - ──────────────────────────────────────────────────────
+2026-04-11 19:01:14 INFO  BaseTest:62 - ===== FINISHED TEST: validateUserCanSelectAndPurchaseMultipleProductsInSingleOrder =====
+2026-04-11 19:01:14 INFO  DriverManager:150 - Browser closed successfully
+2026-04-11 19:01:14 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerCanPurchaseItemSuccessfully =====
+2026-04-11 19:01:14 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-11 19:01:17 INFO  DriverManager:140 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-11 19:01:17 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-11 19:01:17 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 19:01:17 INFO  TestListener:38 - ▶ TEST STARTED : [HomePageTest] validateCustomerCanPurchaseItemSuccessfully
+2026-04-11 19:01:17 INFO  TestListener:41 -   Groups       : e2e
+2026-04-11 19:01:17 INFO  BaseTest:58 - Executing test: validateCustomerCanPurchaseItemSuccessfully
+2026-04-11 19:01:18 INFO  BasePage:16 - Navigated to Login Page
+2026-04-11 19:01:19 INFO  BasePage:46 - Login successful, redirected to account page
+2026-04-11 19:01:19 INFO  BasePage:18 - Navigated to Home Page
+2026-04-11 19:01:19 INFO  BasePage:152 - <<< STARTING PURCHASE ITEM FLOW >>>
+2026-04-11 19:01:42 ERROR Button:36 - Element not clickable within 20 seconds: Expected condition failed: waiting for element to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//img[@alt='Combination Pliers']"}.
+(tried for 20 seconds with 500 milliseconds interval)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Waqas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52783}, goog:processID: 15460, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52783/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webSocketUrl: ws://localhost:30263/sessio..., webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 32659a7fb27687f98afd8a59b4701fbe
+2026-04-11 19:01:42 ERROR TestListener:57 - ✘ TEST FAILED  : [HomePageTest] validateCustomerCanPurchaseItemSuccessfully (24335ms)
+2026-04-11 19:01:42 ERROR TestListener:61 -   Reason       : Expected condition failed: waiting for element to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//img[@alt='Combination Pliers']"}.
+(tried for 20 seconds with 500 milliseconds interval)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.178, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Waqas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52783}, goog:processID: 15460, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52783/devtoo..., se:cdpVersion: 146.0.7680.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webSocketUrl: ws://localhost:30263/sessio..., webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 32659a7fb27687f98afd8a59b4701fbe
+2026-04-11 19:01:42 INFO  TestListener:69 -   Screenshot attached to Allure report
+2026-04-11 19:01:42 ERROR TestListener:75 - ──────────────────────────────────────────────────────
+2026-04-11 19:01:42 INFO  BaseTest:62 - ===== FINISHED TEST: validateCustomerCanPurchaseItemSuccessfully =====
+2026-04-11 19:01:42 INFO  DriverManager:150 - Browser closed successfully
+2026-04-11 19:01:42 INFO  BaseTest:38 - ===== STARTING TEST: validateWhetherGuestUserCanPurchaseItemSuccessfully =====
+2026-04-11 19:01:42 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-11 19:01:45 INFO  DriverManager:140 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-11 19:01:45 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-11 19:01:45 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-11 19:01:45 INFO  TestListener:38 - ▶ TEST STARTED : [HomePageTest] validateWhetherGuestUserCanPurchaseItemSuccessfully
+2026-04-11 19:01:45 INFO  TestListener:41 -   Groups       : e2e
+2026-04-11 19:01:45 INFO  BaseTest:79 - Executing test: validateWhetherGuestUserCanPurchaseItemSuccessfully
+2026-04-11 19:01:45 INFO  BasePage:94 - <<< STARTING PURCHASE FLOW AS GUEST USER >>>
+2026-04-11 19:01:53 INFO  BasePage:124 - Payment result: Payment was successful
+2026-04-11 19:01:53 INFO  BasePage:125 - <<< GUEST PURCHASE FLOW COMPLETED >>>
+2026-04-11 19:01:53 INFO  TestListener:47 - ✔ TEST PASSED  : [HomePageTest] validateWhetherGuestUserCanPurchaseItemSuccessfully (7724ms)
+2026-04-11 19:01:53 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-11 19:01:53 INFO  BaseTest:62 - ===== FINISHED TEST: validateWhetherGuestUserCanPurchaseItemSuccessfully =====
+2026-04-11 19:01:53 INFO  DriverManager:150 - Browser closed successfully
+2026-04-11 19:01:53 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-11 19:01:53 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-11 19:01:53 INFO  TestListener:29 -   ✔ Passed  : 2
+2026-04-11 19:01:53 INFO  TestListener:30 -   ✘ Failed  : 2
+2026-04-11 19:01:53 INFO  TestListener:31 -   ⊘ Skipped : 0
+2026-04-11 19:01:53 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-18 04:18:39 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-18 04:18:40 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-18 04:18:40 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-18 04:18:40 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-18 04:18:40 INFO  BaseTest:38 - ===== STARTING TEST: validateLoginPageTitle =====
+2026-04-18 04:18:40 ERROR DriverManager:35 - Failed to load configuration file: src/main/java/com/toolshop/qa/config/config.properties
+java.io.FileNotFoundException: src\main\java\com\toolshop\qa\config\config.properties (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:185)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:109)
+	at webDriverManager.DriverManager.loadProperties(DriverManager.java:32)
+	at webTests.BaseTest.setUp(BaseTest.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:846)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:611)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+2026-04-18 04:18:40 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-18 04:18:40 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateLoginPageTitle
+2026-04-18 04:18:40 INFO  TestListener:41 -   Groups    : smoke
+2026-04-18 04:18:40 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateLoginPageTitle
+2026-04-18 04:18:40 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-18 04:18:40 INFO  BaseTest:62 - ===== FINISHED TEST: validateLoginPageTitle =====
+2026-04-18 04:18:40 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-18 04:18:40 INFO  DriverManager:67 - Initializing browser: null
+2026-04-18 04:18:40 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-18 04:18:40 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-18 04:18:40 INFO  TestListener:41 -   Groups    : smoke, e2e
+2026-04-18 04:18:40 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-18 04:18:40 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-18 04:18:40 INFO  BaseTest:62 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-18 04:18:40 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-18 04:18:40 INFO  DriverManager:67 - Initializing browser: null
+2026-04-18 04:18:40 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-18 04:18:40 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-18 04:18:40 INFO  TestListener:41 -   Groups    : smoke, e2e
+2026-04-18 04:18:40 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-18 04:18:40 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-18 04:18:40 INFO  BaseTest:62 - ===== FINISHED TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-18 04:18:40 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-18 04:18:40 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-18 04:18:40 INFO  TestListener:29 -   ✔ Passed  : 0
+2026-04-18 04:18:40 INFO  TestListener:30 -   ✘ Failed  : 0
+2026-04-18 04:18:40 INFO  TestListener:31 -   ⊘ Skipped : 3
+2026-04-18 04:18:40 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-18 04:20:21 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-18 04:20:22 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-18 04:20:22 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-18 04:20:22 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-18 04:20:22 INFO  BaseTest:38 - ===== STARTING TEST: validateLoginPageTitle =====
+2026-04-18 04:20:22 INFO  DriverManager:44 - System property override: browser=chrome
+2026-04-18 04:20:22 INFO  DriverManager:44 - System property override: app.base.url=https://practicesoftwaretesting.com/
+2026-04-18 04:20:22 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-18 04:20:33 INFO  DriverManager:143 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-18 04:20:33 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-18 04:20:33 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-18 04:20:33 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateLoginPageTitle
+2026-04-18 04:20:33 INFO  TestListener:41 -   Groups    : smoke
+2026-04-18 04:20:33 INFO  BaseTest:20 - Executing test: validateLoginPageTitle
+2026-04-18 04:20:38 INFO  BasePage:16 - Navigated to Login Page
+2026-04-18 04:20:38 INFO  BaseTest:25 - RESULT: Page title = 'Login - Practice Software Testing - Toolshop - v5.0'
+2026-04-18 04:20:38 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateLoginPageTitle (4935ms)
+2026-04-18 04:20:38 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-18 04:20:38 INFO  BaseTest:62 - ===== FINISHED TEST: validateLoginPageTitle =====
+2026-04-18 04:20:39 INFO  DriverManager:153 - Browser closed successfully
+2026-04-18 04:20:39 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogsInSuccessfully =====
+2026-04-18 04:20:39 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-18 04:20:44 INFO  DriverManager:143 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-18 04:20:45 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-18 04:20:45 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-18 04:20:45 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogsInSuccessfully
+2026-04-18 04:20:45 INFO  TestListener:41 -   Groups    : smoke, e2e
+2026-04-18 04:20:45 INFO  BaseTest:34 - Executing test: validateCustomerLogsInSuccessfully
+2026-04-18 04:20:45 INFO  BaseTest:35 - ACTION: Attempting login with valid user: customer2@practicesoftwaretesting.com
+2026-04-18 04:20:46 INFO  BasePage:16 - Navigated to Login Page
+2026-04-18 04:20:51 INFO  BasePage:98 - Action successful. Redirected to: https://practicesoftwaretesting.com/account
+2026-04-18 04:20:51 INFO  BaseTest:43 - RESULT: https://practicesoftwaretesting.com/account
+2026-04-18 04:20:51 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateCustomerLogsInSuccessfully (5704ms)
+2026-04-18 04:20:51 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-18 04:20:51 INFO  BaseTest:62 - ===== FINISHED TEST: validateCustomerLogsInSuccessfully =====
+2026-04-18 04:20:51 INFO  DriverManager:153 - Browser closed successfully
+2026-04-18 04:20:51 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-18 04:20:51 INFO  DriverManager:67 - Initializing browser: chrome
+2026-04-18 04:20:56 INFO  DriverManager:143 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-18 04:20:57 INFO  BaseTest:57 - Browser initialized successfully
+2026-04-18 04:20:57 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-18 04:20:57 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-18 04:20:57 INFO  TestListener:41 -   Groups    : smoke, e2e
+2026-04-18 04:20:57 INFO  BaseTest:52 - Executing test: validateCustomerLogInWithInvalidCredentials
+2026-04-18 04:20:57 INFO  BaseTest:53 - ACTION: Attempting login with invalid credentials
+2026-04-18 04:20:59 INFO  BasePage:16 - Navigated to Login Page
+2026-04-18 04:21:01 WARN  BasePage:106 - Action failed. Error: Invalid email or password
+2026-04-18 04:21:01 INFO  BaseTest:61 - RESULT: Invalid email or password
+2026-04-18 04:21:01 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateCustomerLogInWithInvalidCredentials (3757ms)
+2026-04-18 04:21:01 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-18 04:21:01 INFO  BaseTest:62 - ===== FINISHED TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-18 04:21:02 INFO  DriverManager:153 - Browser closed successfully
+2026-04-18 04:21:02 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-18 04:21:02 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-18 04:21:02 INFO  TestListener:29 -   ✔ Passed  : 3
+2026-04-18 04:21:02 INFO  TestListener:30 -   ✘ Failed  : 0
+2026-04-18 04:21:02 INFO  TestListener:31 -   ⊘ Skipped : 0
+2026-04-18 04:21:02 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-18 04:21:58 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-18 04:21:59 ERROR DriverManager:59 - Failed to load configuration file: src/main/java/com/toolshop/qa/config/configApi.properties
+java.io.FileNotFoundException: src\main\java\com\toolshop\qa\config\configApi.properties (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:185)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:109)
+	at webDriverManager.DriverManager.loadApiProperties(DriverManager.java:56)
+	at apiTests.BaseApiTest.setupApi(BaseApiTest.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+2026-04-18 04:21:59 INFO  BaseApiTest:50 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-18 04:21:59 INFO  BaseApiTest:55 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-18 04:21:59 INFO  BaseApiTest:50 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-18 04:21:59 INFO  BaseApiTest:55 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-18 04:21:59 INFO  BaseApiTest:50 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-18 04:21:59 INFO  BaseApiTest:55 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-18 04:21:59 INFO  BaseApiTest:50 - ===== STARTING API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-18 04:21:59 INFO  BaseApiTest:55 - ===== FINISHED API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-18 04:22:42 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-18 04:22:45 INFO  BaseApiTest:44 - API configured. Base URI: https://api.practicesoftwaretesting.com
+2026-04-18 04:22:45 INFO  BaseApiTest:22 - Authenticating API user: customer2@practicesoftwaretesting.com
+2026-04-18 04:22:50 INFO  BaseApiTest:40 - Authentication successful-> Bearer token set
+2026-04-18 04:22:50 INFO  BaseApiTest:50 - ===== STARTING API TEST: loginWithValidCredentials =====
+2026-04-18 04:22:50 INFO  BaseApiTest:21 - ACTION: POST /users/login | email: customer2@practicesoftwaretesting.com
+2026-04-18 04:22:51 INFO  BaseApiTest:14 - RESPONSE [200] : {"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NzY0NjgxNzIsImV4cCI6MTc3NjQ2ODQ3MiwibmJmIjoxNzc2NDY4MTcyLCJqdGkiOiJQRzdLdVVkb3JGVjFYNndtIiwic3ViIjoiMDFLUEVUUldCUzZEN0JCODZQVjQzUDlSVzciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.S3cY1dJIeqdaOvi3f4dK4hk0F7GGcIHFS9_rwaXxmWk","token_type":"bearer","expires_in":300}
+2026-04-18 04:22:51 INFO  BaseApiTest:36 - RESULT: Login successful | token_type=bearer | expires_in=300
+2026-04-18 04:22:51 INFO  BaseApiTest:55 - ===== FINISHED API TEST: loginWithValidCredentials =====
+2026-04-18 04:22:51 INFO  BaseApiTest:50 - ===== STARTING API TEST: loginWithInvalidCredentials =====
+2026-04-18 04:22:51 INFO  BaseApiTest:46 - ACTION: POST /users/login with wrong password | email: customer2@practicesoftwaretesting.com
+2026-04-18 04:22:51 INFO  BaseApiTest:14 - RESPONSE [401] : {"error":"Unauthorized"}
+2026-04-18 04:22:51 INFO  BaseApiTest:57 - RESULT: Login correctly rejected | body='{"error":"Unauthorized"}'
+2026-04-18 04:22:51 INFO  BaseApiTest:55 - ===== FINISHED API TEST: loginWithInvalidCredentials =====
+2026-04-18 04:22:51 INFO  BaseApiTest:50 - ===== STARTING API TEST: getAuthenticatedUserProfile =====
+2026-04-18 04:22:51 INFO  BaseApiTest:66 - ACTION: GET /users/me | expected email: customer2@practicesoftwaretesting.com
+2026-04-18 04:22:51 INFO  BaseApiTest:14 - RESPONSE [200] : {"id":"01KPETRWBS6D7BB86PV43P9RW7","provider":null,"first_name":"Jack","last_name":"Howe","phone":null,"dob":"1980-03-03","email":"customer2@practicesoftwaretesting.com","totp_enabled":false,"created_at":"2026-04-17 23:00:17","address":{"street":"Test street 654","city":"Frankfurt","state":null,"country":"Germany","postal_code":null}}
+2026-04-18 04:22:51 INFO  BaseApiTest:79 - RESULT: Profile retrieved | email=customer2@practicesoftwaretesting.com | name=Jack Howe
+2026-04-18 04:22:51 INFO  BaseApiTest:55 - ===== FINISHED API TEST: getAuthenticatedUserProfile =====
+2026-04-18 04:22:51 INFO  BaseApiTest:50 - ===== STARTING API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-18 04:22:51 INFO  BaseApiTest:90 - ACTION: POST /users/forgot-password | email: customer@practicesoftwaretesting.com
+2026-04-18 04:22:52 INFO  BaseApiTest:14 - RESPONSE [200] : {"success":true}
+2026-04-18 04:22:52 INFO  BaseApiTest:103 - RESULT: Password reset successful | success=true
+2026-04-18 04:22:52 INFO  BaseApiTest:55 - ===== FINISHED API TEST: forgotPasswordWithRegisteredEmail =====

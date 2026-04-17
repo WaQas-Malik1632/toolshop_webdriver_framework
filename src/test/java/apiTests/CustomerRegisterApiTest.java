@@ -11,7 +11,10 @@ import static io.restassured.RestAssured.given;
 public class CustomerRegisterApiTest extends BaseApiTest {
 
     private static final String UNIQUE_EMAIL = "apitester_" + System.currentTimeMillis() + "@yopmail.com";
+    private static final String UNIQUE_EMAIL1= "apitester_" + System.currentTimeMillis() + "@yopmail.com";
+    private static final String INVALID_EMAIL = "apitestyopc";
     private static final String VALID_PASSWORD = "Toolshopuser@1";
+    private static final String WEAK_PASSWORD = "Tool123";
 
     @Test(priority = 1, groups = {"smoke", "e2e"})
     @Story("Register - Positive Flow")
@@ -41,13 +44,13 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        assertStatusCode(response, 201);
+        apiBaseSteps.assertStatusCode(response, 201);
         Assert.assertNotNull(response.path("id"), "id should not be null");
         Assert.assertEquals(response.path("first_name"), "ApiTest", "first_name mismatch");
         Assert.assertEquals(response.path("last_name"), "User", "last_name mismatch");
         Assert.assertEquals(response.path("email"), UNIQUE_EMAIL, "email mismatch");
 
-        log.info("RESULT: Customer registered | id={} | email={}",
+        log.info("RESULT: Customer registered successfully | id={} | email={}",
                 (Object) response.path("id"), (Object) response.path("email"));
     }
 
@@ -56,14 +59,14 @@ public class CustomerRegisterApiTest extends BaseApiTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("POST /users/register - minimal required fields only, returns 201")
     public void registerCustomerWithRequiredFieldsOnly() {
-        String minimalEmail = "api_minimal_" + System.currentTimeMillis() + "@yopmail.com";
-        log.info("ACTION: POST /users/register minimal | email: {}", minimalEmail);
+
+        log.info("ACTION: POST /users/register minimal | email: {}", UNIQUE_EMAIL1);
 
         Response response = given()
                 .body("{"
                         + "\"first_name\":\"Minimal\","
                         + "\"last_name\":\"User\","
-                        + "\"email\":\"" + minimalEmail + "\","
+                        + "\"email\":\"" + UNIQUE_EMAIL1 + "\","
                         + "\"password\":\"" + VALID_PASSWORD + "\""
                         + "}"
                 )
@@ -72,26 +75,25 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        assertStatusCode(response, 201);
+        apiBaseSteps.assertStatusCode(response, 201);
         Assert.assertNotNull(response.path("id"), "id should not be null");
-        Assert.assertEquals(response.path("email"), minimalEmail, "email mismatch");
+        Assert.assertEquals(response.path("email"), UNIQUE_EMAIL1, "email mismatch");
 
-        log.info("RESULT: Minimal registration successful | id={}", (Object) response.path("id"));
+        log.info("RESULT: Registration successful with required fields only | id={}", (Object) response.path("id"));
     }
 
     @Test(priority = 3, groups = {"smoke", "e2e"})
     @Story("Register - Duplicate Email")
     @Severity(SeverityLevel.CRITICAL)
-    @Description("POST /users/register - duplicate email returns 422")
+    @Description("POST /users/register - register user with minimal required fields with duplicate email should returns 422")
     public void registerWithDuplicateEmailReturns422() {
-        String existingEmail = prop.getProperty("api.user.email");
-        log.info("ACTION: POST /users/register with existing email: {}", existingEmail);
+        log.info("ACTION: POST /users/register with existing email: {}", apiUserEmail);
 
         Response response = given()
                 .body("{"
                         + "\"first_name\":\"Duplicate\","
                         + "\"last_name\":\"User\","
-                        + "\"email\":\"" + existingEmail + "\","
+                        + "\"email\":\"" + apiUserEmail + "\","
                         + "\"password\":\"" + VALID_PASSWORD + "\""
                         + "}"
                 )
@@ -100,7 +102,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        assertStatusCode(response, 422);
+        apiBaseSteps.assertStatusCode(response, 422);
         log.info("RESULT: Duplicate email correctly rejected | body: {}", response.body().asString());
     }
 
@@ -123,7 +125,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        assertStatusCode(response, 422);
+        apiBaseSteps.assertStatusCode(response, 422);
         log.info("RESULT: Missing email correctly rejected | body: {}", response.body().asString());
     }
 
@@ -132,14 +134,13 @@ public class CustomerRegisterApiTest extends BaseApiTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("POST /users/register - missing password returns 422")
     public void registerWithMissingPasswordReturns422() {
-        String email = "nopass_" + System.currentTimeMillis() + "@yopmail.com";
-        log.info("ACTION: POST /users/register without password | email: {}", email);
+        log.info("ACTION: POST /users/register without password | email: {}", UNIQUE_EMAIL);
 
         Response response = given()
                 .body("{"
                         + "\"first_name\":\"NoPass\","
                         + "\"last_name\":\"User\","
-                        + "\"email\":\"" + email + "\""
+                        + "\"email\":\"" + UNIQUE_EMAIL + "\""
                         + "}"
                 )
                 .when()
@@ -147,7 +148,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        assertStatusCode(response, 422);
+        apiBaseSteps.assertStatusCode(response, 422);
         log.info("RESULT: Missing password correctly rejected | body: {}", response.body().asString());
     }
 
@@ -162,7 +163,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .body("{"
                         + "\"first_name\":\"Invalid\","
                         + "\"last_name\":\"Email\","
-                        + "\"email\":\"not-an-email\","
+                        + "\"email\":\"" + INVALID_EMAIL + "\","
                         + "\"password\":\"" + VALID_PASSWORD + "\""
                         + "}"
                 )
@@ -171,7 +172,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        assertStatusCode(response, 422);
+        apiBaseSteps.assertStatusCode(response, 422);
         log.info("RESULT: Invalid email format correctly rejected | body: {}", response.body().asString());
     }
 
@@ -180,15 +181,14 @@ public class CustomerRegisterApiTest extends BaseApiTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("POST /users/register - weak password returns 422")
     public void registerWithWeakPasswordReturns422() {
-        String email = "weakpass_" + System.currentTimeMillis() + "@yopmail.com";
-        log.info("ACTION: POST /users/register with weak password | email: {}", email);
+        log.info("ACTION: POST /users/register with weak password | email: {}", UNIQUE_EMAIL);
 
         Response response = given()
                 .body("{"
                         + "\"first_name\":\"Weak\","
                         + "\"last_name\":\"Pass\","
-                        + "\"email\":\"" + email + "\","
-                        + "\"password\":\"12345678\""
+                        + "\"email\":\"" + UNIQUE_EMAIL + "\","
+                        + "\"password\"" + WEAK_PASSWORD + "\","
                         + "}"
                 )
                 .when()
@@ -196,7 +196,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        assertStatusCode(response, 422);
+        apiBaseSteps.assertStatusCode(response, 422);
         log.info("RESULT: Weak password correctly rejected | body: {}", response.body().asString());
     }
 
@@ -205,16 +205,15 @@ public class CustomerRegisterApiTest extends BaseApiTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("POST /users/register - dob under 18 years returns 422")
     public void registerWithUnderAgeDobReturns422() {
-        String email = "young_" + System.currentTimeMillis() + "@yopmail.com";
-        log.info("ACTION: POST /users/register with under-age dob | email: {}", email);
+        log.info("ACTION: POST /users/register with under-age dob | email: {}", UNIQUE_EMAIL);
 
         Response response = given()
                 .body("{"
                         + "\"first_name\":\"Young\","
                         + "\"last_name\":\"User\","
-                        + "\"email\":\"" + email + "\","
+                        + "\"email\":\"" + UNIQUE_EMAIL + "\","
                         + "\"password\":\"" + VALID_PASSWORD + "\","
-                        + "\"dob\":\"2020-01-01\""
+                        + "\"dob\":\"2020-03-16\""
                         + "}"
                 )
                 .when()
@@ -222,7 +221,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        assertStatusCode(response, 422);
+        apiBaseSteps.assertStatusCode(response, 422);
         log.info("RESULT: Under-age dob correctly rejected | body: {}", response.body().asString());
     }
 }
