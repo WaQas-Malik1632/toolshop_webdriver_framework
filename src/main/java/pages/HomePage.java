@@ -9,7 +9,7 @@ public interface HomePage extends WebPage {
     @FindBy(value = "//a[contains(text(),'Sign in')]")
     AtlasWebElement<?> loginMenuBtn();
 
-    @FindBy("//a[contains(text(),'Home')]")
+    @FindBy("//a[@class='nav-link active']")
     AtlasWebElement<?> homeNavMenu();
 
     @FindBy("//*[@id='Layer_1']")
@@ -94,6 +94,9 @@ public interface HomePage extends WebPage {
 
     @FindBy("//input[@id='postal_code']")
     AtlasWebElement<?> postalCodeInputField();
+
+    @FindBy("//input[@id='house_number']")
+    AtlasWebElement<?> houseNoInputField();
 
     //Payment related fields
     @FindBy("//select[@id='payment-method']")

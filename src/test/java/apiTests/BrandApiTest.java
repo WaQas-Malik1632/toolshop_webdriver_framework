@@ -28,11 +28,11 @@ public class BrandApiTest extends BaseApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
-        apiBaseSteps.assertListNotEmpty(response, "$");
-        apiBaseSteps.assertFieldNotEmpty(response, "[0].id");
-        apiBaseSteps.assertFieldNotEmpty(response, "[0].name");
-        apiBaseSteps.assertFieldNotEmpty(response, "[0].slug");
+        BaseApiSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertListNotEmpty(response, "$");
+        BaseApiSteps.assertFieldNotEmpty(response, "[0].id");
+        BaseApiSteps.assertFieldNotEmpty(response, "[0].name");
+        BaseApiSteps.assertFieldNotEmpty(response, "[0].slug");
         log.info("RESULT: {} brand(s) | first='{}'",
                 response.jsonPath().getList("$").size(), response.jsonPath().getString("[0].name"));
     }
@@ -52,8 +52,8 @@ public class BrandApiTest extends BaseApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
-        apiBaseSteps.assertListNotEmpty(response, "$");
+        BaseApiSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertListNotEmpty(response, "$");
         List<String> names = response.jsonPath().getList("name", String.class);
         Assert.assertTrue(names.get(0).contains("ForgeFlex"),
                 "First brand should contain 'ForgeFlex' but was: " + names.get(0));
@@ -74,7 +74,7 @@ public class BrandApiTest extends BaseApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 404);
+        BaseApiSteps.assertStatusCode(response, 404);
         log.info("RESULT: 404 correctly returned");
     }
 }

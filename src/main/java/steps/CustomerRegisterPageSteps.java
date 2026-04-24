@@ -38,13 +38,12 @@ public class CustomerRegisterPageSteps extends BaseSteps {
         input.enterText(onRegistrationPage().firstNameInputField(), registerFormData.getFirstName());
         input.enterText(onRegistrationPage().lastNameInputField(), registerFormData.getLastName());
         input.enterText(onRegistrationPage().dateOfBirthField(), registerFormData.getBirthDate());
-        input.enterText(onRegistrationPage().streetInputField(), registerFormData.getStreet());
+        dropdown.selectByVisibleText(onRegistrationPage().countrySelect(), registerFormData.getCountry());
         input.enterText(onRegistrationPage().postalCodeInputField(), registerFormData.getPostalCode());
+        input.enterText(onRegistrationPage().houseNoInputField(), registerFormData.getHouseNo());
+        input.enterText(onRegistrationPage().streetInputField(), registerFormData.getStreet());
         input.enterText(onRegistrationPage().cityInputField(), registerFormData.getCity());
         input.enterText(onRegistrationPage().stateInputField(), registerFormData.getState());
-
-        dropdown.selectByVisibleText(onRegistrationPage().countrySelect(), registerFormData.getCountry());
-
         input.enterText(onRegistrationPage().phoneInputField(), registerFormData.getPhone());
         input.enterText(onRegistrationPage().emailInputField(), registerFormData.getEmail());
         input.enterText(onRegistrationPage().passwordInputField(), registerFormData.getPassword());
@@ -62,6 +61,7 @@ public class CustomerRegisterPageSteps extends BaseSteps {
             String birthDate,
             String street,
             String postalCode,
+            String houseNo,
             String city,
             String state,
             String country,
@@ -75,6 +75,7 @@ public class CustomerRegisterPageSteps extends BaseSteps {
                 .birthDate(birthDate)
                 .street(street)
                 .postalCode(postalCode)
+                .houseNo(houseNo)
                 .city(city)
                 .state(state)
                 .country(country)

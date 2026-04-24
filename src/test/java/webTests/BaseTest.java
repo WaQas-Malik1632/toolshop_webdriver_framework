@@ -24,8 +24,8 @@ public class BaseTest {
     public String loginUserEmail;
     public String loginUserPass;
     public String loginWrongPass;
-    public String resetEmail;
-    public String registeredEmail;
+    public String resetWithUnRegisteredEmail;
+    public String resetWithRegisteredEmail;
 
     public String userCurrentPass;
     public String userNewPass;
@@ -33,20 +33,22 @@ public class BaseTest {
 
 
     @BeforeMethod(alwaysRun = true)
-    public void setUp(Method method) throws IOException {
+    public void setUp(Method method, org.testng.ITestContext context) throws IOException {
         this.testMethod = method;
         log.info("===== STARTING TEST: {} =====", method.getName());
 
         prop = DriverManager.loadProperties();
 
-        browserName = prop.getProperty("browser");
+        String testBrowser = context.getCurrentXmlTest().getParameter("browser");
+        browserName = (testBrowser != null && !testBrowser.isEmpty()) ? testBrowser : prop.getProperty("browser");
+
         appBaseUrl = prop.getProperty("app.base.url");
 
         loginUserEmail = prop.getProperty("user.login.email");
         loginUserPass = prop.getProperty("user.login.password");
         loginWrongPass = prop.getProperty("user.login.wrong.password");
-        resetEmail = prop.getProperty("user.reset.email");
-        registeredEmail = prop.getProperty("user.reset.registered.email");
+        resetWithUnRegisteredEmail = prop.getProperty("user.reset.unregistered.email");
+        resetWithRegisteredEmail = prop.getProperty("user.reset.registered.email");
 
         userCurrentPass = prop.getProperty("user.change.current.password");
         userNewPass = prop.getProperty("user.change.new.password");
@@ -54,13 +56,13 @@ public class BaseTest {
 
         DriverManager.initializeDriver(browserName, appBaseUrl);
 
-        log.info("Browser initialized successfully");
+        log.info("Browser initialized successfully: {}", browserName);
     }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result) {
         log.info("===== FINISHED TEST: {} =====", result.getMethod().getMethodName());
-        DriverManager.quitDriver();
+        // DriverManager.quitDriver();
     }
 
     protected WebDriver getDriver() {

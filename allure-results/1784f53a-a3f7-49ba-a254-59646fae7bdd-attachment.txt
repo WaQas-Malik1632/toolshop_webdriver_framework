@@ -1,0 +1,3 @@
+Scenario: Validate customer can contact with Admin about payment issue
+Status: FAILED
+Duration: 13 seconds

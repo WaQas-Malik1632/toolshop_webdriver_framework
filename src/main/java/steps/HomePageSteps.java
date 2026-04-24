@@ -11,12 +11,10 @@ public class HomePageSteps extends BaseSteps {
     }
 
     @Step("Navigate to Home Page")
-    public HomePageSteps navigateToHomePage() {
+    public void navigateToHomePage() {
         button.waitAndClick(onHomePage().homeNavMenu());
         onHomePage().homePageLogo().isDisplayed();
-
         log.info("Navigated to Home Page");
-        return this;
     }
 
     @Step("Verify Home Page Logo is visible and clickable")
@@ -55,6 +53,7 @@ public class HomePageSteps extends BaseSteps {
 
         button.waitAndClick(onHomePage().proceedToCheckoutBtn());
         button.waitAndClick(onHomePage().proceedToCheckoutBtnAfterLogin());
+        input.enterText(onHomePage().houseNoInputField(), formData.getHouseNo());
         button.waitAndClick(onHomePage().proceedToCheckoutBtnAfterBillingAddress());
 
         dropdown.selectByVisibleText(onHomePage().selectPaymentMethod(), formData.getPaymentMethod());
@@ -79,10 +78,12 @@ public class HomePageSteps extends BaseSteps {
             String cardNumber,
             String expiryDate,
             String cvv,
-            String cardHolderName) {
+            String cardHolderName,
+            String houseNo) {
 
         CheckoutPaymentFormData formData = new CheckoutPaymentFormData.Builder()
                 .setPaymentDetailsForCreditCard("Credit Card", cardNumber, expiryDate, cvv, cardHolderName)
+                .setHouseNo(houseNo)
                 .build();
 
         return purchaseMultipleProducts(formData);
@@ -112,7 +113,7 @@ public class HomePageSteps extends BaseSteps {
         input.enterText(onHomePage().stateInputField(), formData.getState());
         input.enterText(onHomePage().countryInputField(), formData.getCountry());
         input.enterText(onHomePage().postalCodeInputField(), formData.getPostalCode());
-
+        input.enterText(onHomePage().houseNoInputField(), formData.getHouseNo());
         button.waitAndClick(onHomePage().proceedToCheckoutBtnAfterBillingAddress());
 
         dropdown.selectByVisibleText(onHomePage().selectPaymentMethod(), formData.getPaymentMethod());
@@ -136,11 +137,12 @@ public class HomePageSteps extends BaseSteps {
             String city,
             String state,
             String country,
-            String postalCode) {
+            String postalCode,
+            String houseNo) {
 
         CheckoutPaymentFormData formData = new CheckoutPaymentFormData.Builder()
                 .setGuestDetails(guestEmail, guestFirstName, guestLastName)
-                .setBillingAddress(street, city, state, country, postalCode, "Cash on Delivery")
+                .setBillingAddress(street, city, state, country, postalCode, houseNo, "Cash on Delivery")
                 .build();
 
         return purchaseItemFlowAsGuestUser(formData);
@@ -157,10 +159,9 @@ public class HomePageSteps extends BaseSteps {
 
         button.waitAndClick(onHomePage().proceedToCheckoutBtn());
         button.waitAndClick(onHomePage().proceedToCheckoutBtnAfterLogin());
+        input.enterText(onHomePage().houseNoInputField(), formData.getHouseNo());
         button.waitAndClick(onHomePage().proceedToCheckoutBtnAfterBillingAddress());
-
         dropdown.selectByVisibleText(onHomePage().selectPaymentMethod(), formData.getPaymentMethod());
-
         input.enterText(onHomePage().bankNameInputField(), formData.getBankName());
         input.enterText(onHomePage().accountNameInputField(), formData.getAccountName());
         input.enterText(onHomePage().accountNoInputField(), formData.getAccountNumber());
@@ -175,14 +176,16 @@ public class HomePageSteps extends BaseSteps {
         return message;
     }
 
-    @Step("Purchase item with Bank Transfer")
+    @Step("Purchase item with Bank Transfer (with custom house number)")
     public String purchaseItemWithBankTransfer(
             String bankName,
             String accountName,
-            String accountNumber) {
+            String accountNumber,
+            String houseNo) {
 
         CheckoutPaymentFormData formData = new CheckoutPaymentFormData.Builder()
                 .setPaymentDetailsForBank("Bank Transfer", bankName, accountName, accountNumber)
+                .setHouseNo(houseNo)
                 .build();
 
         return purchaseItemFlow(formData);

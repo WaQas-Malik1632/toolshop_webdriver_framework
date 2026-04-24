@@ -36,22 +36,26 @@ public class DriverManager {
                 throw e;
             }
 
-            // Allow Jenkins / CLI system properties to override config file values
-            for (String key : new String[]{"browser", "app.base.url", "user.login.email", "user.login.password"}) {
-                String sysProp = System.getProperty(key);
-                if (sysProp != null && !sysProp.isEmpty()) {
-                    prop.setProperty(key, sysProp);
-                    log.info("System property override: {}={}", key, key.contains("password") ? "***" : sysProp);
-                }
-            }
+            // Apply CI/CD system property overrides if running from Jenkins
+            applySystemPropertyOverrides(prop);
         }
         return prop;
+    }
+
+    private static void applySystemPropertyOverrides(Properties properties) {
+        for (String key : new String[]{"browser", "app.base.url", "user.login.email", "user.login.password"}) {
+            String sysProp = System.getProperty(key);
+            if (sysProp != null && !sysProp.isEmpty()) {
+                properties.setProperty(key, sysProp);
+                log.info("System property override: {}={}", key, key.contains("password") ? "***" : sysProp);
+            }
+        }
     }
 
     public static Properties loadApiProperties() throws IOException {
         if (prop == null) {
             prop = new Properties();
-            String configPath = "src/main/java/config/configApi.properties";
+            String configPath = "src/main/java/com/toolshop/qa/config/configApi.properties";
 
             try (FileInputStream fis = new FileInputStream(configPath)) {
                 prop.load(fis);
@@ -66,7 +70,6 @@ public class DriverManager {
     public static void initializeDriver(String browserName, String baseUrl) {
         log.info("Initializing browser: {}", browserName);
 
-        //browserName = browserName.trim().toLowerCase();
         WebDriver webDriver;
 
         switch (browserName.trim().toLowerCase()) {

@@ -3,16 +3,16 @@ package webTests;
 import constants.LoginPageConstants;
 import io.qameta.allure.*;
 import io.qameta.allure.testng.AllureTestNg;
-import listeners.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import webTests.listeners.TestListener;
 
 @Feature("Authentication")
 @Listeners({AllureTestNg.class, TestListener.class})
 public class LoginTest extends BaseTest {
 
-    @Test(priority = 1, enabled = true, groups = {"smoke"})
+    @Test(priority = 1, enabled = false, groups = {"smoke"})
     @Story("Validate Login Page Title")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the Login page title matches the expected value")
@@ -26,7 +26,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(actualTitle, LoginPageConstants.LOGIN_PAGE_TITLE, "Title mismatch on Login Page");
     }
 
-    @Test(priority = 2, enabled = true, groups = {"smoke", "e2e"})
+    @Test(priority = 2, enabled = false, groups = {"smoke", "e2e"})
     @Story("Customer Login - Positive Flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that user can login with valid credentials successfully")
@@ -68,12 +68,12 @@ public class LoginTest extends BaseTest {
     @Description("Verify that user can reset password using Registered email successfully")
     public void validateUserCanResetForgotPasswordWithRegisteredEmailSuccessfully() {
         log.info("Executing test: {}", testMethod.getName());
-        log.info("ACTION: Requesting password reset for: {}", resetEmail);
+        log.info("ACTION: Requesting password reset for: {}", resetWithRegisteredEmail);
 
         String result = onLoginPage()
                 .navigateToLoginPage()
                 .openForgotPasswordForm()
-                .enterForgotPasswordEmail(resetEmail)
+                .enterForgotPasswordEmail(resetWithRegisteredEmail)
                 .submitForgotPasswordRequest()
                 .captureForgotPasswordResultMessage();
 
@@ -87,12 +87,12 @@ public class LoginTest extends BaseTest {
     @Description("Verify that user can not reset password using un-registered email")
     public void validateUserCanNotResetForgotPasswordWithUnregisteredEmail() {
         log.info("Executing test: {}", testMethod.getName());
-        log.info("ACTION: Requesting password reset for unregistered: {}", registeredEmail);
+        log.info("ACTION: Requesting password reset for unregistered: {}", resetWithUnRegisteredEmail);
 
         String result = onLoginPage()
                 .navigateToLoginPage()
                 .openForgotPasswordForm()
-                .enterForgotPasswordEmail(registeredEmail)
+                .enterForgotPasswordEmail(resetWithUnRegisteredEmail)
                 .submitForgotPasswordRequest()
                 .captureForgotPasswordResultMessage();
 

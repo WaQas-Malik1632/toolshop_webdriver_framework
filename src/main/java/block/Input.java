@@ -14,12 +14,18 @@ public class Input {
     private static final int DEFAULT_WAIT_TIMEOUT = 10;
     private final WebDriverWait wait;
 
-    public Input (WebDriver driver) {
+    public Input(WebDriver driver) {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_WAIT_TIMEOUT));
     }
 
     public Input enterText(AtlasWebElement<?> element, String text) {
         log.debug("Entering text into input field: {}", text);
+
+        // Handle null or empty text gracefully
+        if (text == null || text.isEmpty()) {
+            log.warn("Attempted to enter null or empty text. Skipping input.");
+            return this;
+        }
 
         waitForVisible(element);
         element.clear();
@@ -30,6 +36,12 @@ public class Input {
     }
 
     public Input clearAndEnterText(AtlasWebElement<?> element, String text) {
+        // Handle null or empty text gracefully
+        if (text == null || text.isEmpty()) {
+            log.warn("Attempted to enter null or empty text. Skipping input.");
+            return this;
+        }
+
         waitForVisible(element);
         element.clear();
         element.sendKeys(text);

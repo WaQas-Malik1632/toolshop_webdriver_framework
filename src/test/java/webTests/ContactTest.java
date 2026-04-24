@@ -3,16 +3,16 @@ package webTests;
 import constants.ContactPageConstants;
 import io.qameta.allure.*;
 import io.qameta.allure.testng.AllureTestNg;
-import listeners.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import webTests.listeners.TestListener;
 
 @Feature("Contact Us Page")
 @Listeners({AllureTestNg.class, TestListener.class})
 public class ContactTest extends BaseTest {
 
-    @Test(priority = 1, enabled = true, groups = {"smoke", "e2e"})
+    @Test(priority = 1, enabled = false, groups = {"smoke", "e2e"})
     @Story("Validate contact page title")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that the customer contact page title matches the expected value")

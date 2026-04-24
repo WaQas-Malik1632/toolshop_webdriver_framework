@@ -27,9 +27,10 @@ public class Button {
 
     public Button click(AtlasWebElement<?> element) {
         try {
+            wait.until(ExpectedConditions.visibilityOf(element));
             wait.until(ExpectedConditions.elementToBeClickable(element));
             log.debug("Waiting for element to be clickable");
-
+            element.isEnabled();
             element.click();
             log.debug("Button clicked successfully");
         } catch (Exception e) {

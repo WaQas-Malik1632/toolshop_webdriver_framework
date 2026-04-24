@@ -6007,3 +6007,256 @@ java.io.FileNotFoundException: src\main\java\com\toolshop\qa\config\configApi.pr
 2026-04-18 04:22:52 INFO  BaseApiTest:14 - RESPONSE [200] : {"success":true}
 2026-04-18 04:22:52 INFO  BaseApiTest:103 - RESULT: Password reset successful | success=true
 2026-04-18 04:22:52 INFO  BaseApiTest:55 - ===== FINISHED API TEST: forgotPasswordWithRegisteredEmail =====
+2026-04-25 03:47:11 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-25 03:47:11 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-25 03:47:11 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-25 03:47:11 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-25 03:47:12 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-25 03:47:12 ERROR DriverManager:35 - Failed to load configuration file: src/main/java/com/toolshop/qa/config/config.properties
+java.io.FileNotFoundException: src\main\java\com\toolshop\qa\config\config.properties (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:185)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:109)
+	at webDriverManager.DriverManager.loadProperties(DriverManager.java:32)
+	at webTests.BaseTest.setUp(BaseTest.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:846)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:611)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+2026-04-25 03:47:12 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-25 03:47:12 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-25 03:47:12 INFO  TestListener:41 -   Groups    : smoke, e2e
+2026-04-25 03:47:12 WARN  TestListener:80 - ⊘ TEST SKIPPED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-25 03:47:12 WARN  TestListener:83 - ──────────────────────────────────────────────────────
+2026-04-25 03:47:12 INFO  BaseTest:64 - ===== FINISHED TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-25 03:47:12 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-25 03:47:12 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-25 03:47:12 INFO  TestListener:29 -   ✔ Passed  : 0
+2026-04-25 03:47:12 INFO  TestListener:30 -   ✘ Failed  : 0
+2026-04-25 03:47:12 INFO  TestListener:31 -   ⊘ Skipped : 1
+2026-04-25 03:47:12 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-25 03:48:20 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-25 03:48:20 INFO  TestListener:20 - ╔══════════════════════════════════════════════════════╗
+2026-04-25 03:48:20 INFO  TestListener:21 -   SUITE STARTED: toolshop_webdriver_framework
+2026-04-25 03:48:20 INFO  TestListener:22 - ╚══════════════════════════════════════════════════════╝
+2026-04-25 03:48:21 INFO  BaseTest:38 - ===== STARTING TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-25 03:48:21 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 03:48:34 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 03:48:38 INFO  BaseTest:59 - Browser initialized successfully: edge
+2026-04-25 03:48:39 INFO  TestListener:37 - ──────────────────────────────────────────────────────
+2026-04-25 03:48:39 INFO  TestListener:38 - ▶ TEST STARTED : [LoginTest] validateCustomerLogInWithInvalidCredentials
+2026-04-25 03:48:39 INFO  TestListener:41 -   Groups    : smoke, e2e
+2026-04-25 03:48:39 INFO  BaseTest:52 - Executing test: validateCustomerLogInWithInvalidCredentials
+2026-04-25 03:48:39 INFO  BaseTest:53 - ACTION: Attempting login with invalid credentials
+2026-04-25 03:48:41 INFO  BasePage:16 - Navigated to Login Page
+2026-04-25 03:48:43 WARN  BasePage:106 - Action failed. Error: Invalid email or password
+2026-04-25 03:48:43 INFO  BaseTest:61 - RESULT: Invalid email or password
+2026-04-25 03:48:43 INFO  TestListener:47 - ✔ TEST PASSED  : [LoginTest] validateCustomerLogInWithInvalidCredentials (4566ms)
+2026-04-25 03:48:43 INFO  TestListener:51 - ──────────────────────────────────────────────────────
+2026-04-25 03:48:43 INFO  BaseTest:64 - ===== FINISHED TEST: validateCustomerLogInWithInvalidCredentials =====
+2026-04-25 03:48:43 INFO  TestListener:27 - ╔══════════════════════════════════════════════════════╗
+2026-04-25 03:48:43 INFO  TestListener:28 -   SUITE FINISHED: toolshop_webdriver_framework
+2026-04-25 03:48:43 INFO  TestListener:29 -   ✔ Passed  : 1
+2026-04-25 03:48:43 INFO  TestListener:30 -   ✘ Failed  : 0
+2026-04-25 03:48:43 INFO  TestListener:31 -   ⊘ Skipped : 0
+2026-04-25 03:48:43 INFO  TestListener:32 - ╚══════════════════════════════════════════════════════╝
+2026-04-25 04:28:45 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-25 04:28:47 WARN  Utils:133 - The test method 'io.cucumber.testng.AbstractTestNGCucumberTests.runScenario' will be skipped since its data provider 'scenarios' returned an empty array or iterator. 
+2026-04-25 04:29:37 INFO  CucumberHooks:42 - ╔════════════════════════════════════════════════════════════════╗
+2026-04-25 04:29:37 INFO  CucumberHooks:43 - ║           STARTING BDD TEST EXECUTION                         ║
+2026-04-25 04:29:37 INFO  CucumberHooks:44 - ╚════════════════════════════════════════════════════════════════╝
+2026-04-25 04:29:37 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:29:37 INFO  CucumberHooks:53 - SCENARIO: Validate contact page title
+2026-04-25 04:29:37 INFO  CucumberHooks:54 - TAGS: [@ContactUs, @Smoke, @E2E]
+2026-04-25 04:29:37 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 04:29:43 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 04:29:45 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-04-25 04:29:45 INFO  ContactStepDefinitions:24 - Navigating to contact us page
+2026-04-25 04:29:48 INFO  BasePage:17 - Navigated to Contact Us Page
+2026-04-25 04:29:48 INFO  ContactStepDefinitions:31 - Verifying page title. Expected: Contact Us - Practice Software Testing - Toolshop - v5.0, Actual: Contact Us - Practice Software Testing - Toolshop - v5.0
+2026-04-25 04:29:48 INFO  CucumberHooks:107 - Duration: 11 sec
+2026-04-25 04:29:49 INFO  DriverManager:156 - Browser closed successfully
+2026-04-25 04:29:49 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-04-25 04:29:49 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:29:49 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:29:49 INFO  CucumberHooks:53 - SCENARIO: Validate customer can contact with Admin about payment issue
+2026-04-25 04:29:49 INFO  CucumberHooks:54 - TAGS: [@ContactUs, @E2E]
+2026-04-25 04:29:49 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 04:29:53 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 04:29:54 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-04-25 04:29:54 INFO  ContactStepDefinitions:24 - Navigating to contact us page
+2026-04-25 04:29:56 INFO  BasePage:17 - Navigated to Contact Us Page
+2026-04-25 04:29:56 INFO  ContactStepDefinitions:44 - ACTION: Filling Contact Us form --> [Name: Tester User, Email: test@gmail.com, Subject: Payments]
+2026-04-25 04:29:56 INFO  BasePage:29 - Filling contact form
+2026-04-25 04:30:03 ERROR CucumberHooks:80 - ✗ FAILED: Validate customer can contact with Admin about payment issue
+2026-04-25 04:30:04 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-04-25 04:30:04 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-04-25 04:30:04 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-04-25 04:30:04 INFO  CucumberHooks:107 - Duration: 14 sec
+2026-04-25 04:30:05 INFO  DriverManager:156 - Browser closed successfully
+2026-04-25 04:30:05 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-04-25 04:30:05 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:30:05 INFO  CucumberHooks:128 - ╔════════════════════════════════════════════════════════════════╗
+2026-04-25 04:30:05 INFO  CucumberHooks:129 - ║           FINISHED BDD TEST EXECUTION                         ║
+2026-04-25 04:30:05 INFO  CucumberHooks:130 - ╚════════════════════════════════════════════════════════════════╝
+2026-04-25 04:30:20 INFO  CucumberHooks:42 - ╔════════════════════════════════════════════════════════════════╗
+2026-04-25 04:30:20 INFO  CucumberHooks:43 - ║           STARTING BDD TEST EXECUTION                         ║
+2026-04-25 04:30:20 INFO  CucumberHooks:44 - ╚════════════════════════════════════════════════════════════════╝
+2026-04-25 04:30:21 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:30:21 INFO  CucumberHooks:53 - SCENARIO: Validate contact page title
+2026-04-25 04:30:21 INFO  CucumberHooks:54 - TAGS: [@ContactUs, @Smoke, @E2E]
+2026-04-25 04:30:21 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 04:30:27 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 04:30:28 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-04-25 04:30:28 INFO  ContactStepDefinitions:24 - Navigating to contact us page
+2026-04-25 04:30:31 INFO  BasePage:17 - Navigated to Contact Us Page
+2026-04-25 04:30:31 INFO  ContactStepDefinitions:31 - Verifying page title. Expected: Contact Us - Practice Software Testing - Toolshop - v5.0, Actual: Contact Us - Practice Software Testing - Toolshop - v5.0
+2026-04-25 04:30:31 INFO  CucumberHooks:107 - Duration: 10 sec
+2026-04-25 04:30:32 INFO  DriverManager:156 - Browser closed successfully
+2026-04-25 04:30:32 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-04-25 04:30:32 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:30:32 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:30:32 INFO  CucumberHooks:53 - SCENARIO: Validate customer can contact with Admin about payment issue
+2026-04-25 04:30:32 INFO  CucumberHooks:54 - TAGS: [@ContactUs, @E2E]
+2026-04-25 04:30:32 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 04:30:35 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 04:30:36 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-04-25 04:30:36 INFO  ContactStepDefinitions:24 - Navigating to contact us page
+2026-04-25 04:30:38 INFO  BasePage:17 - Navigated to Contact Us Page
+2026-04-25 04:30:38 INFO  ContactStepDefinitions:44 - ACTION: Filling Contact Us form --> [Name: Tester User, Email: test@gmail.com, Subject: Payments]
+2026-04-25 04:30:38 INFO  BasePage:29 - Filling contact form
+2026-04-25 04:30:45 ERROR CucumberHooks:80 - ✗ FAILED: Validate customer can contact with Admin about payment issue
+2026-04-25 04:30:46 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-04-25 04:30:46 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-04-25 04:30:46 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-04-25 04:30:46 INFO  CucumberHooks:107 - Duration: 13 sec
+2026-04-25 04:30:47 INFO  DriverManager:156 - Browser closed successfully
+2026-04-25 04:30:47 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-04-25 04:30:47 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:30:47 INFO  CucumberHooks:128 - ╔════════════════════════════════════════════════════════════════╗
+2026-04-25 04:30:47 INFO  CucumberHooks:129 - ║           FINISHED BDD TEST EXECUTION                         ║
+2026-04-25 04:30:47 INFO  CucumberHooks:130 - ╚════════════════════════════════════════════════════════════════╝
+2026-04-25 04:31:16 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-25 04:31:17 WARN  Utils:133 - The test method 'io.cucumber.testng.AbstractTestNGCucumberTests.runScenario' will be skipped since its data provider 'scenarios' returned an empty array or iterator. 
+2026-04-25 04:32:53 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Waqas\AppData\Local\JetBrains\IdeaIC2024.2\temp-testng-customsuite.xml
+
+2026-04-25 04:32:55 INFO  CucumberHooks:42 - ╔════════════════════════════════════════════════════════════════╗
+2026-04-25 04:32:55 INFO  CucumberHooks:43 - ║           STARTING BDD TEST EXECUTION                         ║
+2026-04-25 04:32:55 INFO  CucumberHooks:44 - ╚════════════════════════════════════════════════════════════════╝
+2026-04-25 04:32:55 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:32:55 INFO  CucumberHooks:53 - SCENARIO: Validate Login Page Title
+2026-04-25 04:32:55 INFO  CucumberHooks:54 - TAGS: [@Authentication, @Smoke]
+2026-04-25 04:32:55 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 04:33:02 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:05 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:07 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-04-25 04:33:10 INFO  BasePage:16 - Navigated to Login Page
+2026-04-25 04:33:10 INFO  LoginStepDefinitions:36 - Verifying page title. Expected: Login - Practice Software Testing - Toolshop - v5.0, Actual: Login - Practice Software Testing - Toolshop - v5.0
+2026-04-25 04:33:10 INFO  CucumberHooks:107 - Duration: 14 sec
+2026-04-25 04:33:11 INFO  DriverManager:156 - Browser closed successfully
+2026-04-25 04:33:11 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-04-25 04:33:11 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:33:11 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:33:11 INFO  CucumberHooks:53 - SCENARIO: Customer Login - Positive Flow
+2026-04-25 04:33:11 INFO  CucumberHooks:54 - TAGS: [@Authentication, @Smoke, @E2E, @Critical]
+2026-04-25 04:33:11 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 04:33:15 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:16 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:16 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-04-25 04:33:19 INFO  BasePage:16 - Navigated to Login Page
+2026-04-25 04:33:19 INFO  LoginStepDefinitions:44 - Logging in with valid credentials for user: customer2@practicesoftwaretesting.com
+2026-04-25 04:33:24 INFO  BasePage:98 - Action successful. Redirected to: https://practicesoftwaretesting.com/account
+2026-04-25 04:33:24 INFO  LoginStepDefinitions:50 - Login result captured: https://practicesoftwaretesting.com/account
+2026-04-25 04:33:24 INFO  LoginStepDefinitions:92 - Verifying user is on account page
+2026-04-25 04:33:24 INFO  CucumberHooks:107 - Duration: 12 sec
+2026-04-25 04:33:24 INFO  DriverManager:156 - Browser closed successfully
+2026-04-25 04:33:24 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-04-25 04:33:24 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:33:24 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:33:24 INFO  CucumberHooks:53 - SCENARIO: Customer Login - Negative Flow
+2026-04-25 04:33:24 INFO  CucumberHooks:54 - TAGS: [@Authentication, @Smoke, @E2E, @Critical]
+2026-04-25 04:33:24 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 04:33:29 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:29 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:29 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-04-25 04:33:34 INFO  BasePage:16 - Navigated to Login Page
+2026-04-25 04:33:34 INFO  LoginStepDefinitions:57 - Logging in with invalid credentials for user: customer2@practicesoftwaretesting.com
+2026-04-25 04:33:37 WARN  BasePage:106 - Action failed. Error: Invalid email or password
+2026-04-25 04:33:37 INFO  LoginStepDefinitions:63 - Login result captured: Invalid email or password
+2026-04-25 04:33:37 INFO  LoginStepDefinitions:99 - Verifying authentication error message
+2026-04-25 04:33:37 INFO  CucumberHooks:107 - Duration: 12 sec
+2026-04-25 04:33:38 INFO  DriverManager:156 - Browser closed successfully
+2026-04-25 04:33:38 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-04-25 04:33:38 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:33:38 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:33:38 INFO  CucumberHooks:53 - SCENARIO: Reset Password - Registered Email
+2026-04-25 04:33:38 INFO  CucumberHooks:54 - TAGS: [@Authentication, @E2E, @Critical]
+2026-04-25 04:33:38 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 04:33:42 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:43 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:43 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-04-25 04:33:46 INFO  BasePage:16 - Navigated to Login Page
+2026-04-25 04:33:46 INFO  LoginStepDefinitions:69 - Requesting password reset for registered email: customer2@practicesoftwaretesting.com
+2026-04-25 04:33:48 INFO  LoginStepDefinitions:75 - Password reset result: page.forgot-password.confirm
+2026-04-25 04:33:48 INFO  LoginStepDefinitions:106 - Verifying password reset confirmation
+2026-04-25 04:33:48 ERROR CucumberHooks:80 - ✗ FAILED: Reset Password - Registered Email
+2026-04-25 04:33:48 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-04-25 04:33:48 INFO  CucumberHooks:107 - Duration: 9 sec
+2026-04-25 04:33:49 INFO  DriverManager:156 - Browser closed successfully
+2026-04-25 04:33:49 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-04-25 04:33:49 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:33:49 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:33:49 INFO  CucumberHooks:53 - SCENARIO: Reset Password - Negative Flow - Unregistered Email
+2026-04-25 04:33:49 INFO  CucumberHooks:54 - TAGS: [@Authentication, @E2E, @Critical]
+2026-04-25 04:33:49 INFO  DriverManager:71 - Initializing browser: edge
+2026-04-25 04:33:52 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:53 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-04-25 04:33:53 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-04-25 04:33:57 INFO  BasePage:16 - Navigated to Login Page
+2026-04-25 04:33:57 INFO  LoginStepDefinitions:81 - Requesting password reset for unregistered email: Tester4@yopmail.com
+2026-04-25 04:33:59 INFO  LoginStepDefinitions:87 - Password reset result: The selected email is invalid.
+2026-04-25 04:33:59 INFO  LoginStepDefinitions:113 - Verifying invalid email error
+2026-04-25 04:33:59 ERROR CucumberHooks:80 - ✗ FAILED: Reset Password - Negative Flow - Unregistered Email
+2026-04-25 04:34:00 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-04-25 04:34:00 INFO  CucumberHooks:107 - Duration: 10 sec
+2026-04-25 04:34:01 INFO  DriverManager:156 - Browser closed successfully
+2026-04-25 04:34:01 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-04-25 04:34:01 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-04-25 04:34:01 INFO  CucumberHooks:128 - ╔════════════════════════════════════════════════════════════════╗
+2026-04-25 04:34:01 INFO  CucumberHooks:129 - ║           FINISHED BDD TEST EXECUTION                         ║
+2026-04-25 04:34:01 INFO  CucumberHooks:130 - ╚════════════════════════════════════════════════════════════════╝

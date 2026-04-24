@@ -28,8 +28,8 @@ public class ProductApiTest extends BaseApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
-        apiBaseSteps.assertListNotEmpty(response, "data");
+        BaseApiSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertListNotEmpty(response, "data");
         Assert.assertEquals(response.jsonPath().getInt("current_page"), 1, "current_page should be 1");
         Assert.assertTrue(response.jsonPath().getInt("total") > 0, "total should be > 0");
         log.info("RESULT: total={} | current_page={}", response.jsonPath().getInt("total"), response.jsonPath().getInt("current_page"));
@@ -50,8 +50,8 @@ public class ProductApiTest extends BaseApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
-        apiBaseSteps.assertSortedAsc(response.jsonPath().getList("data.price", Float.class), "price");
+        BaseApiSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertSortedAsc(response.jsonPath().getList("data.price", Float.class), "price");
     }
 
     @Test(priority = 3, groups = {"e2e"})
@@ -69,8 +69,8 @@ public class ProductApiTest extends BaseApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
-        apiBaseSteps.assertSortedDesc(response.jsonPath().getList("data.name", String.class), "name");
+        BaseApiSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertSortedDesc(response.jsonPath().getList("data.name", String.class), "name");
     }
 
     @Test(priority = 4, groups = {"smoke", "e2e"})
@@ -88,8 +88,8 @@ public class ProductApiTest extends BaseApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
-        apiBaseSteps.assertListNotEmpty(response, "data");
+        BaseApiSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertListNotEmpty(response, "data");
         List<String> names = response.jsonPath().getList("data.name", String.class);
         Assert.assertTrue(names.get(0).contains("Pliers"),
                 "First result should contain 'Pliers' but was: " + names.get(0));
@@ -111,7 +111,7 @@ public class ProductApiTest extends BaseApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertStatusCode(response, 200);
         List<?> data = response.jsonPath().getList("data");
         Assert.assertTrue(data.isEmpty(), "Expected empty data but got " + data.size() + " results");
         log.info("RESULT: No products found - as expected");

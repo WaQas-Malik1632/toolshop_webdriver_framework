@@ -31,4 +31,3 @@ public class BaseSteps extends BasePage {
     }
 
 }
-

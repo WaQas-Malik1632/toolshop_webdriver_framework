@@ -44,7 +44,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        apiBaseSteps.assertStatusCode(response, 201);
+        BaseApiSteps.assertStatusCode(response, 201);
         Assert.assertNotNull(response.path("id"), "id should not be null");
         Assert.assertEquals(response.path("first_name"), "ApiTest", "first_name mismatch");
         Assert.assertEquals(response.path("last_name"), "User", "last_name mismatch");
@@ -75,7 +75,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        apiBaseSteps.assertStatusCode(response, 201);
+        BaseApiSteps.assertStatusCode(response, 201);
         Assert.assertNotNull(response.path("id"), "id should not be null");
         Assert.assertEquals(response.path("email"), UNIQUE_EMAIL1, "email mismatch");
 
@@ -102,7 +102,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        apiBaseSteps.assertStatusCode(response, 422);
+        BaseApiSteps.assertStatusCode(response, 422);
         log.info("RESULT: Duplicate email correctly rejected | body: {}", response.body().asString());
     }
 
@@ -125,7 +125,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        apiBaseSteps.assertStatusCode(response, 422);
+        BaseApiSteps.assertStatusCode(response, 422);
         log.info("RESULT: Missing email correctly rejected | body: {}", response.body().asString());
     }
 
@@ -148,7 +148,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        apiBaseSteps.assertStatusCode(response, 422);
+        BaseApiSteps.assertStatusCode(response, 422);
         log.info("RESULT: Missing password correctly rejected | body: {}", response.body().asString());
     }
 
@@ -172,7 +172,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        apiBaseSteps.assertStatusCode(response, 422);
+        BaseApiSteps.assertStatusCode(response, 422);
         log.info("RESULT: Invalid email format correctly rejected | body: {}", response.body().asString());
     }
 
@@ -196,7 +196,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        apiBaseSteps.assertStatusCode(response, 422);
+        BaseApiSteps.assertStatusCode(response, 422);
         log.info("RESULT: Weak password correctly rejected | body: {}", response.body().asString());
     }
 
@@ -221,7 +221,7 @@ public class CustomerRegisterApiTest extends BaseApiTest {
                 .then()
                 .extract().response();
 
-        apiBaseSteps.assertStatusCode(response, 422);
+        BaseApiSteps.assertStatusCode(response, 422);
         log.info("RESULT: Under-age dob correctly rejected | body: {}", response.body().asString());
     }
 }

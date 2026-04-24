@@ -35,4 +35,5 @@ public interface ContactPage extends WebPage {
 
     @FindBy("//div[contains(@class,'alert alert-danger') or contains(@class,'alert alert-success')]")
     AtlasWebElement<?> globalErrorMessage();
+
 }

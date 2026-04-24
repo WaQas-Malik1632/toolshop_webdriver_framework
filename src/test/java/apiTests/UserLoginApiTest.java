@@ -28,9 +28,9 @@ public class UserLoginApiTest extends AuthenticatedApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
-        apiBaseSteps.assertFieldNotEmpty(response, "access_token");
-        apiBaseSteps.assertFieldEquals(response, "token_type", "bearer");
+        BaseApiSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertFieldNotEmpty(response, "access_token");
+        BaseApiSteps.assertFieldEquals(response, "token_type", "bearer");
         Assert.assertTrue(response.jsonPath().getInt("expires_in") > 0,
                 "expires_in should be > 0, was: " + response.jsonPath().getInt("expires_in"));
         log.info("RESULT: Login successful | token_type={} | expires_in={}",
@@ -53,7 +53,7 @@ public class UserLoginApiTest extends AuthenticatedApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 401);
+        BaseApiSteps.assertStatusCode(response, 401);
         log.info("RESULT: Login correctly rejected | body='{}'", response.body().asString());
     }
 
@@ -72,10 +72,10 @@ public class UserLoginApiTest extends AuthenticatedApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
-        apiBaseSteps.assertFieldEquals(response, "email", apiUserEmail);
-        apiBaseSteps.assertFieldNotEmpty(response, "first_name");
-        apiBaseSteps.assertFieldNotEmpty(response, "last_name");
+        BaseApiSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertFieldEquals(response, "email", apiUserEmail);
+        BaseApiSteps.assertFieldNotEmpty(response, "first_name");
+        BaseApiSteps.assertFieldNotEmpty(response, "last_name");
         log.info("RESULT: Profile retrieved | email={} | name={} {}",
                 response.jsonPath().getString("email"),
                 response.jsonPath().getString("first_name"),
@@ -97,7 +97,7 @@ public class UserLoginApiTest extends AuthenticatedApiTest {
                 .extract()
                 .response();
 
-        apiBaseSteps.assertStatusCode(response, 200);
+        BaseApiSteps.assertStatusCode(response, 200);
         boolean success = response.jsonPath().getBoolean("success");
         Assert.assertTrue(success, "Expected success=true for registered email but was: " + success);
         log.info("RESULT: Password reset successful | success={}", true);

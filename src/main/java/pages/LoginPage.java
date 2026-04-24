@@ -6,7 +6,6 @@ import io.qameta.atlas.webdriver.extension.FindBy;
 
 public interface LoginPage extends WebPage {
 
-
     @FindBy("//a[contains(text(),'Sign in')]")
     AtlasWebElement<?> loginMenuBtn();
 

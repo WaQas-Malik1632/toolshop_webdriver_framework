@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite thread-count="5" name="Master Test Suite - Tool Shop" parallel="methods" verbose="1">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+        <listener class-name="webTests.listeners.TestListener"/>
+    </listeners>
+
+    <!-- Test Block 1: API Smoke Tests -->
+    <test name="API Smoke Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="apiTests.CustomerRegisterApiTest"/>
+            <class name="apiTests.UserLoginApiTest"/>
+            <class name="apiTests.ProductApiTest"/>
+            <class name="apiTests.BrandApiTest"/>
+        </classes>
+    </test>
+
+    <!-- Test Block 2: API E2E Tests -->
+    <test name="API E2E Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="e2e"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="apiTests.CustomerRegisterApiTest"/>
+            <class name="apiTests.UserLoginApiTest"/>
+            <class name="apiTests.ProductApiTest"/>
+            <class name="apiTests.BrandApiTest"/>
+        </classes>
+    </test>
+
+    <!-- Test Block 3: Web Smoke Tests (Edge Browser) -->
+    <test name="Web Smoke Tests - Edge" preserve-order="true">
+        <parameter name="browser" value="edge"/>
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="webTests.CustomerRegisterTest"/>
+            <class name="webTests.LoginTest"/>
+            <class name="webTests.HomePageTest"/>
+            <class name="webTests.CustomerAccountTest"/>
+            <class name="webTests.ContactTest"/>
+        </classes>
+    </test>
+
+    <!-- Test Block 4: Web E2E Tests (Chrome Browser) -->
+    <test name="Web E2E Tests - Chrome" preserve-order="true">
+        <parameter name="browser" value="chrome"/>
+        <groups>
+            <run>
+                <include name="e2e"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="webTests.CustomerRegisterTest"/>
+            <class name="webTests.LoginTest"/>
+            <class name="webTests.HomePageTest"/>
+            <class name="webTests.CustomerAccountTest"/>
+            <class name="webTests.ContactTest"/>
+        </classes>
+    </test>
+
+</suite>

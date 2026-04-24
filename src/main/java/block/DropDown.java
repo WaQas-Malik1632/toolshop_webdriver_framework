@@ -10,13 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class DropDown
-{
+public class DropDown {
     private static final Logger log = LogManager.getLogger(DropDown.class);
     private static final int DEFAULT_WAIT_TIMEOUT = 10;
     private final WebDriverWait wait;
 
-    public DropDown (WebDriver driver) {
+    public DropDown(WebDriver driver) {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_WAIT_TIMEOUT));
     }
 

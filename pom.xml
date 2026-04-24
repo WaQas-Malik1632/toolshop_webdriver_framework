@@ -15,10 +15,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <suite>master</suite>
-
-        <browser>chrome</browser>
-        <app.base.url>https://practicesoftwaretesting.com/</app.base.url>
+        <suiteXmlFile>testng-master.xml</suiteXmlFile>
     </properties>
 
     <dependencies>
@@ -36,6 +33,26 @@
             <version>7.12.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Cucumber Dependencies -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.20.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>7.20.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>2.32.0</version>
+        </dependency>
+
         <!-- Source: https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -130,14 +147,9 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.25.1/aspectjweaver-1.9.25.1.jar"
                     </argLine>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/${suite}-suite.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <browser>${browser}</browser>
-                        <app.base.url>${app.base.url}</app.base.url>
-                    </systemPropertyVariables>
-
+                    <includes>
+                        <include>**/runners/*Runner.java</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>

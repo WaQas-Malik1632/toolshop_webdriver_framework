@@ -28,11 +28,11 @@ public class CustomerAccountPageSteps extends BaseSteps {
     }
 
     @Step("Navigate to Home Page")
-    public HomePageSteps navigateToHomePage() {
-        return new HomePageSteps(driver).navigateToHomePage();
+    public void navigateToHomePage() {
+        button.waitAndClick(onAccountPage().homeNavMenu());
     }
 
-    @Step("User Sign Out")
+    @Step("User Sign Out from account page")
     public String userSignOut() {
         button.waitAndClick(onAccountPage().navMenu());
         button.waitAndClick(onAccountPage().signOutLink());

@@ -21,20 +21,23 @@ public interface CustomerRegistrationPage extends WebPage {
     @FindBy("//input[@id='dob']")
     AtlasWebElement<?> dateOfBirthField();
 
-    @FindBy("//input[@id='street']")
-    AtlasWebElement<?> streetInputField();
+    @FindBy("//select[@id='country']")
+    AtlasWebElement<?> countrySelect();
 
     @FindBy("//input[@id='postal_code']")
     AtlasWebElement<?> postalCodeInputField();
+
+    @FindBy("//input[@id='house_number']")
+    AtlasWebElement<?> houseNoInputField();
+
+    @FindBy("//input[@id='street']")
+    AtlasWebElement<?> streetInputField();
 
     @FindBy("//input[@id='city']")
     AtlasWebElement<?> cityInputField();
 
     @FindBy("//input[@id='state']")
     AtlasWebElement<?> stateInputField();
-
-    @FindBy("//select[@id='country']")
-    AtlasWebElement<?> countrySelect();
 
     @FindBy("//input[@id='phone']")
     AtlasWebElement<?> phoneInputField();

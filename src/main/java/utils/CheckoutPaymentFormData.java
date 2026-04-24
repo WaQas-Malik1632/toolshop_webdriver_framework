@@ -16,6 +16,7 @@ public class CheckoutPaymentFormData {
     private final String state;
     private final String country;
     private final String postalCode;
+    private final String houseNo;
 
     // Payment Info for Bank
     private final String paymentMethod;
@@ -41,6 +42,7 @@ public class CheckoutPaymentFormData {
         this.state = builder.state;
         this.country = builder.country;
         this.postalCode = builder.postalCode;
+        this.houseNo = builder.houseNo;
         this.paymentMethod = builder.paymentMethod;
         this.bankName = builder.bankName;
         this.accountName = builder.accountName;
@@ -92,6 +94,10 @@ public class CheckoutPaymentFormData {
         return postalCode;
     }
 
+    public String getHouseNo() {
+        return houseNo;
+    }
+
     public String getPaymentMethod() {
         return paymentMethod;
     }
@@ -137,6 +143,7 @@ public class CheckoutPaymentFormData {
         private String state;
         private String country;
         private String postalCode;
+        private String houseNo;
         private String paymentMethod;
         private String bankName;
         private String accountName;
@@ -163,14 +170,13 @@ public class CheckoutPaymentFormData {
         }
 
         // Billing details method for guest user
-        public Builder setBillingAddress(String street, String city, String state, String country, String postalCode, String method) {
+        public Builder setBillingAddress(String street, String city, String state, String country, String postalCode, String houseNo, String method) {
             this.street = street;
             this.city = city;
             this.state = state;
             this.country = country;
             this.postalCode = postalCode;
-
-            //Payment method COD
+            this.houseNo = houseNo;
             this.paymentMethod = method;
 
             return this;
@@ -186,12 +192,17 @@ public class CheckoutPaymentFormData {
             return this;
         }
 
-        // Payment details method for registered user
+        // Payment details method for registered user with Bank Transfer
         public Builder setPaymentDetailsForBank(String method, String bank, String accName, String accNumber) {
             this.paymentMethod = method;
             this.bankName = bank;
             this.accountName = accName;
             this.accountNumber = accNumber;
+            return this;
+        }
+
+        public Builder setHouseNo(String houseNo) {
+            this.houseNo = houseNo;
             return this;
         }
 

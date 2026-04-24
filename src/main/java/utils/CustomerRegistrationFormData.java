@@ -6,6 +6,7 @@ public class CustomerRegistrationFormData {
     private final String birthDate;
     private final String street;
     private final String postalCode;
+    private final String houseNo;
     private final String city;
     private final String state;
     private final String country;
@@ -19,6 +20,7 @@ public class CustomerRegistrationFormData {
         this.birthDate = builder.birthDate;
         this.street = builder.street;
         this.postalCode = builder.postalCode;
+        this.houseNo = builder.houseNo;
         this.city = builder.city;
         this.state = builder.state;
         this.country = builder.country;
@@ -45,6 +47,10 @@ public class CustomerRegistrationFormData {
 
     public String getPostalCode() {
         return postalCode;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
     }
 
     public String getCity() {
@@ -78,6 +84,7 @@ public class CustomerRegistrationFormData {
         private String birthDate;
         private String street;
         private String postalCode;
+        private String houseNo;
         private String city;
         private String state;
         private String country;
@@ -107,6 +114,11 @@ public class CustomerRegistrationFormData {
 
         public Builder postalCode(String postalCode) {
             this.postalCode = postalCode;
+            return this;
+        }
+
+        public Builder houseNo(String houseNum) {
+            this.houseNo = houseNum;
             return this;
         }
 

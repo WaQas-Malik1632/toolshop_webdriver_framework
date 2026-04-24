@@ -21,9 +21,6 @@ public interface CustomerAccountPage extends WebPage {
     @FindBy("//button[normalize-space()='Update Profile']")
     AtlasWebElement<?> updateProfileSubmitBtn();
 
-    @FindBy("//app-profile//form//div[contains(@class, 'alert')]")
-    AtlasWebElement<?> profileUpdateSuccessToast();
-
     @FindBy("//input[@id='current-password']")
     AtlasWebElement<?> currentPassword();
 
@@ -36,8 +33,11 @@ public interface CustomerAccountPage extends WebPage {
     @FindBy("//button[contains(text(),'Change Password')]")
     AtlasWebElement<?> changePasswordSubmitBtn();
 
-    @FindBy("//a[@id='menu']")
+    @FindBy("//button[@id='menu']")
     AtlasWebElement<?> navMenu();
+
+    @FindBy("//a[contains(text(),'Home')]")
+    AtlasWebElement<?> homeNavMenu();
 
     @FindBy("//a[normalize-space()='Sign out']")
     AtlasWebElement<?> signOutLink();

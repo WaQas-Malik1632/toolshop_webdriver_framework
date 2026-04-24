@@ -4,10 +4,10 @@ import constants.AccountPageConstants;
 import constants.LoginPageConstants;
 import io.qameta.allure.*;
 import io.qameta.allure.testng.AllureTestNg;
-import listeners.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import webTests.listeners.TestListener;
 
 @Feature("Customer Account Page")
 @Listeners({AllureTestNg.class, TestListener.class})
@@ -16,7 +16,7 @@ public class CustomerAccountTest extends BaseTest {
     @Test(priority = 1, enabled = true, invocationCount = 1, groups = {"smoke", "e2e"})
     @Story("Validate logged out flow")
     @Severity(SeverityLevel.CRITICAL)
-    @Description("Verify that customer can logged out successfully")
+    @Description("Verify that user can logout successfully")
     public void validateUserCanLogOutSuccessfully() {
         log.info("Executing test: {}", testMethod.getName());
 
@@ -48,7 +48,7 @@ public class CustomerAccountTest extends BaseTest {
         Assert.assertEquals(result, AccountPageConstants.UPDATE_PROFILE_DATA_SUCCESS_MESSAGE, "Failed! User profile didn't update successfully");
     }
 
-    @Test(priority = 3, enabled = true, invocationCount = 1, groups = {"e2e"})
+    @Test(priority = 3, enabled = true, groups = {"e2e"})
     @Story("Validate update password flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can update password")
@@ -60,14 +60,14 @@ public class CustomerAccountTest extends BaseTest {
                 .navigateToLoginPage()
                 .logInAs(loginUserEmail, loginUserPass)
                 .navigateToProfilePage()
-                .updatePassword(userCurrentPass,userNewPass,userNewConfirmPass)
+                .updatePassword(userCurrentPass, userNewPass, userNewConfirmPass)
                 .capturePasswordUpdateMessage();
 
         log.info("RESULT: '{}'", result);
         Assert.assertEquals(result, AccountPageConstants.UPDATE_PASSWORD_SUCCESS_MESSAGE, "Failed! Update password success message didn't display");
     }
 
-    @Test(priority = 4, enabled = true, invocationCount = 1, groups = {"e2e"})
+    @Test(priority = 4, enabled = true, groups = {"e2e"})
     @Story("Validate update password -Negative flow")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that customer can update password")
