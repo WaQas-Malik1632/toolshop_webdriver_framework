@@ -1,0 +1,3 @@
+Scenario: Validate user logged out flow
+Status: FAILED
+Duration: 26 seconds

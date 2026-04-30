@@ -6260,3 +6260,271 @@ java.io.FileNotFoundException: src\main\java\com\toolshop\qa\config\config.prope
 2026-04-25 04:34:01 INFO  CucumberHooks:128 - ╔════════════════════════════════════════════════════════════════╗
 2026-04-25 04:34:01 INFO  CucumberHooks:129 - ║           FINISHED BDD TEST EXECUTION                         ║
 2026-04-25 04:34:01 INFO  CucumberHooks:130 - ╚════════════════════════════════════════════════════════════════╝
+2026-05-01 03:31:16 INFO  CucumberHooks:42 - ╔════════════════════════════════════════════════════════════════╗
+2026-05-01 03:31:16 INFO  CucumberHooks:43 - ║           STARTING BDD TEST EXECUTION                         ║
+2026-05-01 03:31:16 INFO  CucumberHooks:44 - ╚════════════════════════════════════════════════════════════════╝
+2026-05-01 03:31:16 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:53 - SCENARIO: Validate Login Page Title
+2026-05-01 03:31:16 INFO  CucumberHooks:54 - TAGS: [@Authentication, @Smoke]
+2026-05-01 03:31:16 ERROR DriverManager:35 - Failed to load configuration file: src/main/java/com/toolshop/qa/config/config.properties
+java.io.FileNotFoundException: src\main\java\com\toolshop\qa\config\config.properties (The system cannot find the path specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:185)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:109)
+	at webDriverManager.DriverManager.loadProperties(DriverManager.java:32)
+	at bdd.hooks.CucumberHooks.setUp(CucumberHooks.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:47)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:78)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.core.runtime.Runtime.lambda$executePickle$6(Runtime.java:107)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.Runtime.lambda$executePickle$7(Runtime.java:107)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at io.cucumber.core.runtime.Runtime$SameThreadExecutorService.execute(Runtime.java:235)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:125)
+	at io.cucumber.core.runtime.Runtime.lambda$runFeatures$3(Runtime.java:89)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.SliceOps$1$1.accept(SliceOps.java:200)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1693)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:147)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:588)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:723)
+	at io.cucumber.core.runtime.Runtime.runFeatures(Runtime.java:90)
+	at io.cucumber.core.runtime.Runtime.lambda$run$0(Runtime.java:78)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:147)
+	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:162)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:145)
+	at io.cucumber.core.runtime.Runtime.run(Runtime.java:78)
+	at io.cucumber.core.cli.Main.run(Main.java:87)
+	at io.cucumber.core.cli.Main.main(Main.java:30)
+2026-05-01 03:31:16 ERROR CucumberHooks:80 - ✗ FAILED: Validate Login Page Title
+2026-05-01 03:31:16 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:31:16 INFO  CucumberHooks:107 - Duration: 0 sec
+2026-05-01 03:31:16 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:31:16 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:53 - SCENARIO: Customer Login - Positive Flow
+2026-05-01 03:31:16 INFO  CucumberHooks:54 - TAGS: [@Authentication, @Smoke, @Critical, @Login]
+2026-05-01 03:31:16 INFO  DriverManager:71 - Initializing browser: null
+2026-05-01 03:31:16 ERROR CucumberHooks:80 - ✗ FAILED: Customer Login - Positive Flow
+2026-05-01 03:31:16 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:31:16 INFO  CucumberHooks:107 - Duration: 0 sec
+2026-05-01 03:31:16 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:31:16 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:53 - SCENARIO: Customer Login - Negative Flow
+2026-05-01 03:31:16 INFO  CucumberHooks:54 - TAGS: [@Authentication, @Smoke, @E2E, @Critical]
+2026-05-01 03:31:16 INFO  DriverManager:71 - Initializing browser: null
+2026-05-01 03:31:16 ERROR CucumberHooks:80 - ✗ FAILED: Customer Login - Negative Flow
+2026-05-01 03:31:16 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:31:16 INFO  CucumberHooks:107 - Duration: 0 sec
+2026-05-01 03:31:16 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:31:16 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:53 - SCENARIO: Reset Password - Registered Email
+2026-05-01 03:31:16 INFO  CucumberHooks:54 - TAGS: [@Authentication, @E2E, @Critical]
+2026-05-01 03:31:16 INFO  DriverManager:71 - Initializing browser: null
+2026-05-01 03:31:16 ERROR CucumberHooks:80 - ✗ FAILED: Reset Password - Registered Email
+2026-05-01 03:31:16 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:31:16 INFO  CucumberHooks:107 - Duration: 0 sec
+2026-05-01 03:31:16 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:31:16 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:53 - SCENARIO: Reset Password - Negative Flow - Unregistered Email
+2026-05-01 03:31:16 INFO  CucumberHooks:54 - TAGS: [@Authentication, @E2E, @Critical]
+2026-05-01 03:31:16 INFO  DriverManager:71 - Initializing browser: null
+2026-05-01 03:31:16 ERROR CucumberHooks:80 - ✗ FAILED: Reset Password - Negative Flow - Unregistered Email
+2026-05-01 03:31:16 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:31:16 INFO  CucumberHooks:107 - Duration: 0 sec
+2026-05-01 03:31:16 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:31:16 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:31:16 INFO  CucumberHooks:128 - ╔════════════════════════════════════════════════════════════════╗
+2026-05-01 03:31:16 INFO  CucumberHooks:129 - ║           FINISHED BDD TEST EXECUTION                         ║
+2026-05-01 03:31:16 INFO  CucumberHooks:130 - ╚════════════════════════════════════════════════════════════════╝
+2026-05-01 03:32:32 INFO  CucumberHooks:42 - ╔════════════════════════════════════════════════════════════════╗
+2026-05-01 03:32:32 INFO  CucumberHooks:43 - ║           STARTING BDD TEST EXECUTION                         ║
+2026-05-01 03:32:32 INFO  CucumberHooks:44 - ╚════════════════════════════════════════════════════════════════╝
+2026-05-01 03:32:32 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:32:32 INFO  CucumberHooks:53 - SCENARIO: Validate Login Page Title
+2026-05-01 03:32:32 INFO  CucumberHooks:54 - TAGS: [@Authentication, @Smoke]
+2026-05-01 03:32:32 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:32:36 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:32:39 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:32:39 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-05-01 03:32:42 INFO  BasePage:16 - Navigated to Login Page
+2026-05-01 03:32:42 INFO  LoginStepDefinitions:36 - Verifying page title. Expected: Login - Practice Software Testing - Toolshop - v5.0, Actual: Login - Practice Software Testing - Toolshop - v5.0
+2026-05-01 03:32:42 INFO  CucumberHooks:107 - Duration: 9 sec
+2026-05-01 03:32:42 INFO  DriverManager:156 - Browser closed successfully
+2026-05-01 03:32:42 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:32:42 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:32:42 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:32:42 INFO  CucumberHooks:53 - SCENARIO: Customer Login - Positive Flow
+2026-05-01 03:32:42 INFO  CucumberHooks:54 - TAGS: [@Authentication, @Smoke, @Critical, @Login]
+2026-05-01 03:32:42 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:32:45 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:32:45 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:32:45 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-05-01 03:32:46 INFO  BasePage:16 - Navigated to Login Page
+2026-05-01 03:32:46 INFO  LoginStepDefinitions:44 - Logging in with valid credentials for user: customer2@practicesoftwaretesting.com
+2026-05-01 03:32:50 INFO  BasePage:98 - Action successful. Redirected to: https://practicesoftwaretesting.com/account
+2026-05-01 03:32:50 INFO  LoginStepDefinitions:50 - Login result captured: https://practicesoftwaretesting.com/account
+2026-05-01 03:32:50 INFO  CucumberHooks:107 - Duration: 7 sec
+2026-05-01 03:32:50 INFO  DriverManager:156 - Browser closed successfully
+2026-05-01 03:32:50 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:32:50 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:32:50 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:32:50 INFO  CucumberHooks:53 - SCENARIO: Customer Login - Negative Flow
+2026-05-01 03:32:50 INFO  CucumberHooks:54 - TAGS: [@Authentication, @Smoke, @E2E, @Critical]
+2026-05-01 03:32:50 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:32:52 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:32:53 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:32:53 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-05-01 03:32:54 INFO  BasePage:16 - Navigated to Login Page
+2026-05-01 03:32:54 INFO  LoginStepDefinitions:57 - Logging in with invalid credentials for user: customer2@practicesoftwaretesting.com
+2026-05-01 03:32:55 WARN  BasePage:106 - Action failed. Error: Invalid email or password
+2026-05-01 03:32:55 INFO  LoginStepDefinitions:63 - Login result captured: Invalid email or password
+2026-05-01 03:32:55 INFO  LoginStepDefinitions:99 - Verifying authentication error message
+2026-05-01 03:32:55 INFO  CucumberHooks:107 - Duration: 5 sec
+2026-05-01 03:32:56 INFO  DriverManager:156 - Browser closed successfully
+2026-05-01 03:32:56 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:32:56 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:32:56 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:32:56 INFO  CucumberHooks:53 - SCENARIO: Reset Password - Registered Email
+2026-05-01 03:32:56 INFO  CucumberHooks:54 - TAGS: [@Authentication, @E2E, @Critical]
+2026-05-01 03:32:56 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:32:58 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:32:59 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:32:59 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-05-01 03:33:00 INFO  BasePage:16 - Navigated to Login Page
+2026-05-01 03:33:00 INFO  LoginStepDefinitions:69 - Requesting password reset for registered email: customer2@practicesoftwaretesting.com
+2026-05-01 03:33:01 INFO  LoginStepDefinitions:75 - Password reset result: page.forgot-password.confirm
+2026-05-01 03:33:01 INFO  LoginStepDefinitions:106 - Verifying password reset confirmation
+2026-05-01 03:33:01 ERROR CucumberHooks:80 - ✗ FAILED: Reset Password - Registered Email
+2026-05-01 03:33:01 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:33:01 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-05-01 03:33:01 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:33:01 INFO  CucumberHooks:107 - Duration: 5 sec
+2026-05-01 03:33:02 INFO  DriverManager:156 - Browser closed successfully
+2026-05-01 03:33:02 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:33:02 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:33:02 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:33:02 INFO  CucumberHooks:53 - SCENARIO: Reset Password - Negative Flow - Unregistered Email
+2026-05-01 03:33:02 INFO  CucumberHooks:54 - TAGS: [@Authentication, @E2E, @Critical]
+2026-05-01 03:33:02 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:33:05 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:33:05 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:33:05 INFO  LoginStepDefinitions:29 - Navigating to login page
+2026-05-01 03:33:06 INFO  BasePage:16 - Navigated to Login Page
+2026-05-01 03:33:06 INFO  LoginStepDefinitions:81 - Requesting password reset for unregistered email: Tester4@yopmail.com
+2026-05-01 03:33:07 INFO  LoginStepDefinitions:87 - Password reset result: The selected email is invalid.
+2026-05-01 03:33:07 INFO  LoginStepDefinitions:113 - Verifying invalid email error
+2026-05-01 03:33:07 ERROR CucumberHooks:80 - ✗ FAILED: Reset Password - Negative Flow - Unregistered Email
+2026-05-01 03:33:07 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:33:07 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-05-01 03:33:07 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:33:07 INFO  CucumberHooks:107 - Duration: 5 sec
+2026-05-01 03:33:07 INFO  DriverManager:156 - Browser closed successfully
+2026-05-01 03:33:07 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:33:07 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:33:07 INFO  CucumberHooks:128 - ╔════════════════════════════════════════════════════════════════╗
+2026-05-01 03:33:07 INFO  CucumberHooks:129 - ║           FINISHED BDD TEST EXECUTION                         ║
+2026-05-01 03:33:07 INFO  CucumberHooks:130 - ╚════════════════════════════════════════════════════════════════╝
+2026-05-01 03:34:25 INFO  CucumberHooks:42 - ╔════════════════════════════════════════════════════════════════╗
+2026-05-01 03:34:25 INFO  CucumberHooks:43 - ║           STARTING BDD TEST EXECUTION                         ║
+2026-05-01 03:34:25 INFO  CucumberHooks:44 - ╚════════════════════════════════════════════════════════════════╝
+2026-05-01 03:34:26 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:34:26 INFO  CucumberHooks:53 - SCENARIO: Validate user logged out flow
+2026-05-01 03:34:26 INFO  CucumberHooks:54 - TAGS: [@CustomerAccount, @Smoke, @E2E, @Critical]
+2026-05-01 03:34:26 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:34:30 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:34:30 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:34:30 INFO  CustomerAccountStepDefinitions:35 - Logging in as customer: customer2@practicesoftwaretesting.com
+2026-05-01 03:34:31 INFO  BasePage:16 - Navigated to Login Page
+2026-05-01 03:34:52 ERROR CucumberHooks:80 - ✗ FAILED: Validate user logged out flow
+2026-05-01 03:34:53 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:34:53 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-05-01 03:34:53 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:34:53 INFO  CucumberHooks:107 - Duration: 26 sec
+2026-05-01 03:34:53 INFO  DriverManager:156 - Browser closed successfully
+2026-05-01 03:34:53 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:34:53 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:34:53 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:34:53 INFO  CucumberHooks:53 - SCENARIO: Validate accounts profile data update
+2026-05-01 03:34:53 INFO  CucumberHooks:54 - TAGS: [@CustomerAccount, @E2E, @Critical]
+2026-05-01 03:34:53 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:34:57 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:34:57 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:34:57 INFO  CustomerAccountStepDefinitions:35 - Logging in as customer: customer2@practicesoftwaretesting.com
+2026-05-01 03:34:58 INFO  BasePage:16 - Navigated to Login Page
+2026-05-01 03:35:19 ERROR CucumberHooks:80 - ✗ FAILED: Validate accounts profile data update
+2026-05-01 03:35:19 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:35:19 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-05-01 03:35:19 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:35:19 INFO  CucumberHooks:107 - Duration: 25 sec
+2026-05-01 03:35:19 INFO  DriverManager:156 - Browser closed successfully
+2026-05-01 03:35:19 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:35:19 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:35:20 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:35:20 INFO  CucumberHooks:53 - SCENARIO: Validate update password flow
+2026-05-01 03:35:20 INFO  CucumberHooks:54 - TAGS: [@CustomerAccount, @E2E, @Critical, @profile]
+2026-05-01 03:35:20 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:35:22 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:35:23 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:35:23 INFO  CustomerAccountStepDefinitions:35 - Logging in as customer: customer2@practicesoftwaretesting.com
+2026-05-01 03:35:24 INFO  BasePage:16 - Navigated to Login Page
+2026-05-01 03:35:45 ERROR CucumberHooks:80 - ✗ FAILED: Validate update password flow
+2026-05-01 03:35:45 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:35:45 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-05-01 03:35:45 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:35:45 INFO  CucumberHooks:107 - Duration: 25 sec
+2026-05-01 03:35:45 INFO  DriverManager:156 - Browser closed successfully
+2026-05-01 03:35:45 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:35:45 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:35:45 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:35:45 INFO  CucumberHooks:53 - SCENARIO: Validate update password - Negative flow
+2026-05-01 03:35:45 INFO  CucumberHooks:54 - TAGS: [@CustomerAccount, @E2E, @Critical, @profile]
+2026-05-01 03:35:45 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:35:48 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:35:49 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:35:49 INFO  CustomerAccountStepDefinitions:35 - Logging in as customer: customer2@practicesoftwaretesting.com
+2026-05-01 03:35:50 INFO  BasePage:16 - Navigated to Login Page
+2026-05-01 03:36:11 ERROR CucumberHooks:80 - ✗ FAILED: Validate update password - Negative flow
+2026-05-01 03:36:11 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:36:11 INFO  CucumberHooks:94 - ✓ Screenshot attached
+2026-05-01 03:36:11 ERROR AllureLifecycle:608 - Could not add attachment: no test is running
+2026-05-01 03:36:11 INFO  CucumberHooks:107 - Duration: 25 sec
+2026-05-01 03:36:11 INFO  DriverManager:156 - Browser closed successfully
+2026-05-01 03:36:11 INFO  CucumberHooks:118 - ✓ Browser closed
+2026-05-01 03:36:11 INFO  CucumberHooks:123 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:36:11 INFO  CucumberHooks:128 - ╔════════════════════════════════════════════════════════════════╗
+2026-05-01 03:36:11 INFO  CucumberHooks:129 - ║           FINISHED BDD TEST EXECUTION                         ║
+2026-05-01 03:36:11 INFO  CucumberHooks:130 - ╚════════════════════════════════════════════════════════════════╝
+2026-05-01 03:36:33 INFO  CucumberHooks:42 - ╔════════════════════════════════════════════════════════════════╗
+2026-05-01 03:36:33 INFO  CucumberHooks:43 - ║           STARTING BDD TEST EXECUTION                         ║
+2026-05-01 03:36:33 INFO  CucumberHooks:44 - ╚════════════════════════════════════════════════════════════════╝
+2026-05-01 03:36:33 INFO  CucumberHooks:52 - ══════════════════════════════════════════════════════════════
+2026-05-01 03:36:33 INFO  CucumberHooks:53 - SCENARIO: Validate user logged out flow
+2026-05-01 03:36:33 INFO  CucumberHooks:54 - TAGS: [@CustomerAccount, @Smoke, @E2E, @Critical]
+2026-05-01 03:36:33 INFO  DriverManager:71 - Initializing browser: edge
+2026-05-01 03:36:37 INFO  DriverManager:146 - Navigating to Application URL: https://practicesoftwaretesting.com/
+2026-05-01 03:36:37 INFO  CucumberHooks:62 - ✓ Browser: edge | URL: https://practicesoftwaretesting.com/
+2026-05-01 03:36:38 INFO  CustomerAccountStepDefinitions:35 - Logging in as customer: customer2@practicesoftwaretesting.com
+2026-05-01 03:36:39 INFO  BasePage:16 - Navigated to Login Page

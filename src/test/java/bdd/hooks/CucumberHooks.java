@@ -4,19 +4,19 @@ import io.cucumber.java.*;
 import io.qameta.allure.Allure;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.time.Instant;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import utils.TestContext;
+import utils.Users;
 import webDriverManager.DriverManager;
+import webTests.BaseTest;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
+import java.time.Instant;
 
 /**
- * Cucumber Hooks for BDD Framework with Allure Integration
- * <p>
  * Available Cucumber Hook Annotations:
  * - @Before: Runs before each scenario (can have order parameter)
  * - @After: Runs after each scenario (can have order parameter)
@@ -24,17 +24,15 @@ import java.util.Properties;
  * - @AfterStep: Runs after each step
  * - @BeforeAll: Runs once before all scenarios (static method)
  * - @AfterAll: Runs once after all scenarios (static method)
- * <p>
  * Hook Execution Order:
  * - Lower order number = Higher priority (executes first)
  * - @Before(order = 0) executes before @Before(order = 1)
  * - @After(order = 0) executes after @After(order = 1)
  */
 
-public class CucumberHooks {
+public class CucumberHooks extends BaseTest {
 
     private static final Logger log = LogManager.getLogger(CucumberHooks.class);
-    private Properties prop;
     private Instant scenarioStartTime;
 
     @BeforeAll
@@ -53,14 +51,19 @@ public class CucumberHooks {
         log.info("SCENARIO: {}", scenario.getName());
         log.info("TAGS: {}", scenario.getSourceTagNames());
 
-        prop = DriverManager.loadProperties();
-        String browserName = prop.getProperty("browser");
-        String appBaseUrl = prop.getProperty("app.base.url");
+        if (prop == null) {
+            prop = DriverManager.loadProperties();
+        }
+
+        browserName = prop.getProperty("browser");
+        appBaseUrl = prop.getProperty("app.base.url");
+
+        Users userData = new Users(prop);
+        TestContext.setUserData(userData);
 
         DriverManager.initializeDriver(browserName, appBaseUrl);
 
         log.info("✓ Browser: {} | URL: {}", browserName, appBaseUrl);
-
     }
 
     @Before(value = "@RequiresLogin", order = 1)
@@ -69,7 +72,7 @@ public class CucumberHooks {
     }
 
     @After(order = 1)
-    public void tearDown(Scenario scenario) {
+    public void afterStep(Scenario scenario) {
 
         Duration duration = Duration.between(scenarioStartTime, Instant.now());
 
@@ -97,22 +100,17 @@ public class CucumberHooks {
                         log.error("Screenshot failed: {}", e.getMessage());
                     }
                 }
-
-                Allure.addAttachment("Failure Details", "text/plain",
-                        "Scenario: " + scenario.getName() +
-                                "\nStatus: FAILED" +
-                                "\nDuration: " + duration.getSeconds() + " seconds");
             }
 
             log.info("Duration: {} sec", duration.getSeconds());
 
         } catch (Exception e) {
-            log.error("Teardown error: {}", e.getMessage(), e);
+            log.error("AfterStep error: {}", e.getMessage(), e);
         }
     }
 
     @After(order = 0)
-    public void finalCleanup() {
+    public void tearDown() {
         try {
             DriverManager.quitDriver();
             log.info("✓ Browser closed");

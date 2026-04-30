@@ -13,11 +13,13 @@ import webDriverManager.DriverManager;
 import java.io.IOException;
 import java.util.Properties;
 
+import static utils.TestContext.getUserData;
+
 public class LoginStepDefinitions {
     private static final Logger log = LogManager.getLogger(LoginStepDefinitions.class);
     private final LoginPageSteps loginPageSteps;
-    private final Properties prop;
     private String capturedResult;
+    public final Properties prop;
 
     public LoginStepDefinitions() throws IOException {
         this.loginPageSteps = new LoginPageSteps(DriverManager.getDriver());
@@ -39,37 +41,32 @@ public class LoginStepDefinitions {
 
     @When("user logs in with valid credentials")
     public void userLogsInWithValidCredentials() {
-        String email = prop.getProperty("user.login.email");
-        String password = prop.getProperty("user.login.password");
-        log.info("Logging in with valid credentials for user: {}", email);
+        log.info("Logging in with valid credentials for user: {}", getUserData().loginUserEmail);
 
         capturedResult = loginPageSteps
-                .enterEmail(email)
-                .enterPassword(password)
+                .enterEmail(getUserData().loginUserEmail)
+                .enterPassword(getUserData().loginUserPass)
                 .submitLoginAndCaptureResult();
         log.info("Login result captured: {}", capturedResult);
     }
 
     @When("user logs in with invalid credentials")
     public void userLogsInWithInvalidCredentials() {
-        String email = prop.getProperty("user.login.email");
-        String wrongPassword = prop.getProperty("user.login.wrong.password");
-        log.info("Logging in with invalid credentials for user: {}", email);
+        log.info("Logging in with invalid credentials for user: {}", getUserData().loginUserEmail);
 
         capturedResult = loginPageSteps
-                .enterEmail(email)
-                .enterPassword(wrongPassword)
+                .enterEmail(getUserData().loginUserEmail)
+                .enterPassword(getUserData().loginWrongPass)
                 .submitLoginAndCaptureResult();
         log.info("Login result captured: {}", capturedResult);
     }
 
     @When("user requests a password reset for a registered email")
     public void userRequestsPasswordResetForRegisteredEmail() {
-        String resetEmail = prop.getProperty("user.reset.registered.email");
-        log.info("Requesting password reset for registered email: {}", resetEmail);
+        log.info("Requesting password reset for registered email: {}", getUserData().resetWithRegisteredEmail);
 
         loginPageSteps.openForgotPasswordForm()
-                .enterForgotPasswordEmail(resetEmail)
+                .enterForgotPasswordEmail(getUserData().resetWithRegisteredEmail)
                 .submitForgotPasswordRequest();
         capturedResult = loginPageSteps.captureForgotPasswordResultMessage();
         log.info("Password reset result: {}", capturedResult);
@@ -77,19 +74,17 @@ public class LoginStepDefinitions {
 
     @When("user requests a password reset for an unregistered email")
     public void userRequestsPasswordResetForUnregisteredEmail() {
-        String unregisteredEmail = prop.getProperty("user.reset.unregistered.email");
-        log.info("Requesting password reset for unregistered email: {}", unregisteredEmail);
-
+        log.info("Requesting password reset for unregistered email: {}", getUserData().resetWithUnRegisteredEmail);
         loginPageSteps.openForgotPasswordForm()
-                .enterForgotPasswordEmail(unregisteredEmail)
+                .enterForgotPasswordEmail(getUserData().resetWithUnRegisteredEmail)
                 .submitForgotPasswordRequest();
         capturedResult = loginPageSteps.captureForgotPasswordResultMessage();
-        log.info("Password reset result: {}", capturedResult);
+        log.info("Password reset result with unregistered email: {}", capturedResult);
     }
 
-    @Then("user should be on the account page")
-    public void userShouldBeOnTheAccountPage() {
-        log.info("Verifying user is on account page");
+    @Then("user is redirected to the account page")
+    public void userIsRedirectedToTheAccountPage() {
+        log.info("Verifying user is redirected to account page");
         Assert.assertEquals(capturedResult, LoginPageConstants.CUSTOMER_ACCOUNT_PAGE_URL,
                 "Login failed: User not redirected to account page");
     }
@@ -114,5 +109,4 @@ public class LoginStepDefinitions {
         Assert.assertEquals(capturedResult, LoginPageConstants.FORGOT_PASSWORD_INVALID_EMAIL_NEW_ERROR,
                 "Expected invalid email error not displayed");
     }
-
 }

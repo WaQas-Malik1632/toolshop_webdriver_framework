@@ -17,9 +17,12 @@ public class CustomerAccountPageSteps extends BaseSteps {
         return this;
     }
 
-    @Step("Get Profile Page Title")
-    public String getProfilePageTitle() {
-        return getPageTitle();
+    @Step("Navigate to Profile Page from Accounts Page")
+    public String navigateToProfilePageFromAccountsPage() {
+        button.waitAndClick(onAccountPage().profileMenu());
+        waitForUrl("/account/profile");
+        log.info("Navigated to Profile Page from Accounts Page");
+        return driver.getCurrentUrl();
     }
 
     @Step("Get Current Page URL")

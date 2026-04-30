@@ -1,0 +1,3 @@
+Scenario: Validate accounts profile data update
+Status: FAILED
+Duration: 25 seconds

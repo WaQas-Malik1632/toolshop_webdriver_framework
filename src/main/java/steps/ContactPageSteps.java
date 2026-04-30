@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class ContactPageSteps extends BaseSteps {
 
-
     public ContactPageSteps(WebDriver driver) {
         super(driver);
     }
@@ -28,7 +27,7 @@ public class ContactPageSteps extends BaseSteps {
                                           String message, String attachmentPath) {
         log.info("Filling contact form");
 
-        input.enterText(onContactPage().inputFirstName(),fName);
+        input.enterText(onContactPage().inputFirstName(), fName);
         input.enterText(onContactPage().inputLastName(), lName);
         input.enterText(onContactPage().inputEmailAddress(), email);
 

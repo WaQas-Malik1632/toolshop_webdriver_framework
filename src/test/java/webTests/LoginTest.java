@@ -12,6 +12,7 @@ import webTests.listeners.TestListener;
 @Listeners({AllureTestNg.class, TestListener.class})
 public class LoginTest extends BaseTest {
 
+
     @Test(priority = 1, enabled = false, groups = {"smoke"})
     @Story("Validate Login Page Title")
     @Severity(SeverityLevel.NORMAL)

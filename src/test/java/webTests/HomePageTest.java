@@ -12,7 +12,7 @@ import webTests.listeners.TestListener;
 @Listeners({AllureTestNg.class, TestListener.class})
 public class HomePageTest extends BaseTest {
 
-    @Test(priority = 1, enabled = false, groups = {"smoke", "e2e"})
+    @Test(priority = 1, enabled = true, groups = {"smoke", "e2e"})
     @Story("Validate Home page logo is visible")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify that Home page logo is visible and clickable")
@@ -69,7 +69,7 @@ public class HomePageTest extends BaseTest {
                 "Payment was not successful");
     }
 
-    @Test(priority = 4, enabled = false, groups = {"e2e"})
+    @Test(priority = 4, enabled = true, groups = {"e2e"})
     @Story("Validate guest user can purchase any product with COD")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that guest user can purchase product successfully with Cash on Delivery")

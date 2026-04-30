@@ -11,10 +11,10 @@ Feature: User Authentication
   Scenario: Validate Login Page Title
     Then login page title should be correct
 
-  @Smoke @E2E @Critical
+  @Smoke @Critical @Login
   Scenario: Customer Login - Positive Flow
     When user logs in with valid credentials
-    Then user should be on the account page
+    Then user is redirected to the account page
 
   @Smoke @E2E @Critical
   Scenario: Customer Login - Negative Flow

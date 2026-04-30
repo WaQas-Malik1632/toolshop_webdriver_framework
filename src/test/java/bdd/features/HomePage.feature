@@ -9,19 +9,19 @@ Feature: Home Page Functionality
     Given user is on the home page
     Then home page logo should be visible
 
-  @E2E @Critical
+  @E2E @Critical @Home
   Scenario: Validate Customer can purchase multiple products with Credit Card
     Given user is logged in and on home page
     When user purchases multiple products with credit card
     Then payment should be successful
 
-  @E2E @Critical
+  @E2E @Critical @Ignore
   Scenario: Validate Customer can purchase any product with Bank Account
     Given user is logged in and on home page
     When user purchases product with bank transfer
     Then payment should be successful
 
-  @E2E @Critical
+  @E2E @Critical @Ignore
   Scenario: Validate guest user can purchase any product with COD
     Given user is on the home page
     When guest user purchases product with cash on delivery

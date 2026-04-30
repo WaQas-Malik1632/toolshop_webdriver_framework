@@ -32,7 +32,7 @@ public class ContactStepDefinitions {
         Assert.assertEquals(actualTitle, ContactPageConstants.CONTACT_PAGE_TITLE, "Failed! Title didn't match");
     }
 
-    @When("user can fill the form and sends the message successfully")
+    @When("user can fill the form and submit it")
     public void userCanFillTheFormAndSendsTheMessageSuccessfully() {
         String firstName = "Tester";
         String lastName = "User";
@@ -45,14 +45,12 @@ public class ContactStepDefinitions {
 
         contactPageSteps.contactUsForm(firstName, lastName, email, subject, message, attachmentPath);
         capturedResult = contactPageSteps.captureContactSuccessMessage();
-        log.info("RESULT: '{}'", capturedResult);
     }
 
-    @Then("user should see success message")
-    public void userShouldSeeSuccessMessage() {
-        log.info("Verifying contact message success");
+    @Then("success toast message should be correct")
+    public void successMessageShouldBeCorrect() {
+        log.info("Verifying success toast message correct");
         Assert.assertEquals(capturedResult, ContactPageConstants.CONTACT_MESSAGE_SUCCESS_MESSAGE,
                 "Failed! Form didn't submit successfully");
     }
-
 }

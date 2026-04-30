@@ -13,5 +13,5 @@ Feature: Contact Us Functionality
 
   @E2E
   Scenario: Validate customer can contact with Admin about payment issue
-    When user can fill the form and sends the message successfully
-    Then user should see success message
+    When user can fill the form and submit it
+    Then success toast message should be correct

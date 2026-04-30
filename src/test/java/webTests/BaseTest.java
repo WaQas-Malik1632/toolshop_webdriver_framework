@@ -31,17 +31,15 @@ public class BaseTest {
     public String userNewPass;
     public String userNewConfirmPass;
 
-
     @BeforeMethod(alwaysRun = true)
     public void setUp(Method method, org.testng.ITestContext context) throws IOException {
         this.testMethod = method;
         log.info("===== STARTING TEST: {} =====", method.getName());
 
         prop = DriverManager.loadProperties();
-
+        // Check if browser parameter is passed from TestNG suite XML, otherwise use config file
         String testBrowser = context.getCurrentXmlTest().getParameter("browser");
         browserName = (testBrowser != null && !testBrowser.isEmpty()) ? testBrowser : prop.getProperty("browser");
-
         appBaseUrl = prop.getProperty("app.base.url");
 
         loginUserEmail = prop.getProperty("user.login.email");

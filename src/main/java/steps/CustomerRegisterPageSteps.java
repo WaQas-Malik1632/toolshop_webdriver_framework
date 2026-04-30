@@ -1,8 +1,8 @@
 package steps;
 
 import io.qameta.allure.Step;
-import utils.CustomerRegistrationFormData;
 import org.openqa.selenium.WebDriver;
+import utils.CustomerRegistrationFormData;
 
 public class CustomerRegisterPageSteps extends BaseSteps {
 

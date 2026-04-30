@@ -1,0 +1,3 @@
+Scenario: Validate update password - Negative flow
+Status: FAILED
+Duration: 25 seconds

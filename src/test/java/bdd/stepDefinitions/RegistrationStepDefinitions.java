@@ -17,8 +17,12 @@ import java.util.Properties;
 public class RegistrationStepDefinitions {
     private static final Logger log = LogManager.getLogger(RegistrationStepDefinitions.class);
     private final CustomerRegisterPageSteps registerPageSteps;
-    private final Properties prop;
+    public final Properties prop;
     private String capturedResult;
+
+    private static final String UNIQUE_EMAIL = "apitester_" + System.currentTimeMillis() + "@yopmail.com";
+    private static final String EXISTING_EMAIL = "customer@practicesoftwaretesting.com";
+    private static final String VALID_PASSWORD = "Toolshopuser@1";
 
     public RegistrationStepDefinitions() throws IOException {
         this.registerPageSteps = new CustomerRegisterPageSteps(DriverManager.getDriver());
@@ -40,10 +44,7 @@ public class RegistrationStepDefinitions {
 
     @When("user registers with unique email and valid details")
     public void userRegistersWithUniqueEmailAndValidDetails() {
-        String uniqueEmail = "tester_" + System.currentTimeMillis() + "@yopmail.com";
-        String validPassword = "Toolshopuser@1";
-
-        log.info("Executing registration with unique email: {}", uniqueEmail);
+        log.info("Executing registration with unique email: {}", UNIQUE_EMAIL);
 
         capturedResult = registerPageSteps.registerCustomer(
                         "Test",
@@ -56,8 +57,8 @@ public class RegistrationStepDefinitions {
                         "District 4",
                         "Hungary",
                         "301234567",
-                        uniqueEmail,
-                        validPassword)
+                        UNIQUE_EMAIL,
+                        VALID_PASSWORD)
                 .captureRegistrationResult();
 
         log.info("RESULT: Redirected to '{}'", capturedResult);
@@ -65,10 +66,7 @@ public class RegistrationStepDefinitions {
 
     @When("user attempts to register with an already existing email")
     public void userAttemptsToRegisterWithAnAlreadyExistingEmail() {
-        String existingEmail = prop.getProperty("user.login.email");
-        String password = prop.getProperty("user.login.wrong.password");
-
-        log.info("Executing registration with existing email: {}", existingEmail);
+        log.info("Executing registration with existing email: {}", EXISTING_EMAIL);
 
         capturedResult = registerPageSteps.registerCustomer(
                         "Test3",
@@ -81,8 +79,8 @@ public class RegistrationStepDefinitions {
                         "District 4",
                         "Hungary",
                         "30123554667",
-                        existingEmail,
-                        password)
+                        EXISTING_EMAIL,
+                        VALID_PASSWORD)
                 .captureRegistrationResult();
 
         log.info("RESULT: '{}'", capturedResult);
@@ -101,5 +99,4 @@ public class RegistrationStepDefinitions {
         Assert.assertEquals(capturedResult, RegisterPageConstants.CUSTOMER_ALREADY_EXISTS_WITH_THIS_EMAIL,
                 "Failed! User registered with unique email successfully");
     }
-
 }

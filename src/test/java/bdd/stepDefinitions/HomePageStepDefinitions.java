@@ -14,11 +14,13 @@ import webDriverManager.DriverManager;
 import java.io.IOException;
 import java.util.Properties;
 
+import static utils.TestContext.getUserData;
+
 public class HomePageStepDefinitions {
     private static final Logger log = LogManager.getLogger(HomePageStepDefinitions.class);
     private final HomePageSteps homePageSteps;
     private final LoginPageSteps loginPageSteps;
-    private final Properties prop;
+    public final Properties prop;
     private String capturedResult;
 
     public HomePageStepDefinitions() throws IOException {
@@ -35,12 +37,10 @@ public class HomePageStepDefinitions {
 
     @Given("user is logged in and on home page")
     public void userIsLoggedInAndOnHomePage() {
-        String email = prop.getProperty("user.login.email");
-        String password = prop.getProperty("user.login.password");
         log.info("Logging in and navigating to home page");
 
         loginPageSteps.navigateToLoginPage()
-                .logInAs(email, password)
+                .logInAs(getUserData().loginUserEmail, getUserData().loginUserPass)
                 .navigateToHomePage();
     }
 
@@ -104,5 +104,4 @@ public class HomePageStepDefinitions {
         Assert.assertEquals(capturedResult, HomePageConstants.PRODUCT_PURCHASE_PAYMENT_SUCCESS_MESSAGE,
                 "Payment was not successful");
     }
-
 }

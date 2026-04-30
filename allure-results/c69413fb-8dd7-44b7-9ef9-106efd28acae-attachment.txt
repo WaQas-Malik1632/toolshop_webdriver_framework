@@ -1,0 +1,3 @@
+Scenario: Reset Password - Negative Flow - Unregistered Email
+Status: FAILED
+Duration: 0 seconds

@@ -70,7 +70,7 @@ public class CustomerAccountTest extends BaseTest {
     @Test(priority = 4, enabled = true, groups = {"e2e"})
     @Story("Validate update password -Negative flow")
     @Severity(SeverityLevel.CRITICAL)
-    @Description("Verify that customer can update password")
+    @Description("Verify that customer can't update password")
     public void validateUserCanNotUpdatePassword() {
         log.info("Executing test: {}", testMethod.getName());
         log.info("ACTION: Attempting password update with non-matching passwords");

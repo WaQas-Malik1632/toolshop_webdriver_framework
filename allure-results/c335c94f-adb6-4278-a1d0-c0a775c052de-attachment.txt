@@ -1,0 +1,3 @@
+Scenario: Reset Password - Registered Email
+Status: FAILED
+Duration: 5 seconds

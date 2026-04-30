@@ -1,8 +1,8 @@
 package steps;
 
 import io.qameta.allure.Step;
-import utils.CheckoutPaymentFormData;
 import org.openqa.selenium.WebDriver;
+import utils.CheckoutPaymentFormData;
 
 public class HomePageSteps extends BaseSteps {
 

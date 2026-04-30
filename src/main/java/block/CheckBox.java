@@ -78,7 +78,7 @@ public class CheckBox {
 
     public boolean isChecked(AtlasWebElement<?> element) {
         try {
-            return element.isSelected(); // ✅ safe with Atlas
+            return element.isSelected();
         } catch (Exception e) {
             return false;
         }

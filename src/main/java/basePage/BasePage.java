@@ -95,7 +95,7 @@ public class BasePage {
         String result = fluentWait.until(d -> {
             // Success: URL changed to /account
             if (d.getCurrentUrl().contains("/account")) {
-                log.info("Action successful. Redirected to: {}", d.getCurrentUrl());
+                log.info("Action successful->Redirected to: {}", d.getCurrentUrl());
                 return d.getCurrentUrl();
             }
             // Failure: toast/error message is visible
